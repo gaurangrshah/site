@@ -19,10 +19,12 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, PhoneIcon } from "@chakra-ui/icons";
 
+import { LogoIcon } from "@/components/logo-icon";
 import { ChNextButtonLink } from "../next-link";
 
 import { is } from "@/utils/validator";
 import { Drawer } from "@/chakra/components/drawer";
+import { useColor } from "@/chakra/hooks/use-color";
 
 const routes = {
   home: "/",
@@ -45,7 +47,9 @@ export const FullLogo = ({
         display='flex'
         alignItems='center'
       >
-        {/* <Image src={src} {...imageProps} /> */}
+        <Box w='40px' h='40px'>
+          <LogoIcon />
+        </Box>
         <VisuallyHidden>
           <Heading as={headingAs} fontSize='4xl' fontWeight='bold'>
             GSDev
@@ -104,12 +108,13 @@ export function CallLink({ ...rest }) {
   );
 }
 
-export function HeaderContent() {
+export function HeaderContent({ bg }) {
   const mobileNav = useDisclosure();
+  const { color } = useColor();
 
   return (
     <>
-      <chakra.header w='full'>
+      <Box w='full'>
         <Flex
           alignItems='center'
           justifyContent='space-between'
@@ -123,12 +128,12 @@ export function HeaderContent() {
               justify='flex-end'
               spacing={1}
               mr={1}
-              color='gray.700'
+              // color='gray.700'
               display={{ base: "none", md: "inline-flex" }}
             >
               <NavLinks
                 chProps={{
-                  color: "blue.800",
+                  color: color("navLink"),
                   variant: "link",
                   textTransform: "capitalize",
                   pr: 6,
@@ -149,13 +154,12 @@ export function HeaderContent() {
             </Box>
           </HStack>
         </Flex>
-      </chakra.header>
+      </Box>
       <Drawer
         content={{
           header: {
             Component: FullLogo,
             props: {
-              src: "/falcon-logo.svg",
               headingAs: "h2",
             },
           },

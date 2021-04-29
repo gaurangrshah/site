@@ -1,7 +1,6 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { theme } from "@/chakra/index";
-import { shuffle } from './array-ops';
-
+import { shuffle } from "./array-ops";
 
 export function borders(children, color = "red") {
   let colors = Object.keys(theme.colors[color]);
@@ -46,3 +45,4 @@ export function combineProviders(providers) {
 
    */
 }
+

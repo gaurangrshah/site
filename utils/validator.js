@@ -29,4 +29,6 @@ export const is = {
   },
 };
 
-export const isBrowser = () => typeof window !== 'undefined';
+export const isSSR = () => {
+  return !(typeof window !== "undefined" && window.document?.createElement);
+}

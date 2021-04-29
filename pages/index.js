@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Splash } from "@/components/structure/splash";
+
 
 export default function Landing() {
   return (
@@ -12,6 +13,7 @@ export default function Landing() {
 
       <Flex m='auto auto'>
         <Splash />
+
         {/* Protected content only visible to auhenticaed users
         <ProtectedRoute>
           Go to your <Link href='/dashboard/pages'>dashboard</Link>

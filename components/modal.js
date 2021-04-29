@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import { useColor } from "../chakra/hooks/use-color";
 
 export const CHModal = ({
   title = "",
@@ -20,8 +21,12 @@ export const CHModal = ({
   hasSubmit = false,
   allowClose = true,
   handler,
+  noOverlay = false,
+  bg = "bg",
   ...rest
 }) => {
+  const { color } = useColor();
+
   const handleHandler = async (e) => {
     await handler.action(e);
     onClose();
@@ -40,10 +45,10 @@ export const CHModal = ({
         isCentered={true}
         {...rest}
       >
-        <ModalOverlay />
-        <ModalContent>
+        {!noOverlay && <ModalOverlay />}
+        <ModalContent bg={color(bg)}>
           <ModalHeader textTransform='capitalize'>{title}</ModalHeader>
-          <ModalCloseButton />
+          {allowClose && <ModalCloseButton />}
           <ModalBody>{children}</ModalBody>
 
           <ModalFooter>

@@ -1,10 +1,13 @@
 export const customColors = {
-  // red: "#ff0000",
-  // black: "#393939",
-  // grey: "#3A3A3A",
-  // gray: "#3A3A3A",
-  // lightgrey: "#e1e1e1",
-  // lightgray: "#e1e1e1",
-  // offWhite: "#ededed",
-  // purple: "green",
+  lavendarWeb: "#E3DFFF",
+  mintCream: "#F7FFF7",
+  nyanza: "#E2FADB",
+  turquoise: "#4ECDC4",
+  emerald: "#138E76",
+  blueSapphire: "#086375",
+  blackCoral: "#4C5563",
+  charcoal: "#384251",
+  jet: "#363636",
+  gunmetal: "#242F40",
+  //---------------------
 };

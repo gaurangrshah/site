@@ -1,10 +1,14 @@
-import { chakra, Box } from '@chakra-ui/react';
-import { constants } from '../../chakra/constants';
+import { chakra, Box } from "@chakra-ui/react";
+import { useColor } from "@/chakra/hooks/use-color";
 
 export function FooterContent({ ...rest }) {
+  const { color } = useColor();
   return (
     <>
-      <chakra.p color="#black">&copy; {new Date().getFullYear()}</chakra.p>
+      <chakra.p color={color("color")}>
+        &copy; {new Date().getFullYear()}
+      </chakra.p>
     </>
   );
 }
+

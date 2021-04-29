@@ -1,8 +1,10 @@
+import { customColors } from "./custom-colors";
 export const light = {
-  bg: "gray.400",
+  barBg: "brand.300",
+  navLink: "brand.600",
+  bg: "mintCream",
   bgAlt: "gray.300",
-  barBg: "blue.50",
-  color: "gray.900",
+  color: "brand.700",
   cardBg: "gray.200",
   cardColor: "gray.300",
   containerBg: "rgba(255, 255, 255, 0.25)",
@@ -11,10 +13,11 @@ export const light = {
 };
 
 export const dark = {
-  bg: "gray.900",
+  barBg: "brand.dark",
+  navLink: "brand.300",
+  bg: "brand.dark",
   bgAlt: "gray.700",
-  barBg: "blue.300",
-  color: "gray.700",
+  color: "brand.300",
   cardBg: "gray.700",
   cardColor: "gray.700",
   containerBg: "gray.800",

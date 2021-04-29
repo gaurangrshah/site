@@ -7,8 +7,8 @@ export const header = {
 header.default.wrapper = {
   as: "header",
   w: "full",
-  h: "60px",
-  p: 4,
+  h: "100%",
+  // p: 4,
 };
 
 header.default.container = {
@@ -47,6 +47,7 @@ footer.default.wrapper = {
   w: "full",
   h: "60px",
   p: 4,
+  h: "100%",
 };
 
 footer.default.container = {

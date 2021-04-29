@@ -31,7 +31,7 @@ export const styles = {
       wordWrap: "break-word",
     },
     "*::-webkit-scrollbar-track": {
-      boxShadow: "inset 0 0 6px rgba(0,0,0,0.3)",
+      boxShadow: "inset 0 0 6px var(--chakra-colors-brand-500)",
       borderRadius: "10px",
       backgroundColor: "transparent",
     },
@@ -40,8 +40,8 @@ export const styles = {
     },
     "*::-webkit-scrollbar-thumb": {
       borderRadius: "10px",
-      boxShadow: "inset 0 0 6px rgba(0,0,0,.3)",
-      backgroundColor: "gray.700",
+      boxShadow: "inset 0 0 6px var(--chakra-colors-brand-400)",
+      backgroundColor: "var(--chakra-colors-brand-400)",
     },
     "html, body": {
       margin: 0,
@@ -50,13 +50,11 @@ export const styles = {
       scrollBehavior: "smooth",
       // using % here allows users to override default size in browser settings??
       fontSize: "85.2%", // == 10px
-      bg: mode("gray.400", "gray.900")(props),
     },
     body: {
       position: "relative",
       fontFamily: "body",
-      color: mode("gray.600", "whiteAlpha.700")(props),
-      // bg: mode("gray.400", "gray.900")(props),
+      color: mode("brand.700", "brand.200")(props),
       fontSize: "1.5rem",
       lineHeight: 2,
       textRendering: "optimizeLegibility",

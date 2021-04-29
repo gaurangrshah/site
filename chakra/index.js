@@ -11,11 +11,21 @@ const colors = {
     dark,
   },
   brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
+    100: customColors.lavendarWeb, //#E3DFFF
+    200: customColors.mintCream, //#F7FFF7
+    300: customColors.nyanza, //#E2FADB
+    400: customColors.turquoise, //#4ECDC4
+    500: customColors.emerald, //#138E76
+    600: customColors.blueSapphire, //#086375
+    700: customColors.blackCoral, //#4C5563
+    800: customColors.charcoal, //#384251
+    900: customColors.jet, //#363636
+    dark: customColors.gunmetal, //#242F40
   },
-  ...customColors,
+};
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 
 const shadows = {
@@ -23,6 +33,7 @@ const shadows = {
 };
 
 export const theme = extendTheme({
+  config,
   colors,
   styles,
   fonts,

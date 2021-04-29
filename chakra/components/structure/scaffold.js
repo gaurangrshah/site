@@ -1,8 +1,7 @@
-import { Box, ColorModeScript, Grid } from "@chakra-ui/react";
+import { Box, chakra } from "@chakra-ui/react";
 
 import { ScaffoldProvider } from "@/chakra/contexts/scaffold-context";
 import { useScaffold } from "@/chakra/contexts/scaffold-context";
-
 function Scaffold({ children }) {
   const {
     showHeader,
@@ -45,9 +44,9 @@ function Scaffold({ children }) {
 
 function PageGrid({ theme = "default", children, ...rest }) {
   return (
-    <Box {...pagegrid[theme]} {...rest}>
+    <chakra.div {...pagegrid[theme]} {...rest}>
       {children}
-    </Box>
+    </chakra.div>
   );
 }
 
@@ -61,9 +60,9 @@ function TopBar({ theme = "default", children, ...rest }) {
 
 function MainContent({ theme = "default", children, ...rest }) {
   return (
-    <Box {...main[theme]} {...rest}>
+    <chakra.main {...main[theme]} {...rest}>
       {children}
-    </Box>
+    </chakra.main>
   );
 }
 
@@ -92,14 +91,14 @@ export const pagegrid = {
   default: {
     display: "flex",
     flexDirection: "column",
-    minH: "100vh",
+    // minH: "100vh",
     height: "100%",
+    overflow: "hidden",
   },
 };
 
 export const main = {
   default: {
-    as: "main",
     position: "relative",
     w: "full",
     maxW: "full",
