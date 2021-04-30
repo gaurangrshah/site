@@ -5,11 +5,9 @@ import { ModeToggle } from "../components/mode-toggle";
 import Scaffold from "../components/structure/scaffold";
 import { Wave } from "@/components/backgrounds/shapes";
 
-import { useColor } from "@/chakra/hooks/use-color";
-
+import { InnerWave } from "../components/motion-wave";
 
 export function DefaultLayout(props) {
-  const { color } = useColor();
   const gradientTransition = {
     backgroundColor: {
       type: "tween",
@@ -58,33 +56,44 @@ export function DefaultLayout(props) {
         >
           <ModeToggle />
           <Scaffold {...props} />
-          <Wave
-            colors={[color("fieldLabel"), color("fieldLabel")]}
-            position='fixed'
-            bottom={0}
-            left={0}
-            transform='rotate(180deg)'
-            sx={{ transformStyle: "preserve-3d" }}
-            zIndex='docked'
-          />
+          <Box
+            sx={{
+              position: `absolute`,
+              bottom: 0,
+              width: `full`,
+              transform: `scale(1, -1)`,
+              zIndex: 100,
+            }}
+          >
+            <InnerWave
+              sx={{
+                position: `relative`,
+                height: `full`,
+                svg: { width: `100%`, height: `40vh` },
+              }}
+            >
+              <Box
+                as='svg'
+                xmlns='http://www.w3.org/2000/svg'
+                id='motion-wave'
+                viewBox='0 0 800 338.05'
+                preserveAspectRatio='none'
+                fill='brand.dark'
+                opacity='0.2'
+              >
+                <path>
+                  <animate
+                    attributeName='d'
+                    values='M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z'
+                    repeatCount='indefinite'
+                    dur='30s'
+                  />
+                </path>
+              </Box>
+            </InnerWave>
+          </Box>
         </motion.div>
       </motion.div>
     </>
   );
 }
-
-<svg
-  xmlns='http://www.w3.org/2000/svg'
-  class='icon icon-tabler icon-tabler-brand-twitter'
-  width='44'
-  height='44'
-  viewBox='0 0 24 24'
-  stroke-width='1.5'
-  stroke='#2c3e50'
-  fill='none'
-  stroke-linecap='round'
-  stroke-linejoin='round'
->
-  <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-  <path  />
-</svg>;

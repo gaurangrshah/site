@@ -20,3 +20,16 @@ export function Wave({ color = "inherit", colors = [], ...rest }) {
   );
 }
 
+/**
+ *
+  #USAGE:
+          <Wave
+            colors={[color("fieldLabel"), color("fieldLabel")]}
+            position='fixed'
+            bottom={0}
+            left={0}
+            transform='rotate(180deg)'
+            sx={{ transformStyle: "preserve-3d" }}
+            zIndex='docked'
+          />
+ */
