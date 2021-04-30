@@ -51,7 +51,7 @@ export const Splash = () => {
         <Box
           position='relative'
           bg='brand.dark'
-          w='container.sm'
+          w={["70%", "container.xs", "container.sm"]}
           boxShadow='md'
           borderRadius='5px'
           py={24}
