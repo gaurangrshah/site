@@ -1,11 +1,11 @@
-import { Box } from "@chakra-ui/react";
+import { Box, chakra } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { ModeToggle } from "../components/mode-toggle";
 import Scaffold from "../components/structure/scaffold";
 import { Wave } from "@/components/backgrounds/shapes";
 
-import { InnerWave } from "../components/motion-wave";
+import { ChInnerWave } from "../components/motion-wave";
 
 export function DefaultLayout(props) {
   const gradientTransition = {
@@ -65,13 +65,7 @@ export function DefaultLayout(props) {
               zIndex: 100,
             }}
           >
-            <InnerWave
-              sx={{
-                position: `relative`,
-                height: `full`,
-                svg: { width: `100%`, height: `40vh` },
-              }}
-            >
+            <ChInnerWave pos='relative' h='full'>
               <Box
                 as='svg'
                 xmlns='http://www.w3.org/2000/svg'
@@ -80,6 +74,8 @@ export function DefaultLayout(props) {
                 preserveAspectRatio='none'
                 fill='brand.dark'
                 opacity='0.2'
+                width='100%'
+                height='25vh'
               >
                 <path>
                   <animate
@@ -90,7 +86,7 @@ export function DefaultLayout(props) {
                   />
                 </path>
               </Box>
-            </InnerWave>
+            </ChInnerWave>
           </Box>
         </motion.div>
       </motion.div>

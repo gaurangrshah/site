@@ -59,7 +59,7 @@ export const Splash = () => {
           mx='auto'
           my='auto'
           zindex='2'
-          mt='30%'
+          mt='15%'
         >
           <Box w='100px' mx='auto' my='auto'>
             <LogoIcon />

@@ -1,5 +1,6 @@
 import { keyframes, css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { chakra } from "@chakra-ui/react";
 
 const wave = keyframes`
   0% {
@@ -25,6 +26,8 @@ export const InnerWave = styled.div`
     ${waveAnimation(`20s`)};
   }
 `;
+
+export const ChInnerWave = chakra(InnerWave);
 
 // const upDown = keyframes`
 //   from {
