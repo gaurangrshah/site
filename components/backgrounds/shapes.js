@@ -19,3 +19,4 @@ export function Wave({ color = "inherit", colors = [], ...rest }) {
     </Box>
   );
 }
+

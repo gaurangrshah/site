@@ -91,7 +91,6 @@ export const pagegrid = {
   default: {
     display: "flex",
     flexDirection: "column",
-    // minH: "100vh",
     height: "100%",
     overflow: "hidden",
   },

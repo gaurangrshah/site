@@ -11,7 +11,15 @@ export const Logo = ({ title }) => {
 };
 
 export const LogoIcon = ({ ...props }) => (
-  <Box as='svg' viewBox='0 0 647 647' {...props}>
+  <Box
+    as='svg'
+    viewBox='0 0 647 647'
+    {...props}
+    // transformStyle='preserve-3d'
+    // transform='rotate3d(1.3,2,1.8 45deg)'
+    // backfaceVisibility='hidden'
+    // perspective='40em'
+  >
     <circle
       cx='323.5'
       cy='323.5'

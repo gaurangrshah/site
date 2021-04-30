@@ -2,7 +2,7 @@ import { customColors } from "./custom-colors";
 export const light = {
   barBg: "brand.300",
   navLink: "brand.600",
-  bg: "mintCream",
+  bg: "brand.200",
   bgAlt: "gray.300",
   color: "brand.700",
   cardBg: "gray.200",

@@ -35,3 +35,4 @@ export const CustomIcon = ({ icon = "add", color = "inherit", ...rest }) => {
     </Box>
   );
 };
+

@@ -50,6 +50,7 @@ export const styles = {
       scrollBehavior: "smooth",
       // using % here allows users to override default size in browser settings??
       fontSize: "85.2%", // == 10px
+      background: "transparent",
     },
     body: {
       position: "relative",
