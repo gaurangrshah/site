@@ -5,38 +5,6 @@ import { Splash } from "@/components/structure/splash";
 export default function Landing() {
   return (
     <>
-      {/* <Head>
-        <meta
-          name='description'
-          content='Full Stack Developer - Learning while building in public'
-        />
-
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://gshahdev.com/' />
-        <meta property='og:title' content='G. Shah Dev' />
-        <meta
-          property='og:description'
-          content='Full Stack Developer - Learning while building in public'
-        />
-        <meta
-          property='og:image'
-          content='https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png'
-        />
-
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:url' content='https://gshahdev.com/' />
-        <meta property='twitter:handle' content='@Soham_Asmi/' />
-        <meta property='twitter:title' content='G. Shah Dev' />
-        <meta
-          property='twitter:description'
-          content='Full Stack Developer - Learning while building in public'
-        />
-        <meta
-          property='twitter:image'
-          content='https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png'
-        />
-      </Head> */}
-
       <Flex m='auto auto'>
         <Splash />
 

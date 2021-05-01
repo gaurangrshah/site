@@ -10,7 +10,7 @@ const SEO = {
   canonical: `${BASE_URL}`,
   twitter: {
     handle: "@Soham_asmi",
-    site: "@site",
+    site: "@Soham_asmi",
     cardType: "summary_large_image",
   },
   openGraph: {
@@ -22,7 +22,7 @@ const SEO = {
     images: [
       {
         // url: `${BASE_URL}/static/images/logo.png`,
-        url: `https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png`,
+        url: `https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/twitter-card.png`,
         alt: title,
         width: 1280,
         height: 720,
