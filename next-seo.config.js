@@ -12,7 +12,6 @@ const SEO = {
     handle: "@Soham_asmi",
     site: "@site",
     cardType: "summary_large_image",
-
   },
   openGraph: {
     type: "website",
@@ -22,7 +21,8 @@ const SEO = {
     description,
     images: [
       {
-        url: `${BASE_URL}/static/images/logo.png`,
+        // url: `${BASE_URL}/static/images/logo.png`,
+        url: `https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png`,
         alt: title,
         width: 1280,
         height: 720,
