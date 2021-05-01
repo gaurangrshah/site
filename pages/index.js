@@ -5,7 +5,7 @@ import { Splash } from "@/components/structure/splash";
 export default function Landing() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta
           name='description'
           content='Full Stack Developer - Learning while building in public'
@@ -25,6 +25,7 @@ export default function Landing() {
 
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:url' content='https://gshahdev.com/' />
+        <meta property='twitter:handle' content='@Soham_Asmi/' />
         <meta property='twitter:title' content='G. Shah Dev' />
         <meta
           property='twitter:description'
@@ -34,7 +35,7 @@ export default function Landing() {
           property='twitter:image'
           content='https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png'
         />
-      </Head>
+      </Head> */}
 
       <Flex m='auto auto'>
         <Splash />
