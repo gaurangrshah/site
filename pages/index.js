@@ -9,6 +9,10 @@ export default function Landing() {
       <Head>
         <title>G. Shah Dev</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta
+          property='og:image'
+          content='https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/image.png'
+        />
       </Head>
 
       <Flex m='auto auto'>

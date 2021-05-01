@@ -8,7 +8,6 @@ import {
   Link,
   Text,
   SimpleGrid,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 import { LogoIcon } from "@/components/logo-icon";
@@ -16,8 +15,6 @@ import { MotionBox } from "../motion-box";
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 
 export const Splash = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Flex
@@ -26,7 +23,7 @@ export const Splash = () => {
         h='full'
         textAlign='center'
         mx='auto'
-        // my='auto'
+        my='auto'
         color='brand.200'
       >
         <MotionBox
