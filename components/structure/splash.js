@@ -96,6 +96,17 @@ export const Splash = () => {
             </chakra.p>
             <SocialIcons />
           </Box>
+
+          <Box mt={6}>
+            <Link
+              href={`https://gallant-mestorf-d7446d.netlify.app`}
+              isExternal
+            >
+              <chakra.p>
+                👉 &nbsp; or you can visit the old site here 👈
+              </chakra.p>
+            </Link>
+          </Box>
         </Box>
       </Flex>
     </>
