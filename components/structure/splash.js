@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  chakra,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 import { LogoIcon } from "@/components/logo-icon";
 import { MotionBox } from "../motion-box";
@@ -7,14 +15,6 @@ import { CustomIcon } from "@/chakra/icons/custom-icon";
 export const Splash = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const gradientTransition = {
-    backgroundColor: {
-      type: "tween",
-      duration: 100,
-      repeat: Infinity,
-      repeatType: "loop",
-    },
-  };
   return (
     <>
       <Flex
@@ -51,7 +51,8 @@ export const Splash = () => {
         <Box
           position='relative'
           bg='brand.dark'
-          w={["70%", "container.xs", "container.sm"]}
+          opacity='0.9'
+          w={["70%", "container.xs", "50%"]}
           boxShadow='md'
           borderRadius='5px'
           py={24}
@@ -62,14 +63,24 @@ export const Splash = () => {
           mt='15%'
         >
           <Box w='100px' mx='auto' my='auto'>
-            <LogoIcon />
+            <Image src={`/personwbg.svg`} />
           </Box>
-          <Heading as='h3' fontSize='xl' textAlign='center' p={6}></Heading>
-          <p role='img' aria-label='waving hand'>
-            👋
-          </p>
-          <Text fontSize='md' textAlign='center'>
-            Hey I'm Full Stack Web Developer learning while building in public.
+
+          <Heading as='h2' color='brand.400' lineHeight='2'>
+            Gaurang Shah
+          </Heading>
+          <Text fontSize='md' textAlign='center' color='brand.300'>
+            <chakra.p
+              as='span'
+              lineHeight='2'
+              role='img'
+              aria-label='waving hand'
+              fontSize='3xl'
+              verticalAlign='middle'
+            >
+              👋{"   "}
+            </chakra.p>{" "}
+            Hey! I'm a Web Developer learning while building in public.
           </Text>
           <CustomIcon icon='add' />
         </Box>

@@ -43,13 +43,15 @@ export function DefaultLayout(props) {
           }}
           animate={{
             backgroundColor: [
-              "#4ECDC4",
-              "#138E76",
-              "#086375",
+              "#F7FFF7",
+              "#C0E8CA",
+              "#36A087",
+              "#074D53",
+              "#2C3A4E",
+              "#425876",
+              "#627FA7",
               "#E3DFFF",
               "#F7FFF7",
-              "#E2FADB",
-              "#E3DFFF",
             ],
           }}
           transition={gradientTransition}
