@@ -1,10 +1,13 @@
 import {
   Box,
   chakra,
+  Divider,
   Flex,
   Heading,
   Image,
+  Link,
   Text,
+  SimpleGrid,
   useDisclosure,
 } from "@chakra-ui/react";
 
@@ -24,6 +27,7 @@ export const Splash = () => {
         textAlign='center'
         mx='auto'
         // my='auto'
+        color='brand.200'
       >
         <MotionBox
           position='absolute'
@@ -41,8 +45,8 @@ export const Splash = () => {
             y: ["-30%", "10%", "30%", "120%", "50%", "-30%"],
           }}
           transition={{
-            duration: 20,
-            type: "tween",
+            duration: 50,
+            type: "spring",
             repeat: Infinity,
             repeatType: "loop",
           }}
@@ -66,11 +70,14 @@ export const Splash = () => {
             <Image src={`/personwbg.svg`} />
           </Box>
 
-          <Heading as='h2' color='brand.400' lineHeight='2'>
+          <Heading as='h2' color='brand.400' lineHeight='1' mt={2}>
             Gaurang Shah
           </Heading>
-          <Text fontSize='md' textAlign='center' color='brand.300'>
-            <chakra.p
+          <chakra.small as='span' textAlign='center'>
+            full stack developer
+          </chakra.small>
+          <Text fontSize='md' textAlign='center' color='brand.300' py={6}>
+            {/* <chakra.p
               as='span'
               lineHeight='2'
               role='img'
@@ -79,12 +86,67 @@ export const Splash = () => {
               verticalAlign='middle'
             >
               👋{"   "}
-            </chakra.p>{" "}
-            Hey! I'm a Web Developer learning while building in public.
+            </chakra.p>{" "} */}
+            Hey! I'm just setting some things up, check back soon...
           </Text>
-          <CustomIcon icon='add' />
+          <Divider maxWidth='80%' mx='auto' mb={3} />
+          <Box>
+            <chakra.p mb={3}>
+              In the meantime, feel free connect with me everywhere else:
+            </chakra.p>
+            <SocialIcons />
+          </Box>
         </Box>
       </Flex>
     </>
+  );
+};
+
+const SocialIcons = ({
+  icons = ["twitterfill", "github", "linkedin", "reddit", "makerlog"],
+  colors = ["twitter.500", "brand.dark", "red.500", "blue.400", "green.400"],
+  to = [
+    "https://twitter.com/Soham_Asmi",
+    "https://github.com/gaurangrshah",
+    "https://www.linkedin.com/in/gshah2020/",
+    "https://www.reddit.com/user/CelebrationThink3768",
+    "https://getmakerlog.com/@Soham_Asmi",
+  ],
+  children,
+  ...rest
+}) => {
+  return (
+    <Flex
+      direction='row'
+      justify='space-evenly'
+      align='center'
+      px={[16, null, 32]}
+      py={3}
+      w='full'
+      bg={"brand.800"}
+    >
+      {icons?.length &&
+        icons.map((icon, i) => {
+          return (
+            <Link key={icon} href={to[i]} isExternal>
+              <CustomIcon
+                bg={"brand.300"}
+                // w='3rem'
+                // h='3rem'
+                borderRadius='50%'
+                border='2px'
+                borderColor='brand.400'
+                boxShadow='sm'
+                icon={icon}
+                size='2.5rem'
+                color={colors[i]}
+                mx='auto'
+                my='auto'
+                p={`0.25rem`}
+              />
+            </Link>
+          );
+        })}
+    </Flex>
   );
 };

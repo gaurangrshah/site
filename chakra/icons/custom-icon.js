@@ -1,14 +1,19 @@
 import { Box } from "@chakra-ui/react";
 import { paths } from "./paths";
 
-export const CustomIcon = ({ icon = "add", color = "inherit", ...rest }) => {
-  const Icon = ({ color, ...rest }) => {
+export const CustomIcon = ({
+  icon = "add",
+  size = "1.25rem",
+  color = "inherit",
+  ...rest
+}) => {
+  const Icon = ({ color, size, ...rest }) => {
     return (
       <Box
         as='svg'
         viewBox={paths[icon].viewBox}
-        width='1.25em'
-        height='1.25em'
+        width={size}
+        height={size}
         fill={color}
         {...rest}
       >
@@ -18,21 +23,11 @@ export const CustomIcon = ({ icon = "add", color = "inherit", ...rest }) => {
         {Array.isArray(paths[icon].d) ? (
           paths[icon].d.map((d, i) => <path key={i} d={d} />)
         ) : (
-          <path d={paths[icon].d} />
+          <path d={paths[icon].d} opacity="0.6"/>
         )}
       </Box>
     );
   };
 
-  return (
-    <Box
-      as='span'
-      tabIndex={0} // accessibility requirement
-      /* span is required by chakra as a wrapper on icons when using tooltips */
-      // @link https://chakra-ui.com/docs/overlay/tooltip
-    >
-      <Icon color={color} {...rest} />
-    </Box>
-  );
+  return <Icon color={color} size={size} {...rest} />;
 };
-
