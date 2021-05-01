@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>G. Shah Dev</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
