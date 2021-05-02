@@ -5,7 +5,7 @@ import { Splash } from "@/components/structure/splash";
 export default function Landing() {
   return (
     <>
-      <Flex m='auto auto'>
+      <Flex m='auto auto' height="100%">
         <Splash />
 
         {/* Protected content only visible to auhenticaed users

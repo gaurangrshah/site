@@ -30,8 +30,8 @@ export const Splash = () => {
           position='absolute'
           top='0'
           zIndex='1'
-          width='600px'
-          height='600px'
+          width='500px'
+          height='400px'
           borderRadius='50%'
           bgGradient='linear(to-r, rgba(255,255,255, 0), rgba(255,255,255, 0.3))'
           opacity='0.1'
@@ -61,7 +61,6 @@ export const Splash = () => {
           mx='auto'
           my='auto'
           zindex='2'
-          mt='15%'
         >
           <Box w='100px' mx='auto' my='auto'>
             <Image src={`/personwbg.svg`} />
@@ -74,16 +73,6 @@ export const Splash = () => {
             full stack developer
           </chakra.small>
           <Text fontSize='md' textAlign='center' color='brand.300' py={6}>
-            {/* <chakra.p
-              as='span'
-              lineHeight='2'
-              role='img'
-              aria-label='waving hand'
-              fontSize='3xl'
-              verticalAlign='middle'
-            >
-              👋{"   "}
-            </chakra.p>{" "} */}
             Hey! I'm just setting some things up, check back soon...
           </Text>
           <Divider maxWidth='80%' mx='auto' mb={3} />

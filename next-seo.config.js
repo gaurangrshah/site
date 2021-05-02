@@ -21,7 +21,6 @@ const SEO = {
     description,
     images: [
       {
-        // url: `${BASE_URL}/static/images/logo.png`,
         url: `https://cdn.jsdelivr.net/gh/gaurangrshah/_shots@master/scrnshots/twitter-card.png`,
         alt: title,
         width: 1280,
