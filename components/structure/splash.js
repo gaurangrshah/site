@@ -128,11 +128,8 @@ const SocialIcons = ({
             <Link key={icon} href={to[i]} isExternal>
               <CustomIcon
                 bg={"brand.300"}
-                // w='3rem'
-                // h='3rem'
                 borderRadius='50%'
                 border='2px'
-                // borderColor='brand.400'
                 boxShadow='sm'
                 icon={icon}
                 size='2.5rem'

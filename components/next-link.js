@@ -17,10 +17,20 @@ export const ChNextButtonLink = ({
   );
 };
 
-export const ChNextLink = ({ label, href, chProps, children, ...rest }) => {
+export const ChNextLink = ({
+  label,
+  href,
+  locale,
+  prefetch,
+  // chProps,
+  children,
+  ...rest
+}) => {
   return (
-    <NextLink {...{ href }} passHref {...rest}>
-      <Link {...chProps}>{label || children}</Link>
+    <NextLink passHref {...{ href, locale, prefetch }}>
+      <Link {...chProps} {...rest}>
+        {label || children}
+      </Link>
     </NextLink>
   );
 };

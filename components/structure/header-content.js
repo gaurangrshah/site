@@ -61,7 +61,7 @@ export const FullLogo = ({
   );
 };
 
-const NavLinks = ({ onClose, chProps, ...rest }) => {
+const NavLinks = ({ onClose, ...rest }) => {
   return (
     <Flex
       flexDirection={{ base: "column", md: "row" }}
@@ -72,15 +72,11 @@ const NavLinks = ({ onClose, chProps, ...rest }) => {
           <ChNextButtonLink
             key={key}
             href={routes[key]}
-            chProps={{
-              isActive: routes[i] === routes[key],
-              onClick: onClose,
-              _active: {
-                textDecoration: "underline",
-                color: "red",
-              },
-
-              ...chProps,
+            isActive={routes[i] === routes[key]}
+            onClick={onClose}
+            _active={{
+              textDecoration: "underline",
+              color: "red",
             }}
             {...rest}
           >
@@ -96,11 +92,9 @@ export function CallLink({ ...rest }) {
     <>
       <ChNextButtonLink
         href='tel: +12018655225'
-        chProps={{
-          color: "blue.800",
-          variant: "link",
-          ...rest,
-        }}
+        color='blue.800'
+        variant='link'
+        {...rest}
       >
         <VStack>{rest.children}</VStack>
       </ChNextButtonLink>
