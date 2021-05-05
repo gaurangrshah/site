@@ -1,3 +1,7 @@
+export function mergeObjectsByIndex(arr1, arr2) {
+  return arr1.map((item, i) => ({ ...item, ...arr2[i] }));
+}
+
 export function pluck(arr, keys) {
   if (!Array.isArray(arr) || !Array.isArray(keys)) {
     return console.error("please provie an arrao");

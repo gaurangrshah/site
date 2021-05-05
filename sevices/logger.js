@@ -62,4 +62,9 @@ logger.info = (msg, ...args) => {
   return;
 };
 
+logger.response = (response, from) => {
+  if (response.ok) return logger.success( from && from, "✅ ");
+  else logger.error(from && from, "🚫");
+};
+
 module.exports = { logger };

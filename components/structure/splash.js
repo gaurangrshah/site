@@ -62,8 +62,8 @@ export const Splash = () => {
           my='auto'
           zindex='2'
         >
-          <Box w='100px' mx='auto' my='auto'>
-            <Image src={`/personwbg.svg`} />
+          <Box w='100px' mx='auto' my='auto' pb={6}>
+            <Image src={`/personwbgcircle.svg`} />
           </Box>
 
           <Heading as='h2' color='brand.400' lineHeight='1' mt={2}>
@@ -72,12 +72,12 @@ export const Splash = () => {
           <chakra.small as='span' textAlign='center'>
             full stack developer
           </chakra.small>
-          <Text fontSize='md' textAlign='center' color='brand.300' py={6}>
+          <Text fontSize='md' textAlign='center' color='brand.300' py={9}>
             Hey! I'm just setting some things up, check back soon...
           </Text>
           <Divider maxWidth='80%' mx='auto' mb={3} />
           <Box>
-            <chakra.p mb={3}>
+            <chakra.p my={3} pb={3}>
               In the meantime, feel free connect with me everywhere else:
             </chakra.p>
             <SocialIcons />
@@ -132,7 +132,7 @@ const SocialIcons = ({
                 // h='3rem'
                 borderRadius='50%'
                 border='2px'
-                borderColor='brand.400'
+                // borderColor='brand.400'
                 boxShadow='sm'
                 icon={icon}
                 size='2.5rem'

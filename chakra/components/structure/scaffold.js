@@ -102,6 +102,7 @@ export const main = {
     w: "full",
     maxW: "full",
     flex: 1,
+    overflow: "auto",
   },
 };
 
