@@ -22,7 +22,7 @@ export function DefaultLayout(props) {
         style={{
           postition: "relative",
           height: "100vh",
-          zIndex: 0,
+          zIndex: -1,
           overflow: "hidden",
           background: "rgba(255, 255, 255, 0.1)",
           background:
@@ -57,14 +57,14 @@ export function DefaultLayout(props) {
           transition={gradientTransition}
         >
           <ModeToggle />
-          <Scaffold {...props} />
+          <Scaffold {...props} zIndex={1} />
           <Box
-            sx={{
+            {...{
               position: `absolute`,
               bottom: 0,
               width: `full`,
               transform: `scale(1, -1)`,
-              zIndex: 100,
+              zIndex: 0,
             }}
           >
             <ChInnerWave pos='relative' h='full'>

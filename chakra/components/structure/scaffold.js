@@ -103,6 +103,7 @@ export const main = {
     maxW: "full",
     flex: 1,
     overflow: "auto",
+    pb: 36,
   },
 };
 

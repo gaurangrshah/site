@@ -100,14 +100,14 @@ export const Splash = () => {
 };
 
 const SocialIcons = ({
-  icons = ["twitterfill", "github", "linkedin", "reddit", "makerlog"],
+  icons = ["twitterfill", "github", "linkedin" /*"reddit", "makerlog" */],
   colors = ["twitter.500", "brand.dark", "red.500", "blue.400", "green.400"],
   to = [
     "https://twitter.com/Soham_Asmi",
     "https://github.com/gaurangrshah",
     "https://www.linkedin.com/in/gshah2020/",
-    "https://www.reddit.com/user/CelebrationThink3768",
-    "https://getmakerlog.com/@Soham_Asmi",
+    // "https://www.reddit.com/user/CelebrationThink3768",
+    // "https://getmakerlog.com/@Soham_Asmi",
   ],
   children,
   ...rest

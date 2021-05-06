@@ -23,7 +23,7 @@ export const CustomIcon = ({
         {Array.isArray(paths[icon].d) ? (
           paths[icon].d.map((d, i) => <path key={i} d={d} />)
         ) : (
-          <path d={paths[icon].d} opacity="0.8"/>
+          <path d={paths[icon].d} />
         )}
       </Box>
     );
