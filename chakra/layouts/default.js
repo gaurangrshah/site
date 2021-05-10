@@ -56,7 +56,7 @@ export function DefaultLayout(props) {
           }}
           transition={gradientTransition}
         >
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           <Scaffold {...props} zIndex={1} />
           <Box
             {...{
