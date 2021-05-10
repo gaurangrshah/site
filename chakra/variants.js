@@ -10,7 +10,7 @@ export const beforeBox = ({
   right: 0,
   backgroundImage: gradient,
   w: "full",
-  h: "80vh",
+  h: "100vh",
   zIndex: -1,
   ...rest,
 });

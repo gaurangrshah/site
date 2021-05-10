@@ -15,7 +15,7 @@ export const Section = ({ divider, children, ...rest }) => {
           <path d={dividers[divider.shape].d} />
         </Box>
       )}
-      <Box as='section' py={{ base: 0, lg: 24 }} pos='relative' {...rest}>
+      <Box as='section' pos='relative' {...rest}>
         {children}
       </Box>
       {divider && divider.pos === "bottom" && (

@@ -94,7 +94,7 @@ export const Intro = () => {
           </Text>
           <Text w='100%' mt={1}>
             I'm still working on getting more content up, but in the meantime,
-            here's a bit about me...
+            take a look inside my toolbox: 🛠
           </Text>
         </Box>
       </Flex>
@@ -105,8 +105,8 @@ export const Intro = () => {
               move={{
                 initial: { y: 0, x: 0, opacity: 0 },
                 animate: {
-                  y: "-8vh",
-                  x: `-40vw`,
+                  y: "-3vh",
+                  x: `-43vw`,
                   opacity: 1,
                 },
                 exit: { y: 0, x: 0, opacity: 0 },
@@ -119,7 +119,7 @@ export const Intro = () => {
               move={{
                 initial: { y: 0, x: 0, opacity: 0 },
                 animate: {
-                  y: "3vh",
+                  y: "5vh",
                   x: `-45vw`,
                   opacity: 1,
                 },
@@ -178,7 +178,7 @@ export const Intro = () => {
                 initial: { y: 0, x: 0, opacity: 0 },
                 animate: {
                   y: "-8vh",
-                  x: `-30vw`,
+                  x: `-33vw`,
                   opacity: 1,
                 },
                 exit: { y: 0, x: 0, opacity: 0 },
@@ -198,8 +198,8 @@ export const Intro = () => {
                 exit: { y: 0, x: 0, opacity: 0 },
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
-              icon={devIcons.blitz}
-              color={"brand.400"}
+              icon={devIcons.chakra}
+              fill={"brand.400"}
             />
             <MotionBrand
               move={{
@@ -273,7 +273,21 @@ export const BrandIcon = ({
 
 export const MotionBrand = ({ move, icon, ...rest }) => {
   return (
-    <MotionBox position='absolute' top={0} left={`50%`} right={`50%`} {...move}>
+    <MotionBox
+      position='absolute'
+      top={0}
+      left={`50%`}
+      right={`50%`}
+      bg='brand.300'
+      w='4.5rem'
+      h='4.5rem'
+      p={2}
+      borderRadius='50%'
+      display='flex'
+      justifyContent='center'
+      alignItems='center'
+      {...move}
+    >
       <BrandIcon
         icon={icon}
         color='#acacac'

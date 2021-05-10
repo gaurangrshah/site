@@ -28,9 +28,7 @@ export const ChNextLink = ({
 }) => {
   return (
     <NextLink passHref {...{ href, locale, prefetch }}>
-      <Link {...chProps} {...rest}>
-        {label || children}
-      </Link>
+      <Link {...rest}>{label || children}</Link>
     </NextLink>
   );
 };
