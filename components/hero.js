@@ -71,12 +71,24 @@ export const Hero = () => {
           </Button>
         </Box> */}
       </Container>
-      <LogoHover />
+      {/* <LogoHover /> */}
+      <Box w={"100%"} pos='relative' order={[-1, null, 1]}>
+        <Image
+          position='relative'
+          w='350px'
+          mx='auto'
+          src={`/gslogo3d.webp`}
+          objectFit='cover'
+          filter={"drop-shadow(0 0 0.66rem rgba(70, 94, 55, 0.2))"}
+        />
+      </Box>
     </SimpleGrid>
   );
 };
 
 export const LogoHover = ({}) => {
+  // @FIXME:  animation: logo pan on hover
+
   const offsetX = useRef();
   const offsetY = useRef();
 

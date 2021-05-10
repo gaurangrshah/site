@@ -77,6 +77,7 @@ export const Intro = () => {
           p={[12, null, 12]}
           my={["auto", null, 0]}
           textAlign={["center", null, "left"]}
+          color='brand.700'
         >
           <Heading
             as='h3'
