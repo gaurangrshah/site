@@ -1,30 +1,20 @@
-import { Box } from "@chakra-ui/react";
-import { Hero } from "@/components/hero";
-import { Intro } from "@/components/intro";
-import { Section } from "../components/section";
-import { beforeBox } from "../chakra/variants";
-import { Timeline } from "@/components/timeline";
+import Head from "next/head";
+import { Box, Flex } from "@chakra-ui/react";
+import { Splash } from "@/components/structure/splash";
+import { Spotify } from "@/components/spotify";
 
-const Sandbox = () => {
+export default function Sandbox() {
   return (
     <>
-      <Section
-        bg='transparent'
-        zIndex={0}
-        _before={beforeBox({})}
-        py={24}
-        px={16}
-      >
-        <Hero />
-      </Section>
-      <Section py={24} px={16}>
-        <Intro />
-      </Section>
-      <Section py={24} px={16}>
-        <Timeline />
-      </Section>
+      <Flex m='auto auto' height='100%' overflow='auto'>
+        {process.env.NODE_ENV === "development" ? <Spotify /> : <Splash />}
+
+        {/* Protected content only visible to auhenticaed users
+        <ProtectedRoute>
+          Go to your <Link href='/dashboard/pages'>dashboard</Link>
+        </ProtectedRoute>
+        */}
+      </Flex>
     </>
   );
-};
-
-export default Sandbox;
+}

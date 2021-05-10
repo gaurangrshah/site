@@ -94,7 +94,7 @@ export const Intro = () => {
           </Text>
           <Text w='100%' mt={1}>
             I'm still working on getting more content up, but in the meantime,
-            take a look inside my toolbox: 🛠
+            take a peek inside my toolbox: 🛠
           </Text>
         </Box>
       </Flex>
