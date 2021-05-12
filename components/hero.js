@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Badge,
   Box,
@@ -7,7 +7,11 @@ import {
   Flex,
   Heading,
   HStack,
+  IconButton,
   Image,
+  Input,
+  InputGroup,
+  InputRightAddon,
   Text,
   SimpleGrid,
   Stack,
@@ -15,6 +19,9 @@ import {
 import debounce from "lodash.debounce";
 
 import { MotionBox } from "./motion-box";
+import { CustomIcon } from "@/chakra/icons/custom-icon";
+
+import { convertFormToObject } from "@/utils/form-helpers";
 
 export const Hero = () => {
   return (
@@ -49,40 +56,112 @@ export const Hero = () => {
           fontSize={["3xl", "4xl", "5xl"]}
           fontFamily='body'
           fontWeight='800'
-          lineHeight={1.6}
+          lineHeight={1.3}
           textTransform='capitalize'
           textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
           opacity={0.7}
         >
-          Solutions built to deliver.
+          Scalable solutions that deliver results.
         </Heading>
         <Text
+          pt={3}
+          pl={2}
           pr={[0, null, 28]}
           fontSize='md'
           fontFamily='body'
           color='brand.700'
         >
-          I help startups and SMBs with a user-centric approach to delivering
-          robust scalable solutions that are fast, secure, and fully accessible.
+          Fast, secure, user-centric web expereinces built with the latest
+          innovative technologies designed to help you connect with your
+          audience.
         </Text>
-        {/* <Box float='right' mr={[9, null, 36]} mt={9}>
-          <Button colorScheme='brand.800' variant='outline'>
-            Learn More
-          </Button>
-        </Box> */}
+        <HeroForm />
       </Container>
-      {/* <LogoHover /> */}
       <Box w={"100%"} pos='relative' order={[-1, null, 1]}>
         <Image
           position='relative'
           w='350px'
           mx='auto'
-          src={`/gslogo3d.webp`}
+          src={`/gslogo3d.png`}
           objectFit='cover'
           filter={"drop-shadow(0 0 0.66rem rgba(70, 94, 55, 0.2))"}
         />
       </Box>
     </SimpleGrid>
+  );
+};
+
+export const HeroForm = ({ children, ...rest }) => {
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    e.persist();
+
+    setIsSubmitting(true);
+
+    const inputs = convertFormToObject([...e.target.querySelectorAll("input")]);
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/subscribe`,
+      {
+        method: "POST",
+        body: JSON.stringify({ email: inputs?.email }),
+      }
+    );
+
+    const data = await response.json();
+    setIsSubmitting(false);
+    if (data?.message) setMessage(data?.message);
+  };
+  return (
+    <Box
+      w='85%'
+      mt={6}
+      p={6}
+      bg='brand.200'
+      opacity={0.8}
+      borderRadius='md'
+      boxShadow='sm'
+      border={"0.5px"}
+    >
+      <Heading as='h5' lineHeight='1.4' fontSize='sm' pb={2} color='brand.600'>
+        Stay on top of the latest tech trends!
+      </Heading>
+      {message ? (
+        <Box>
+          <Text>{message}</Text>
+        </Box>
+      ) : (
+        <Box as='form' onSubmit={handleSubscribe}>
+          <Text color='brand.700' py={1}>
+            Signup for{" "}
+            <Box as='span' fontWeight='600'>
+              free early-bird access
+            </Box>{" "}
+            to my upcoming newsletter
+          </Text>
+          <InputGroup size='sm' borderColor='brand.500'>
+            <Input name='email' type='email' placeholder='you@youremail.com' />
+            <InputRightAddon
+              children={
+                <IconButton
+                  type='submit'
+                  h='1.75rem'
+                  size='sm'
+                  color='brand.600'
+                  isLoading={isSubmitting}
+                  icon={<CustomIcon icon='plane' mt={1} />}
+                >
+                  Submit
+                </IconButton>
+              }
+            />
+          </InputGroup>
+        </Box>
+      )}
+    </Box>
   );
 };
 

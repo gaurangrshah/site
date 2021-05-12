@@ -15,7 +15,7 @@ import SEO from "../next-seo.config";
 
 const App = ({ Component, pageProps, router }) => {
   const isDashboard = router.asPath.includes("dashboard");
-  console.log(theme);
+  // console.log(theme);
   return (
     <>
       <DefaultSeo {...SEO} />

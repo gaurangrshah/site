@@ -45,7 +45,7 @@ export function Timeline() {
 
           return (
             <VerticalTimelineElement
-              key={element.key}
+              key={element.key || element.id}
               date={element.date}
               dateClassName='date'
               iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
@@ -88,7 +88,7 @@ export function Timeline() {
   );
 }
 
-const timelineElements = [
+export const timelineElements = [
   {
     id: 1,
     title: "G. Shah Development",
