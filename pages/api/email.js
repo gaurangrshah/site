@@ -47,8 +47,6 @@ export default async (req, res) => {
       html: `<b>Thank you for subscribing!</b> <p>Please <a href="${process.env.NEXT_PUBLIC_API_URL}/verify?email=${email}" target="_blank">verify your email</a> </p>`, // html body
     });
 
-    // We can also extract the form variables from our req.body
-    // const { email = "", name = "" } = req.body;
     // console.log(info.messageId);
 
     res.json({
