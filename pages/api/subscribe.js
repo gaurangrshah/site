@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       : req?.body?.email;
 
     if (!email) {
-      console.log("no email found");
+      // console.log("no email found");
       return res.status(404).json({ message: "no email found" });
     }
     const exists = await findSubscriber(email);
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
       const subscriber = await createSubscriber(email);
       // console.log("found existing subscriber II");
       if (subscriber.id) {
-        // console.log("sending email to", email);
+        console.log("sending email to", email);
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/email`,
           {

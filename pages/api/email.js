@@ -15,12 +15,14 @@ import nodemailer from "nodemailer";
 import { isValidJson } from "@/utils/is-valid-json";
 
 export default async (req, res) => {
-  // console.log("🚀 ~ file: email.js ~ line 17 ~ req", req.body);
+  console.log("🚀 ~ file: email.js ~ line 17 ~ req", req.body);
   const email = isValidJson(req?.body)
     ? JSON.parse(req?.body).email
     : req?.body?.email;
-  if (!email)
+  if (!email) {
+    console.log('email.js -- no email found', req?.body)
     return res.status(404).json({ message: "no email provided to /email" });
+  }
 
   // let testAccount = await nodemailer.createTestAccount();
 
