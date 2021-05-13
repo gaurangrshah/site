@@ -29,14 +29,15 @@ export default async function handler(req, res) {
       : req?.body?.email;
 
     if (!email) {
-      // console.log("no email found");
+      console.log("no email found");
       return res.status(404).json({ message: "no email found" });
     }
+    console.log("does subscriber exist?", email);
+
     const exists = await findSubscriber(email);
     if (!exists.length) {
-      // console.log("found existing subscriber");
+      console.log("subscriber: does not exist, creating new subscriber");
       const subscriber = await createSubscriber(email);
-      // console.log("found existing subscriber II");
       if (subscriber.id) {
         console.log("sending email to", email);
         const response = await fetch(
@@ -49,21 +50,22 @@ export default async function handler(req, res) {
           }
         );
         const sent = await response.json();
-        // console.log("🚀 ~ file: subscribe.js ~ line 58 email sent", sent);
+        console.log("🚀 ~ file: subscribe.js ~ line 58 email sent", sent);
 
         return res.json(removeMethods(sent));
       } else {
-        // console.log("hit 404");
+        console.log("hit 404");
         return res
           .status(404)
           .json({ message: "no matching subscriber found" });
       }
     } else {
-      // console.log("subscribed already");
+      console.log("subscriber exists");
+      // @TODO: check if user is verified before sending message back.
       return res.status(200).json({ message: `you're already subscribed` });
     }
   } else {
-    // console.log("hit 405");
+    console.log("hit 405");
     return res.status(405).json({});
   }
 }
