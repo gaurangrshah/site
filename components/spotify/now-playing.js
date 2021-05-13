@@ -23,12 +23,23 @@ export const NowPlaying = ({ children, ...rest }) => {
 
   useEffect(async () => {
     setLoading(true);
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/spotify/now-playing`
+    const response = await fetch(`/api/spotify/now-playing`);
+    console.log(
+      "🚀 ~ file: now-playing.js ~ line 29 ~ useEffect ~ response",
+      response
     );
-    if (response.ok) console.log("success - /now-playing");
-    const data = await response.json();
-    setCurrent(data);
+
+    if (response.status === 200) {
+      console.log("success - /now-playing");
+      if (response.json) {
+        const data = await response.json();
+        console.log(
+          "🚀 ~ file: now-playing.js ~ line 32 ~ useEffect ~ data",
+          data
+        );
+        setCurrent(data);
+      }
+    }
     setLoading(false);
   }, []);
 
