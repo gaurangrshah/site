@@ -9,12 +9,14 @@ import {
   Image,
   Stack,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 import { devIcons } from "./icons/dev";
 import { MotionBox } from "./motion-box";
+import { NowPlaying } from "./spotify/now-playing";
 
 export const Intro = () => {
   const [show, setShow] = useState(false);
@@ -29,76 +31,84 @@ export const Intro = () => {
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >
-      <Flex
-        direction={["column", null, "row"]}
-        as='article'
-        w='95%'
-        mx='auto'
-        bg='brand.300'
-        opacity='0.8'
-        p={6}
-        py={12}
-        boxShadow='xl'
-        borderRadius='md'
-        zIndex={1}
-      >
+      <VStack>
         <Flex
-          direction='column'
-          alignItems={["center", null, "flex-start"]}
-          w={["100%", null, "30%"]}
-          borderRight={["0", null, "1px"]}
-          borderColor='gray.200'
-          boxSizing='border-box'
+          border='1px'
+          direction={["column", null, "row"]}
+          as='article'
+          w='95%'
+          mx='auto'
+          bg='brand.300'
+          opacity='0.8'
+          p={6}
+          py={12}
+          boxShadow='xl'
+          borderRadius='md'
+          zIndex={1}
         >
-          <Image ml={6} src={`/personwbgcircle.svg`} maxW='90px' />
-          <Box p={6} textAlign={["center", null, "left"]}>
+          <Flex
+            direction='column'
+            alignItems={["center", null, "flex-start"]}
+            w={["100%", null, "30%"]}
+            borderRight={["0", null, "1px"]}
+            borderColor='gray.200'
+            boxSizing='border-box'
+          >
+            <Image ml={6} src={`/personwbgcircle.svg`} maxW='90px' />
+            <Box p={6} textAlign={["center", null, "left"]}>
+              <Heading
+                as='h2'
+                fontSize='2xl'
+                fontFamily='body'
+                textAlign={["center", null, "left"]}
+                textTransform='capitalize'
+                textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
+                lineHeight='1'
+                color='brand.500'
+                mt={2}
+              >
+                Gaurang Shah
+              </Heading>
+              <Text
+                as='small'
+                fontSize='xs'
+                textAlign={["center", null, "left"]}
+              >
+                Full Stack Developer
+              </Text>
+            </Box>
+          </Flex>
+          <Box
+            w={["100%", null, "70%"]}
+            mx='auto'
+            flex={1}
+            p={[12, null, 12]}
+            my={["auto", null, 0]}
+            textAlign={["center", null, "left"]}
+            color='brand.700'
+          >
             <Heading
-              as='h2'
-              fontSize='2xl'
+              as='h3'
+              fontSize='3xl'
               fontFamily='body'
-              textAlign={["center", null, "left"]}
+              color='brand.400'
+              lineHeight='1.5'
               textTransform='capitalize'
               textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-              lineHeight='1'
-              color='brand.500'
-              mt={2}
             >
-              Gaurang Shah
+              👋 &nbsp; Hi-ya!
             </Heading>
-            <Text as='small' fontSize='xs' textAlign={["center", null, "left"]}>
-              Full Stack Developer
+            <Text w='100%' mt={4}>
+              Hey, thanks for checking out my little corner of the inter-web.
+            </Text>
+            <Text w='100%' mt={1}>
+              I'm still working on getting more content up, but in the meantime,
+              take a peek inside my toolbox: 🛠
             </Text>
           </Box>
         </Flex>
-        <Box
-          w={["100%", null, "70%"]}
-          mx='auto'
-          flex={1}
-          p={[12, null, 12]}
-          my={["auto", null, 0]}
-          textAlign={["center", null, "left"]}
-          color='brand.700'
-        >
-          <Heading
-            as='h3'
-            fontSize='3xl'
-            fontFamily='body'
-            color='brand.400'
-            lineHeight='1.5'
-            textTransform='capitalize'
-            textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-          >
-            👋 &nbsp; Hi-ya!
-          </Heading>
-          <Text w='100%' mt={4}>
-            Hey, thanks for checking out my little corner of the inter-web.
-          </Text>
-          <Text w='100%' mt={1}>
-            I'm still working on getting more content up, but in the meantime,
-            take a peek inside my toolbox: 🛠
-          </Text>
-        </Box>
-      </Flex>
+        <NowPlaying />
+      </VStack>
       <AnimatePresence zIndex={0}>
         {show && (
           <>
@@ -233,7 +243,6 @@ export const Intro = () => {
           </>
         )}
       </AnimatePresence>
-
       <SocialIcons />
     </Stack>
   );

@@ -1,9 +1,9 @@
 import { Box, Flex, Spinner as ChSpinner } from "@chakra-ui/react";
 
-export function Spinner() {
+export function Spinner({ ...rest }) {
   return (
-    <Flex display='flex' minH='100vh'>
-      <ChSpinner m='auto' zIndex='popover' />
+    <Flex display='flex' minH='100%' flex={1}>
+      <ChSpinner m='auto' zIndex='popover' {...rest} />
     </Flex>
   );
 }

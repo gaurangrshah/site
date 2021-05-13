@@ -1,25 +1,14 @@
-import { getAccessToken } from "./authorize";
-import { logger } from "@/sevices/logger";
-
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
-
-export const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
-
-  return fetch(NOW_PLAYING_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
+import { getNowPlaying } from "@/lib/spotify";
+// import { logger } from "@/sevices/logger";
 
 export default async (_, res) => {
   try {
     const response = await getNowPlaying();
-    logger.response(response, '/now-playing');
-    return res.json(response?.json ? await response.json() : response);
+    const data = await response.json();
+    // console.log("🚀 ~ file: now-playing.js ~ line 7 ~ data", data);
+    return res.json(data);
   } catch (error) {
-    logger.error(error);
+    console.log("🚀 ~ file: now-playing.js ~ line 11 ~ error", error);
     return res.json(error);
   }
 };
