@@ -82,7 +82,7 @@ export const Hero = () => {
           position='relative'
           w='350px'
           mx='auto'
-          src={`/gslogo3d.png`}
+          src={`/gslogo.png`}
           objectFit='cover'
           filter={"drop-shadow(0 0 0.66rem rgba(70, 94, 55, 0.2))"}
         />
@@ -159,38 +159,5 @@ export const HeroForm = ({ children, ...rest }) => {
         </Box>
       )}
     </Box>
-  );
-};
-
-export const LogoHover = ({}) => {
-  // @FIXME:  animation: logo pan on hover
-
-  const offsetX = useRef();
-  const offsetY = useRef();
-
-  const handleMouseMove = (e) => {
-    offsetX.current = e.clientX - window.innerWidth / 2;
-    offsetY.current = e.clientY - window.innerHeight / 2;
-    console.log(offsetX, offsetY);
-  };
-
-  return (
-    <MotionBox
-      w={"100%"}
-      pos='relative'
-      order={[-1, null, 1]}
-      initial={{ x: 0 }}
-      whileHover={{ translateX: offsetX.current / 6 }}
-      onMouseMove={debounce(handleMouseMove, 100)}
-    >
-      <Image
-        position='relative'
-        w='350px'
-        mx='auto'
-        src={`/gslogo3d.webp`}
-        objectFit='cover'
-        filter={"drop-shadow(0 0 0.66rem rgba(70, 94, 55, 0.2))"}
-      />
-    </MotionBox>
   );
 };
