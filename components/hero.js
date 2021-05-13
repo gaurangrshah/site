@@ -103,13 +103,10 @@ export const HeroForm = ({ children, ...rest }) => {
 
     const inputs = convertFormToObject([...e.target.querySelectorAll("input")]);
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/subscribe`,
-      {
-        method: "POST",
-        body: JSON.stringify({ email: inputs?.email }),
-      }
-    );
+    const response = await fetch(`/api/subscribe`, {
+      method: "POST",
+      body: JSON.stringify({ email: inputs?.email }),
+    });
 
     const data = await response.json();
     setIsSubmitting(false);

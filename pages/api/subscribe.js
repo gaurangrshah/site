@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       if (subscriber.id) {
         console.log("sending email to", email);
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/email`,
+          `/api/email`,
           {
             method: "POST",
             headers: new Headers({ "Content-Type": "application/json" }),
