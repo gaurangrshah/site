@@ -21,7 +21,7 @@ export default async (req, res) => {
     };
 
     await sendEmail(mailObj);
-    console.log("email sent", JSON.stringify(mailObject));
+    console.log("email sent", JSON.stringify(mailObj));
 
     res.json({
       message: `We've sent a verfication email to: ${email}`,

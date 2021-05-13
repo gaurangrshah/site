@@ -40,10 +40,9 @@ export default async function handler(req, res) {
       const subscriber = await createSubscriber(email);
       if (subscriber.id) {
         console.log("sending email to", email);
+        // const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
 
-        const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-
-        const response = await fetch(`/api/email`, {
+        const response = await fetch(`${req.headers.origin}/api/email`, {
           method: "POST",
           headers: new Headers({ "Content-Type": "application/json" }),
           credentials: "same-origin",
