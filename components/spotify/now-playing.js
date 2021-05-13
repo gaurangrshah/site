@@ -54,7 +54,6 @@ export const NowPlaying = ({ children, ...rest }) => {
           right={1}
           m={2}
         />
-        {loading && <Spinner size='md' color='brand.300' />}
         {current?.item ? (
           <>
             <Flex
@@ -143,6 +142,8 @@ export const NowPlaying = ({ children, ...rest }) => {
               </HStack>
             </Box>
           </>
+        ) : loading ? (
+          <Spinner size='md' color='brand.300' />
         ) : (
           <HStack align='center'>
             <BrandIcon
@@ -152,9 +153,7 @@ export const NowPlaying = ({ children, ...rest }) => {
               size='1.5rem'
               ml={2}
             />
-            <Text pr={6}>
-              {loading ? "Loading.." : "Not Currently Listening"}
-            </Text>
+            <Text pr={6}>Not Currently Listening</Text>
           </HStack>
         )}
       </Flex>
