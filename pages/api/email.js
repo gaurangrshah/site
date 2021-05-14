@@ -1,4 +1,3 @@
-import Cors from "cors";
 import { sendEmail } from "@/lib/emailer";
 
 import { isValidJson } from "@/utils/is-valid-json";

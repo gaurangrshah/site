@@ -49,7 +49,7 @@ export const Hero = () => {
             Developer
           </Badge>
           <Badge color='brand.600' colorScheme='whiteAlpha'>
-            Creator
+            Maker
           </Badge>
         </HStack>
         <Heading
@@ -61,7 +61,7 @@ export const Hero = () => {
           textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
           opacity={0.7}
         >
-          Scalable solutions that deliver results.
+          Hi-Ya! I'm Gaurang.
         </Heading>
         <Text
           pt={3}
@@ -71,9 +71,7 @@ export const Hero = () => {
           fontFamily='body'
           color='brand.700'
         >
-          Fast, secure, user-centric web expereinces built with the latest
-          innovative technologies designed to help you connect with your
-          audience.
+          I enjoy building modern web experiences to help solve real world problems.
         </Text>
         <HeroForm />
       </Container>
@@ -115,7 +113,7 @@ export const HeroForm = ({ children, ...rest }) => {
   return (
     <Box
       w='85%'
-      mt={6}
+      my={16}
       p={6}
       bg='brand.200'
       opacity={0.8}
