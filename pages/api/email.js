@@ -1,3 +1,5 @@
+import Cors from "cors";
+import initMiddleware from "@/lib/init-middleware";
 import { sendEmail } from "@/lib/emailer";
 
 import { isValidJson } from "@/utils/is-valid-json";
