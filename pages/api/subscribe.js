@@ -49,7 +49,7 @@ export default async function handler(req, res) {
           body: JSON.stringify({ email: email }),
         });
         const sent = await response.json();
-        console.log("🚀 ~ file: subscribe.js ~ line 58 email sent", sent);
+        // console.log("🚀 ~ file: subscribe.js ~ line 58 email sent", sent);
 
         return res.json(removeMethods(sent));
       } else {
@@ -59,8 +59,9 @@ export default async function handler(req, res) {
           .json({ message: "no matching subscriber found" });
       }
     } else {
-      console.log("subscriber exists");
+      // console.log("subscriber exists");
       // @TODO: check if user is verified before sending message back.
+      // @TODO: add option to resend verification email
       return res.status(200).json({ message: `you're already subscribed` });
     }
   } else {
