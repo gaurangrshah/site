@@ -3,6 +3,9 @@ import { mode } from "@chakra-ui/theme-tools";
 import { Header, Footer } from "@/chakra/components/structure/bars";
 import { HeaderContent } from "@/components/structure/header-content";
 import { FooterContent } from "@/components/structure/footer-content";
+// import { ascii } from "./utils/ascii";
+
+// console.log(ascii());
 
 const appConfig = {
   details: {

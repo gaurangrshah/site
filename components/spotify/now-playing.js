@@ -3,6 +3,7 @@ import {
   AspectRatio,
   Badge,
   Box,
+  Container,
   Flex,
   Heading,
   HStack,
@@ -16,6 +17,7 @@ import { devIcons } from "../icons/dev";
 import { otherIcons } from "../icons/other";
 import { msToMins } from "@/utils/datefns";
 import { Spinner } from "@/chakra/components/spinner";
+import { PathIcon } from "../icons/path-icon";
 
 export const NowPlaying = ({ children, ...rest }) => {
   const [current, setCurrent] = useState(null);
@@ -37,129 +39,105 @@ export const NowPlaying = ({ children, ...rest }) => {
 
   return (
     <>
-      <Flex
-        pos='relative'
+      <VStack
+        as={Container}
+        maxW={64}
+        bg='gray.700'
         borderRadius='5px'
-        maxW='500px'
-        bg='gray.600'
-        color='brand.200'
-        boxShadow='md'
-        minW='350px'
-        maxH='130px'
-        minH='45px'
-        my={16}
+        my={3}
+        boxShadow='sm'
       >
-        <BrandIcon
-          icon={devIcons.spotify}
-          fill='#1DB954'
-          pos='absolute'
-          top={2}
-          right={1}
-          m={2}
-        />
-        {current?.item ? (
-          <>
-            <Flex
-              bg='gray.700'
-              w='120px'
-              justify='center'
-              align='center'
-              borderRadius='5px'
-            >
+        <HStack
+          color='gray.500'
+          w='full'
+          mx='auto'
+          justify='space-between'
+          p={1}
+        >
+          <PathIcon icon={devIcons.spotify} fill='#1DB954' opacity='0.7' />
+          <Box w='90%' textAlign='center'>
+            {current?.item ? (
+              <Text color='brand.300'>Currently Listening</Text>
+            ) : loading ? (
+              <Spinner />
+            ) : (
+              <Text>Not Currently Listening</Text>
+            )}
+          </Box>
+          {!current?.item ? (
+            <PathIcon
+              icon={otherIcons.sound_off}
+              stroke='gray.500'
+              fill='transparent'
+              size='2em'
+            />
+          ) : (
+            <PathIcon
+              icon={otherIcons.sound_on}
+              stroke='brand.200'
+              fill='transparent'
+              size='2em'
+            />
+          )}
+        </HStack>
+        {current?.item && (
+          <VStack align='flex-start' color='brand.200' pb={4}>
+            <Box w='200px' h='200px'>
               <Image
-                w='72px'
-                h='72px'
                 src={`${current?.item?.album?.images[1].url}`}
-                borderTopLeftRadius='5px'
-                borderBottomLeftRadius='5px'
+                borderRadius='5px'
                 objectFit='cover'
               />
-            </Flex>
-            <Box p={3} w='full'>
-              <HStack mr={8} bg='gray.700' borderRadius='5px' p={2}>
-                <BrandIcon
-                  icon={otherIcons.headphones}
-                  stroke='brand.200'
-                  fill='transparent'
-                />
+            </Box>
+            <VStack w='full' align='flex-start'>
+              <HStack justify='space-between' w='full'>
                 <Link href={current?.item?.external_urls?.spotify} isExternal>
                   <Text>{current?.item?.name}</Text>
                 </Link>
+                {/* <Text as='small'>
+                  {msToMins(current?.progress_ms)}/
+                  {msToMins(current?.item?.duration_ms)}
+                </Text> */}
               </HStack>
-              <Text as='small' pr={8}>
-                {msToMins(current?.progress_ms)}/
-                {msToMins(current?.item?.duration_ms)}
-              </Text>
-              <HStack as='span' justify='flex-end' w='full'>
+              <HStack>
+                <PathIcon
+                  icon={otherIcons.artist}
+                  fill='transparent'
+                  stroke='brand.400'
+                />
                 {current?.item?.artists.map((artist) => {
+                  console.log("artist", artist.name);
                   return (
                     <Link
                       key={artist?.id}
                       href={artist?.external_urls?.spotify}
+                      data-artist-id={artist.id}
                       isExternal
                     >
-                      <Badge
-                        colorScheme='blue'
-                        fontSize='0.8em'
-                        fontWeight='normal'
-                        data-artist-id={artist.id}
-                        _hover={{ boxShadow: "md" }}
-                      >
-                        <HStack>
-                          <BrandIcon
-                            icon={otherIcons.artist}
-                            fill='brand.600'
-                          />
-                          <Text>{artist?.name}</Text>
-                        </HStack>
-                      </Badge>
+                      <Text color='brand.400'>{artist?.name}</Text>
                     </Link>
                   );
                 })}
               </HStack>
-              <HStack justify='flex-end' my={1}>
-                <Link
-                  data-album-id={current?.item?.album?.id}
-                  key={current?.item?.album?.id}
-                  href={current?.item?.album?.external_urls?.spotify}
-                  isExternal
-                >
-                  <Badge
-                    colorScheme='green'
-                    fontSize='0.8em'
-                    fontWeight='normal'
-                    data-album-id={current?.item?.album.id}
-                    p={1}
-                  >
-                    <HStack>
-                      <BrandIcon
-                        icon={otherIcons.album}
-                        stroke='brand.600'
-                        fill='transparent'
-                        // fill={"brand.100"}
-                      />
-                      <Text>{current?.item?.album?.name}</Text>
-                    </HStack>
-                  </Badge>
-                </Link>
-              </HStack>
-            </Box>
-          </>
-        ) : loading ? (
-          <Spinner size='md' color='brand.300' />
-        ) : (
-          <HStack align='center'>
-            <BrandIcon
-              icon={otherIcons.sound_off}
-              stroke='gray.500'
-              fill='gray.500'
-              size='1.5rem'
-              ml={2}
-            />
-            <Text pr={6}>Not Currently Listening</Text>
-          </HStack>
+              <Link
+                key={current?.item?.album?.id}
+                href={current?.item?.album?.external_urls?.spotify}
+                data-album-id={current?.item?.album?.id}
+                isExternal
+              >
+                <HStack>
+                  <PathIcon
+                    icon={otherIcons.album}
+                    fill='transparent'
+                    stroke='brand.400'
+                  />
+                  <Text as='small'>{current?.item?.album?.name}</Text>
+                </HStack>
+              </Link>
+            </VStack>
+          </VStack>
         )}
-      </Flex>
+      </VStack>
     </>
   );
 };
