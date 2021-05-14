@@ -1,6 +1,3 @@
-import Cors from "cors";
-import initMiddleware from "@/lib/init-middleware";
-
 import Airtable from "airtable";
 
 const base = new Airtable({
@@ -10,15 +7,6 @@ const base = new Airtable({
 }).base(process.env.AIRTABLE_USERS_BASE_ID);
 
 const VIEW = "Grid view";
-
-// Initialize the cors middleware
-const cors = initMiddleware(
-  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
-  Cors({
-    // Only allow requests with  POST and OPTIONS
-    methods: ["GET", "OPTIONS"],
-  })
-);
 
 const verifyEmail = async (email) => {
   const filterByFormula = `AND(email='${email}')`;
@@ -47,9 +35,6 @@ const verifyEmail = async (email) => {
 };
 
 export default async function handler(req, res) {
-  // Run cors
-  // await cors(req, res);
-
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/verified?email=${req?.query?.email}`
   );
