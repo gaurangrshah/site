@@ -1,8 +1,22 @@
+import Cors from "cors";
+import initMiddleware from "@/lib/init-middleware";
 import { sendEmail } from "@/lib/emailer";
 
 import { isValidJson } from "@/utils/is-valid-json";
 
-export default async (req, res) => {
+// Initialize the cors middleware
+const cors = initMiddleware(
+  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+  Cors({
+    // Only allow requests with  POST and OPTIONS
+    methods: ["POST", "OPTIONS"],
+  })
+);
+
+export default async function handler(req, res) {
+  // Run cors
+  await cors(req, res);
+
   const email = isValidJson(req?.body)
     ? JSON.parse(req?.body).email
     : req?.body?.email;
@@ -17,7 +31,7 @@ export default async (req, res) => {
       from: '"G. Shah Dev" <gaurang.r.shah@gmail.com>', // sender address
       recipients: [email], // comma-separated list of receivers
       subject: " ♻️  G. Shah Dev - Please Verify Your Email", // Subject line
-      message: `<b>Thank you for subscribing!</b> <p>Please <a href="${req.headers.origin}/api/verify?email=${email}" target="_blank">verify your email</a> </p>`,
+      message: `<b>Thank you for subscribing!</b> <p>Please <a href="${process.env.NEXT_PUBLIC_API_URL}/verify?email=${email}" target="_blank">verify your email</a> </p>`,
     };
 
     await sendEmail(mailObj);
@@ -29,4 +43,4 @@ export default async (req, res) => {
   } else {
     res.status(200).json({ message: `Response from /api/emails.` });
   }
-};
+}
