@@ -48,7 +48,7 @@ const verifyEmail = async (email) => {
 
 export default async function handler(req, res) {
   // Run cors
-  await cors(req, res);
+  // await cors(req, res);
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/verified?email=${req?.query?.email}`
