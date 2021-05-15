@@ -1,3 +1,5 @@
+// @link: https://samuelkraft.com/blog/spring-parallax-framer-motion-guide
+// @link: https://github.com/samuelkraft/samuelkraft-next/blob/master/components/parallax.tsx
 import { chakra, Box, SlideFade } from "@chakra-ui/react";
 import { dividers } from "./dividers";
 

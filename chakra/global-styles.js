@@ -11,12 +11,6 @@ export const styles = {
       outline: "none",
       boxShadow: "none",
     },
-    "@fontFace": {
-      fontFamily: "radnika_next",
-      src: "url('/static/radnikanext-medium-webfont.woff2') format('woff2')",
-      fontWeight: "normal",
-      fontStyle: "normal",
-    },
     "*": {
       border: 0,
       margin: 0,
@@ -51,6 +45,7 @@ export const styles = {
       // using % here allows users to override default size in browser settings??
       fontSize: "85.2%", // == 10px
       background: "transparent",
+      // height: "100vh",
     },
     body: {
       position: "relative",
@@ -61,6 +56,27 @@ export const styles = {
       textRendering: "optimizeLegibility",
       overflowX: "hidden",
       maxW: "full",
+      "span.markup": {
+        color: "brand.500",
+        fontFamily: "accent",
+        fontSize: "2xl",
+        lineHeight: 0.7,
+        background: "brand.300",
+        px: "0.2rem",
+        mr: "0.2rem",
+        borderRadius: "2px",
+      },
+      "p.scribble": {
+        color: "brand.400",
+        fontFamily: "accent",
+        fontSize: "2xl",
+        opacity: 0.8,
+        textShadow: "0px 0px 2px rgba(0,0,0, 0.2)",
+      },
+      "svg.scribble": {
+        fill: "brand.400",
+        filter: "drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))",
+      },
     },
     "*::placeholder": {
       color: mode("gray.500", "whiteAlpha.400")(props),

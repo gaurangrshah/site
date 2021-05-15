@@ -14,7 +14,9 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     console.log("transporting");
     let mailObj = {
-      from: '"G. Shah Dev" <gaurang.r.shah@gmail.com>', // sender address
+      // @TODO: define outgoing email via appconfig
+      from: `"G. Shah Dev" <${"gaurang.r.shah@gmail.com"}>`, // sender address
+      from: `"G. Shah Dev" <${process.env.SMTP_USER}>`, // sender address
       recipients: [email], // comma-separated list of receivers
       subject: " ♻️  G. Shah Dev - Please Verify Your Email", // Subject line
       message: `<b>Thank you for subscribing!</b> <p>Please <a href="${process.env.NEXT_PUBLIC_API_URL}/verify?email=${email}" target="_blank">verify your email</a> </p>`,

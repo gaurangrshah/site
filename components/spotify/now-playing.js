@@ -99,14 +99,15 @@ export const NowPlaying = ({ children, ...rest }) => {
                   {msToMins(current?.item?.duration_ms)}
                 </Text> */}
               </HStack>
-              <HStack>
+              <HStack flexWrap='wrap'>
                 <PathIcon
                   icon={otherIcons.artist}
                   fill='transparent'
                   stroke='brand.400'
                 />
-                {current?.item?.artists.map((artist) => {
-                  console.log("artist", artist.name);
+                {current?.item?.artists.map((artist, i) => {
+                  const isMultiple = current?.item?.artists?.length > 1;
+                  const isLast = current?.item?.artists?.length === i;
                   return (
                     <Link
                       key={artist?.id}
@@ -114,7 +115,10 @@ export const NowPlaying = ({ children, ...rest }) => {
                       data-artist-id={artist.id}
                       isExternal
                     >
-                      <Text color='brand.400'>{artist?.name}</Text>
+                      <Text as={isMultiple ? "small" : "b"} color='brand.400'>
+                        {artist?.name}
+                      </Text>
+                      {isMultiple && !isLast ? "," : ""}
                     </Link>
                   );
                 })}

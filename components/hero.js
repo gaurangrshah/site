@@ -18,10 +18,10 @@ import {
 } from "@chakra-ui/react";
 import debounce from "lodash.debounce";
 
-import { MotionBox } from "./motion-box";
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 
 import { convertFormToObject } from "@/utils/form-helpers";
+import { DrawnArrow } from "./scribbles/drawn-arrow";
 
 export const Hero = () => {
   return (
@@ -35,7 +35,7 @@ export const Hero = () => {
       my={[6, null, 24]}
     >
       <Container
-        order={[1, null, -1]}
+        order={[-1, null, 1]}
         pos='relative'
         h='30vh'
         w={"100%"}
@@ -54,35 +54,41 @@ export const Hero = () => {
         </HStack>
         <Heading
           fontSize={["3xl", "4xl", "5xl"]}
-          fontFamily='body'
+          // fontFamily='body'
           fontWeight='800'
-          lineHeight={1.3}
+          lineHeight={2.5}
           textTransform='capitalize'
           textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
           opacity={0.7}
         >
-          Hi-Ya! I'm Gaurang.
+          👋 Hi-Ya! I'm Gaurang.
         </Heading>
-        <Text
-          pt={3}
-          pl={2}
-          pr={[0, null, 28]}
-          fontSize='md'
-          fontFamily='body'
-          color='brand.700'
-        >
-          I enjoy building modern web experiences to help solve real world problems.
+        <Text pt={3} pl={2} fontSize='md' fontFamily='body' color='brand.700'>
+          I build modern web experiences that help solve real world problems. I
+          recently got heavily inspired by the{" "}
+          <Box as='span' className='markup'>
+            #indiehacking&nbsp;
+          </Box>
+          community and am currently working on my first{" "}
+          <Box as='span' className='markup'>
+            #buildinpublic &nbsp;
+          </Box>
+          project.
         </Text>
+
         <HeroForm />
       </Container>
-      <Box w={"100%"} pos='relative' order={[-1, null, 1]}>
+      <Box w={"100%"} pos='relative' order={[1, null, -1]} p={36}>
         <Image
           position='relative'
           w='350px'
           mx='auto'
-          src={`/gslogo.png`}
+          src={`/personwbgcircle.svg`}
           objectFit='cover'
           filter={"drop-shadow(0 0 0.66rem rgba(70, 94, 55, 0.2))"}
+          border='10px'
+          borderColor='brand.800'
+          borderRadius='49%'
         />
       </Box>
     </SimpleGrid>
@@ -112,17 +118,45 @@ export const HeroForm = ({ children, ...rest }) => {
   };
   return (
     <Box
+      pos='relative'
       w='85%'
-      my={16}
+      my={32}
       p={6}
       bg='brand.200'
-      opacity={0.8}
+      // opacity={0.8}
       borderRadius='md'
-      boxShadow='sm'
-      border={"0.5px"}
+      boxShadow='1px 1px 4px 0 rgba(19,142,118,0.25) inset'
+      borderStyle='inset'
+      // border={"0.2px inset"}
+      borderColor='brand.300'
     >
-      <Heading as='h5' lineHeight='1.4' fontSize='sm' pb={2} color='brand.600'>
-        Stay on top of the latest tech trends!
+      <Box
+        position='absolute'
+        top={-55}
+        right={5}
+        zIndex={1}
+        display='inline-block'
+      >
+        <Text className='scribble'>Follow my progress</Text>
+        <DrawnArrow
+          className='scribble'
+          w={5}
+          strokeWidth={0.3}
+          // fill='brand.400'
+          // filter='drop-shadow(-1px 1px 0.06rem rgba(70, 94, 55, 0.3))'
+          transform='rotate(36deg)'
+        />
+      </Box>
+      <Heading
+        as='h5'
+        lineHeight='1.4'
+        fontFamily='article'
+        fontSize='sm'
+        pb={2}
+        color='brand.400'
+        textShadow='0px 0px 2px rgba(0,0,0, 0.1)'
+      >
+        Follow my indie-hacking journey!
       </Heading>
       {message ? (
         <Box>
@@ -130,7 +164,7 @@ export const HeroForm = ({ children, ...rest }) => {
         </Box>
       ) : (
         <Box as='form' onSubmit={handleSubscribe}>
-          <Text color='brand.700' py={1}>
+          <Text color='gray.500' py={1}>
             Signup for{" "}
             <Box as='span' fontWeight='600'>
               free early-bird access

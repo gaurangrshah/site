@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 import { LogoIcon } from "@/components/logo-icon";
-import { MotionBox } from "../motion-box";
+import { MotionBox } from "../framer/motion-box";
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 
 export const Splash = () => {

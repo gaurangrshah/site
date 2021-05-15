@@ -15,7 +15,7 @@ import { AnimatePresence } from "framer-motion";
 
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 import { devIcons } from "./icons/dev";
-import { MotionBox } from "./motion-box";
+import { MotionBox } from "./framer/motion-box";
 import { NowPlaying } from "./spotify/now-playing";
 
 export const Intro = () => {
@@ -107,7 +107,6 @@ export const Intro = () => {
             </Text>
           </Box>
         </Flex>
-        <NowPlaying />
       </VStack>
       <AnimatePresence zIndex={0}>
         {show && (
@@ -243,6 +242,8 @@ export const Intro = () => {
           </>
         )}
       </AnimatePresence>
+      <NowPlaying />
+
       <SocialIcons />
     </Stack>
   );

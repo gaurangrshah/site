@@ -17,12 +17,12 @@ const Sandbox = () => {
       >
         <Hero />
       </Section>
-      <Section py={24} px={16}>
+      {/* <Section py={24} px={16}>
         <Intro />
       </Section>
       <Section py={24} px={16}>
         <Timeline />
-      </Section>
+      </Section> */}
     </>
   );
 };
