@@ -18,6 +18,7 @@ export const styles = {
       fontFeatureSettings: `'kern'`,
       textRendering: "optimizeLegibility",
       WebkitFontSmoothing: "antialiased",
+      WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
     },
     "*, *::before, *::after": {
       borderColor: mode("gray.500", "gray.700")(props),
@@ -67,16 +68,18 @@ export const styles = {
         borderRadius: "2px",
       },
       "p.scribble": {
-        color: "brand.400",
+        color: "brand.accent",
         fontFamily: "accent",
         fontSize: "2xl",
         opacity: 0.8,
         textShadow: "0px 0px 2px rgba(0,0,0, 0.2)",
       },
       "svg.scribble": {
-        fill: "brand.400",
+        fill: "brand.accent",
         filter: "drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))",
       },
+      "*.hide-scroll::-webkit-scrollbar": { display: "none" },
+      "*.hide-scroll": { scrollBarWidth: "none" },
     },
     "*::placeholder": {
       color: mode("gray.500", "whiteAlpha.400")(props),

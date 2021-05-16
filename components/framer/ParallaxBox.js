@@ -1,65 +1,49 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
-import { useViewportScroll, motion, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// @link: https://samuelkraft.com/blog/spring-parallax-framer-motion-guide
+import { useState, useRef, useLayoutEffect, ReactNode } from "react";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useSpring,
+  useReducedMotion,
+} from "framer-motion";
 
-export const ParallaxBox = ({ children, ...rest }) => {
-  const { scrollY } = useViewportScroll();
-  const y1 = useTransform(scrollY, [0, 300], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
+const Parallax = ({ children, offset = 50, scrollY }) => {
+  const prefersReducedMotion = useReducedMotion();
+  const [elementTop, setElementTop] = useState(0);
+  const [clientHeight, setClientHeight] = useState(0);
+  const ref = useRef(null);
 
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: false,
-  });
+  const initial = elementTop - clientHeight;
+  const final = elementTop + offset;
 
-  console.log(entry);
+  const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
+  const y = useSpring(yRange, { stiffness: 400, damping: 90 });
 
-  const variants = {
-    visible: { opacity: 1, scale: 1, y: 0 },
-    hidden: {
-      opacity: 0,
-      scale: 0.65,
-      y: 50,
-    },
-  };
+  useLayoutEffect(() => {
+    const element = ref.current;
+    const onResize = () => {
+      setElementTop(
+        element.getBoundingClientRect().top + window.scrollY ||
+          window.pageYOffset
+      );
+      setClientHeight(window.innerHeight);
+    };
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [ref]);
 
-  const box = {
-    width: "150px",
-    height: "150px",
-    borderRadius: "1em",
-    backgroundColor: "#f9f07e",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
+  // Don't parallax if the user has "reduced motion" enabled
+  if (prefersReducedMotion) {
+    return <>{children}</>;
+  }
 
-  const magic = {
-    width: "200px",
-    height: "200px",
-    backgroundColor: "#fff",
-    borderRadius: "20px",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
   return (
-    <>
-      <motion.div className='box' style={{ y: y1, x: -50, ...box }} />
-      <motion.div
-        className='box'
-        style={{ y: y2, x: 50, ...box, background: "salmon" }}
-      />
-      <div style={{ height: 500 }} />
-      <div style={{ position: "fixed", top: 0, left: 0 }}>
-        {" "}
-        {"is in view? " + inView}
-      </div>
-      <motion.div
-        animate={inView ? "visible" : "hidden"}
-        variants={variants}
-        transition={{ duration: 2, ease: "easeOut" }}
-        ref={ref}
-        className='magic'
-      />
-    </>
+    <motion.div ref={ref} style={{ y }}>
+      {children}
+    </motion.div>
   );
 };
+
+export default Parallax;

@@ -1,8 +1,10 @@
 export const customColors = {
-  lavendarWeb: "#E3DFFF",
+  royalDark: "#05235E",
+  han: "#642BD6",
   mintCream: "#F7FFF7",
   nyanza: "#E2FADB",
-  turquoise: "#4ECDC4",
+  // turquoise: "#4ECDC4",
+  turquoise: "#2CDEBA",
   emerald: "#138E76",
   blueSapphire: "#086375",
   blackCoral: "#4C5563",

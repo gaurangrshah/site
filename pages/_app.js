@@ -3,7 +3,6 @@ import { DefaultSeo } from "next-seo";
 
 import { theme } from "@/chakra";
 import { DashboardLayout, DefaultLayout } from "@/chakra/layouts";
-
 import { ScaffoldProvider } from "@/chakra/contexts/scaffold-context";
 import { LocalDataProvider } from "@/contexts/local-data-context";
 import MessageRouter from "@/components/message-router";
@@ -19,7 +18,7 @@ import "@fontsource/yeseva-one/index.css";
 
 const App = ({ Component, pageProps, router }) => {
   const isDashboard = router.asPath.includes("dashboard");
-  console.log(theme);
+  // console.log(theme);
   return (
     <>
       <DefaultSeo {...SEO} />

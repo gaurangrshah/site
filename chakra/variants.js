@@ -1,5 +1,5 @@
 export const beforeBox = ({
-  gradient = "linear-gradient(180deg, rgba(233, 255, 219, 0.6) 60%, rgba(233, 255, 219,0.0) 100%)",
+  // gradient = "linear-gradient(180deg, rgba(233, 255, 219, 0.6) 60%, rgba(233, 255, 219,0.0) 100%)",
   ...rest
 }) => ({
   content: '""',
@@ -8,11 +8,10 @@ export const beforeBox = ({
   top: 0,
   left: 0,
   right: 0,
-  backgroundImage: gradient,
+  // backgroundImage: gradient,
+  bgGradient: "linear(to-br, brand.300,  rgba(233, 255, 219,0.0) )",
   w: "full",
   h: "100vh",
   zIndex: -1,
   ...rest,
 });
-
-

@@ -11,32 +11,34 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useElementScroll, motion, useTransform } from "framer-motion";
+import { useElementScroll, useTransform } from "framer-motion";
 
 import { Section } from "@/components/section";
 import { MotionBox } from "@/components/framer/motion-box";
-import { ParallaxBox } from "@/components/framer/ParallaxBox";
+import ParallaxBox from "@/components/framer/ParallaxBox";
 
 export default function Sandbox2() {
   const ref = useRef();
-  const { scrollYProgress } = useElementScroll(ref);
-  console.log(
-    "🚀 ~ file: sandbox2.js ~ line 23 ~ Sandbox2 ~ scrollYProgress",
-    scrollYProgress
-  );
-
-  useEffect(() => {
-    return scrollYProgress.onChange((v) => console.log(v));
-  }, [scrollYProgress]);
+  const { scrollY } = useElementScroll(ref);
 
   return (
-    <Box ref={ref} overflow='scroll'>
-      <Section p={16} h='100vh' />
-      <Section p={16} h='100vh'>
-        <MotionBox style={{ scaleY: scrollYProgress }}>Test</MotionBox>
-      </Section>
-
-      <Section p={16} h='100vh' />
+    <Box ref={ref} overflowY='scroll' className='hide-scroll' h='100vh'>
+      <Section w='full' h='60vh' />
+      <Section w='full' h='60vh' />
+      <Section w='full' h='60vh' />
+        <Section
+          w='full'
+          h='60vh'
+          bg={"gray.500"}
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+        >
+          <ParallaxBox scrollY={scrollY} offset={200}>
+            Test
+          </ParallaxBox>
+        </Section>
+      <Section w='full' h='60vh' />
     </Box>
   );
 }

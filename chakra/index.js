@@ -11,7 +11,7 @@ const colors = {
     dark,
   },
   brand: {
-    100: customColors.lavendarWeb, //#E3DFFF
+    100: customColors.royalDark, //#05235E
     200: customColors.mintCream, //#F7FFF7
     300: customColors.nyanza, //#E2FADB
     400: customColors.turquoise, //#4ECDC4
@@ -20,6 +20,7 @@ const colors = {
     700: customColors.blackCoral, //#4C5563
     800: customColors.charcoal, //#384251
     900: customColors.jet, //#363636
+    accent: customColors.han, //#642BD6
     dark: customColors.gunmetal, //#242F40
   },
 };
