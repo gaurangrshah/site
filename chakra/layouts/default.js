@@ -24,7 +24,7 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && process.env.NODE_ENV === "development" ? (
+      {mounted && process.env.NODE_ENV === "production" ? (
         <MotionGradient gradientTransition={gradientTransition}>
           {/* <ModeToggle /> */}
           <Scaffold {...props} zIndex={1} />
