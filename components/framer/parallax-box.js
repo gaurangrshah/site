@@ -2,7 +2,6 @@
 import { useState, useRef, useLayoutEffect, ReactNode } from "react";
 import {
   motion,
-  useViewportScroll,
   useTransform,
   useSpring,
   useReducedMotion,
@@ -18,16 +17,16 @@ const Parallax = ({ children, offset = 50, scrollY }) => {
   const final = elementTop + offset;
 
   const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
-  const y = useSpring(yRange, { stiffness: 400, damping: 90 });
+  const y = useSpring(yRange, { stiffness: 400, damping: 10 });
 
   useLayoutEffect(() => {
     const element = ref.current;
     const onResize = () => {
       setElementTop(
-        element.getBoundingClientRect().top + window.scrollY ||
-          window.pageYOffset
+        element.getBoundingClientRect().top + element.scrollY ||
+          element.pageYOffset
       );
-      setClientHeight(window.innerHeight);
+      setClientHeight(element.innerHeight);
     };
     onResize();
     window.addEventListener("resize", onResize);
@@ -47,3 +46,5 @@ const Parallax = ({ children, offset = 50, scrollY }) => {
 };
 
 export default Parallax;
+
+// USAGE: see '../../pages/parallax-box-example.js'

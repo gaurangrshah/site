@@ -22,11 +22,9 @@ export function DefaultLayout(props) {
     },
   };
 
-
-
   return (
     <>
-      {mounted && process.env.NODE_ENV === "production" ? (
+      {mounted && process.env.NODE_ENV === "development" ? (
         <MotionGradient gradientTransition={gradientTransition}>
           {/* <ModeToggle /> */}
           <Scaffold {...props} zIndex={1} />
@@ -50,14 +48,14 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
     <>
       <motion.div
         style={{
+          h: "100vh",
           postition: "relative",
-          height: "100vh",
           zIndex: -1,
           overflow: "hidden",
           background: "rgba(255, 255, 255, 0.1)",
           background:
             "linear-gradient(to bottom right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.0))",
-          backgroundSize: "400% 400%",
+          backgroundSize: "300% 300%",
         }}
         initial={{ backgroundPostion: "0 100%" }}
         animate={{ backgroundPostion: "0 50%" }}
@@ -68,19 +66,13 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
         }}
       >
         <motion.div
-          style={{
-            height: "100vh",
-          }}
           animate={{
             backgroundColor: [
               "#F7FFF7",
               "#C0E8CA",
-              "#36A087",
-              "#074D53",
-              "#2C3A4E",
-              "#425876",
-              "#627FA7",
-              "#E3DFFF",
+              "#2CDEBA",
+              "#138E76",
+              "#086375",
               "#F7FFF7",
             ],
           }}

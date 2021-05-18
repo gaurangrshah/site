@@ -77,3 +77,15 @@ export const DualSection = ({ divider, children, ...rest }) => {
     </>
   );
 };
+
+/**
+ * USAGE:
+
+ <DualSection
+        bg='brand.500'
+        divider={{ shape: "tilt", fill: "brand.500", style: { mt: 9 } }}
+        // _before={beforeBox()}
+      >
+      {children}
+  </DualSection>
+ */

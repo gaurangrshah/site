@@ -1,43 +1,26 @@
 import { Badge, Box, Container, Heading, HStack, Text } from "@chakra-ui/react";
-import { NewsletterSignup } from "../newsletter-signup";
 
 export const HeroContent = ({ children, ...rest }) => {
   return (
     <>
       <HStack>
-        <Badge
-          px={1}
-          // bgGradient='linear(to-br,  brand.600, brand.400)'
-          // color='brand.200'
-          bg='brand.300'
-          color='brand.500'
-          boxShadow='sm'
-        >
+        <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
           Developer
         </Badge>
-        <Badge
-          px={1}
-          // bgGradient='linear(to-br,  brand.600, brand.400)'
-          // color='brand.200'
-          bg='brand.300'
-          color='brand.500'
-          boxShadow='sm'
-        >
+        <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
           Maker
         </Badge>
       </HStack>
       <Heading
         pos='relative'
-        fontSize={["2xl", "3xl", "4xl", "5xl"]}
+        fontSize={["2xl", "4xl", "3xl", "4xl"]}
         fontWeight='800'
-        pb={[12]}
-        pt={6}
+        lineHeight={2.9}
         letterSpacing='1px'
         textTransform='capitalize'
         textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-        opacity={0.7}
-        // color='brand.600'
-        // color='brand.100'
+        pb={[12]}
+        pt={6}
       >
         <Box as='span' fontSize='3xl' pb={2}>
           👋{" "}
@@ -51,6 +34,14 @@ export const HeroContent = ({ children, ...rest }) => {
           Hi-Ya! I'm Gaurang!
         </Box>
       </Heading>
+      <Box
+        w='350px'
+        h='9px'
+        filter='blur(1.4rem) opacity(0.3)'
+        bg='brand.900'
+        // mx='auto'
+        mt={-20}
+      />
       <Text
         pt={3}
         pl={2}
@@ -70,8 +61,6 @@ export const HeroContent = ({ children, ...rest }) => {
         </Box>
         project.
       </Text>
-
-      <NewsletterSignup />
     </>
   );
 };
