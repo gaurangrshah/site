@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 
 import { PathIcon } from "@/components/icons/path-icon";
 import { otherIcons } from "./icons/other";
@@ -7,17 +7,24 @@ export const ReachOut = () => {
   return (
     <Box
       w='full'
-      p={24}
       my={36}
       mx='auto'
       bg='brand.300'
-      textAlign='center'
-      maxW='container.md'
       p={[6, 12, null, null, 24]}
+      maxW='container.lg'
+      textAlign='center'
       borderRadius={[null, null, null, "10px"]}
       bgGradient={`linear(to-tr, brand.500, brand.600)`}
       boxShadow='lg'
     >
+      <Heading
+        fontSize='5xl'
+        textAlign='center'
+        lineHeight={2}
+        color='brand.300'
+      >
+        Let's Connect
+      </Heading>
       <Box
         p={6}
         m={4}
@@ -25,27 +32,22 @@ export const ReachOut = () => {
         borderColor='brand.300'
         borderRadius='8px'
       >
-        <Heading
-          fontSize='5xl'
-          textAlign='center'
-          color='brand.300'
-          lineHeight={1}
-        >
-          Let's Connect
-        </Heading>
-        <HStack
-          justify='space-around'
-          align='stretch'
-          maxW='container.sm'
-          spacing={16}
+        <Stack
+          direction={["column", null, null, "row"]}
+          justifyContent={["center", null, null, "space-around"]}
+          alignItems={["center", null, null, "stretch"]}
           mx='auto'
+          w='full'
+          maxW={["container.sm", null, null, "container.md"]}
+          spacing={16}
           my={12}
           textAlign='left'
         >
           <Flex
-            w='full'
-            mx='auto'
             alignItems='flex-start'
+            w='full'
+            maxW={["400px", null, "600px"]}
+            mx='auto'
             p={6}
             bg='brand.300'
             borderRadius='5px'
@@ -72,9 +74,10 @@ export const ReachOut = () => {
             </Text>
           </Flex>
           <Flex
-            w='full'
-            mx='auto'
             alignItems='flex-start'
+            w='full'
+            maxW={["400px", null, "600px"]}
+            mx='auto'
             p={6}
             bg='brand.300'
             borderRadius='5px'
@@ -100,7 +103,7 @@ export const ReachOut = () => {
               you've got an idea I'd love to discuss it with you!
             </Text>
           </Flex>
-        </HStack>
+        </Stack>
       </Box>
     </Box>
   );
