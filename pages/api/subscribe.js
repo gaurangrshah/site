@@ -41,12 +41,15 @@ export default async function handler(req, res) {
       if (subscriber.id) {
         console.log("sending email to", email);
         // const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+        const message = `<b>Thank you for subscribing!</b> <p>Please <a href="${process.env.NEXT_PUBLIC_API_URL}/verify?email=${email}" target="_blank">verify your email</a> </p>`;
+
+        const subject = " ♻️  G. Shah Dev - Please Verify Your Email";
 
         const response = await fetch(`${req.headers.origin}/api/email`, {
           method: "POST",
           headers: new Headers({ "Content-Type": "application/json" }),
           credentials: "same-origin",
-          body: JSON.stringify({ email: email }),
+          body: JSON.stringify({ email: email, message, recipients: [email], subject }),
         });
         const sent = await response.json();
         // console.log("🚀 ~ file: subscribe.js ~ line 58 email sent", sent);

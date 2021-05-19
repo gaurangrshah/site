@@ -82,7 +82,7 @@ export const styles = {
       "*.hide-scroll": { scrollBarWidth: "none" },
     },
     "*::placeholder": {
-      color: mode("gray.500", "whiteAlpha.400")(props),
+      color: mode("gray.400", "whiteAlpha.300")(props),
     },
     "input:focus": {
       border: "inherit",

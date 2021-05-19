@@ -58,15 +58,15 @@ export const HeroContent = ({ children, ...rest }) => {
         bg='brand.900'
         mt={-20}
       />
-      <Text
-        pt={3}
-        pl={2}
-        fontSize='md'
-        fontFamily='body'
-        lineHeight={2.5}
-        color='brand.700'
-      >
-        I love working with people and building awesome interfaces.
+      <Box pt={3} pl={2}>
+        <Text
+          fontSize='md'
+          fontFamily='body'
+          lineHeight={2.9}
+          color='brand.700'
+        >
+          I love working with people and building awesome interfaces.
+        </Text>
         <br />
         <HStack
           pos='relative'
@@ -96,7 +96,9 @@ export const HeroContent = ({ children, ...rest }) => {
             >
               Pardon The Appearance
             </Text>
-            <Text fontSize='sm'>I'm still getting some things together.</Text>
+            <Text fontSize='xl' fontFamily='accent'>
+              I'm still getting some things sorted.
+            </Text>
             <VStack
               w='full'
               align='flex-end'
@@ -126,25 +128,24 @@ export const HeroContent = ({ children, ...rest }) => {
                 >
                   Report Bugs
                 </Button>
-                {/* <IconButton
-                  aria-label='Report Bugs'
-                  icon={}
-                /> */}
                 <PathIcon icon={devIcons.github} stroke='brand.800' />
               </ButtonGroup>
             </VStack>
           </VStack>
         </HStack>
-        <br />I recently got heavily inspired by the{" "}
-        <Box as='span' className='markup'>
-          #indiehacking&nbsp;
-        </Box>
-        community and am currently working on my first{" "}
-        <Box as='span' className='markup'>
-          #buildinpublic &nbsp;
-        </Box>
-        project.
-      </Text>
+        <br />
+        <Text w='80%' lineHeight={2.5}>
+          I recently got heavily inspired by the{" "}
+          <Box as='span' className='markup'>
+            #indiehacking&nbsp;
+          </Box>
+          community and am currently working on my first{" "}
+          <Box as='span' className='markup'>
+            #buildinpublic &nbsp;
+          </Box>
+          project.
+        </Text>
+      </Box>
     </>
   );
 };

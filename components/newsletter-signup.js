@@ -56,7 +56,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
     >
       <Box
         pos='relative'
-        w={["80%", null, null, "50%"]}
+        w={["80%", null, null, "40%"]}
         my={16}
         p={6}
         bg='brand.200'
@@ -87,7 +87,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
           fontFamily='article'
           fontSize='md'
           pb={2}
-          color='brand.100'
+          color='brand.500'
           // textShadow='0px 0px 2px rgba(0,0,0, 0.1)'
         >
           Follow me on my indie-hacking journey!
@@ -97,9 +97,9 @@ export const NewsletterSignup = ({ children, ...rest }) => {
             <Text>{message}</Text>
           </Box>
         ) : (
-          <Box as='form' onSubmit={handleSubscribe}>
-            <Text color='gray.500' lineHeight={2.8}>
-              Signup for{" "}
+          <Box as='form' onSubmit={handleSubscribe} maxW="90%">
+            <Text color='gray.500' lineHeight={2.8} my={3}>
+              Sign up for{" "}
               <Box as='span' fontWeight='600'>
                 free early-bird access
               </Box>{" "}
