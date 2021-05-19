@@ -68,14 +68,14 @@ export const styles = {
         borderRadius: "2px",
       },
       "p.scribble": {
-        color: "brand.accent",
+        color: "brand.500",
         fontFamily: "accent",
         fontSize: "2xl",
         opacity: 0.8,
         textShadow: "0px 0px 2px rgba(0,0,0, 0.2)",
       },
       "svg.scribble": {
-        fill: "brand.accent",
+        fill: "brand.500",
         filter: "drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))",
       },
       "*.hide-scroll::-webkit-scrollbar": { display: "none" },
