@@ -93,7 +93,7 @@ export const WaveFooter = () => {
         bottom: 0,
         width: `full`,
         transform: `scale(1, -1)`,
-        zIndex: 0,
+        zIndex: -1,
       }}
     >
       <ChInnerWave pos='relative' h='full'>
@@ -105,7 +105,7 @@ export const WaveFooter = () => {
           preserveAspectRatio='none'
           fill='brand.dark'
           opacity='0.2'
-          width='100%'
+          width='calc(100% - 9px)'
           height='25vh'
         >
           <path>

@@ -35,11 +35,9 @@ export const Work = ({}) => {
           justifyContent='center'
           alignItems='center'
           w='50%'
-          // h={["20vh", null, "30vh"]}
-          px={[16, null, null, 36]}
           bgGradient='linear(to-br, #FAD201, #FEE35D)'
           boxShadow='md'
-          p={36}
+          p={[24, null, null, 36]}
         >
           <Image src='/falcon.svg' />
         </TransitionBox>
@@ -89,7 +87,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.nodejs}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -104,7 +102,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.next}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -119,7 +117,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.airtable}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -134,13 +132,18 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.vercel}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
             </Box>
           </HStack>
-          <HStack spacing={3} justify='flex-end' w='full'>
+          <HStack
+            spacing={3}
+            justify='flex-end'
+            w='full'
+            flexWrap={["wrap", null, "nowrap"]}
+          >
             {/* <Badge colorScheme="teal">Branding</Badge> */}
             <Badge colorScheme='teal' fontSize='xs'>
               Design
@@ -200,7 +203,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.graphql}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -215,7 +218,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.gatsby}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -230,7 +233,7 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.strapi}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
@@ -245,13 +248,18 @@ export const Work = ({}) => {
             <Box bg='rgba(226, 250, 219, 0.6)' borderRadius='6px'>
               <PathIcon
                 icon={devIcons.netlify}
-                size={["1.5rem", "2rem", "3rem"]}
+                size={["1.2rem", "1.5rem", "2rem", "3rem"]}
                 fill='brand.dark'
                 p={["0.25rem", null, 2]}
               />
             </Box>
           </HStack>
-          <HStack spacing={3} justify='flex-end' w='full'>
+          <HStack
+            spacing={3}
+            justify='flex-end'
+            w='full'
+            flexWrap={["wrap", null, "nowrap"]}
+          >
             {/* <Badge colorScheme="teal">Branding</Badge> */}
             <Badge colorScheme='teal'>Design</Badge>
             <Badge colorScheme='teal'>UX/UI</Badge>
@@ -264,11 +272,11 @@ export const Work = ({}) => {
           justifyContent='center'
           alignItems='center'
           w='50%'
-          px={[16, null, null, 36]}
+          // px={[16, null, null, 36]}
           // h={["20vh", null, "30vh"]}
           bgGradient='linear(to-tr, #0A3FFF, #00186D)'
           boxShadow='md'
-          p={36}
+          p={[24, null, null, 36]}
         >
           <Image src='/pps-latest.svg' />
         </TransitionBox>

@@ -3,8 +3,7 @@ export const customColors = {
   han: "#642BD6",
   mintCream: "#F7FFF7",
   nyanza: "#E2FADB", // rgba(226, 250, 219, 1)
-  // turquoise: "#4ECDC4",
-  turquoise: "#2CDEBA",
+  turquoise: "#2CDEBA", // rgba(44, 222, 186, 1)
   emerald: "#138E76",
   blueSapphire: "#086375", // rgba(8,99,117, 1)
   blackCoral: "#4C5563",
