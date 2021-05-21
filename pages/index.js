@@ -46,7 +46,7 @@ const Index = () => {
       <Section pb={6} minH='30vh'>
         <Outro />
       </Section>
-      <Section pb={36} minH='60vh'>
+      <Section pb={36} minH='60vh' bg='rgba(255, 255, 255, .9)' boxShadow='md'>
         <Footer />
       </Section>
     </Box>

@@ -24,7 +24,7 @@ export const Footer = ({}) => {
         alignItems={["center", null, null, "stretch"]}
       >
         <Box w='full' p={16}>
-          <Box w='full' minH='5em' bg='brand.300' borderRadius='5px'>
+          <Box w='full' minH='5em' bg='brand.300' borderRadius='10px'>
             <Heading p={6} color='brand.500'>
               Let's Connect
             </Heading>
@@ -70,7 +70,7 @@ export const Footer = ({}) => {
             looking forward to adding including a blog and some interactive
             tutorials. So be sure to check back soon.
           </Text>
-          {/* <Disclaimer /> */}
+          <Disclaimer />
           <Text pt={12}>
             I'm currently open to remote opportunities only. If you have an
             opportunity that you feel I'd be a good fit for, I'd be excited to

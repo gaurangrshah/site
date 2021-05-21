@@ -85,7 +85,15 @@ export const ContactForm = ({ reason = "general" }) => {
       <Text>{message}</Text>
     </Box>
   ) : (
-    <Box as='form' position='relative' onSubmit={handleSubmit} mx='auto' p={4}>
+    <Box
+      as='form'
+      position='relative'
+      display='flex'
+      flexDirection='column'
+      onSubmit={handleSubmit}
+      mx='auto'
+      p={4}
+    >
       <InputGroup size='sm' borderColor='brand.500' my={4}>
         <FormControl id='fname' mx={6}>
           <FormLabel color='gray.500'>First Name</FormLabel>
@@ -119,14 +127,14 @@ export const ContactForm = ({ reason = "general" }) => {
         </FormControl>
       </InputGroup>
 
-      <Box ml='65%'>
+      <Box pos='relative' ml='auto' pr={6}>
         <Button
           type='submit'
           isLoading={isSubmitting}
           variant='outline'
-          colorScheme='teal'
+          colorScheme='green'
           leftIcon={
-            <CustomIcon color='teal.800' icon='plane' mt={1} size='1.5rem' />
+            <CustomIcon icon='plane' fill="green" mt={1} size='1.5rem' />
           }
           spinner={<Spinner />}
         >

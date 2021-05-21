@@ -23,16 +23,12 @@ export const Disclaimer = () => {
       w='full'
       py={4}
     >
-      <Box my={6} ml={3} w='96px' h='96px' p={2}>
-        <Image src='/noun-construction.svg' />
-      </Box>
-      <VStack textAlign='left' alignItems='flex-start' pl={3}>
+      <Box position='relative' my={6} ml={3} w='350px' p={2}>
+        {/* <Image position='absolute' top={-12} left={12} src='/noun-construction.svg' w='120px' /> */}
         <Text
           fontFamily='accent'
           flex={1}
-          // textAlign='center'
           fontSize='2xl'
-          // textShadow='rgba(179, 179, 179, 0.2) 1px 1px 2px'
           color='brand.500'
           p={1}
           px={3}
@@ -41,6 +37,8 @@ export const Disclaimer = () => {
         >
           Pardon The Appearance
         </Text>
+      </Box>
+      <VStack w='full' textAlign='left' alignItems='flex-end' pr={3}>
         <Text fontSize='xl' fontFamily='accent'>
           I'm still getting some things sorted.
         </Text>
@@ -50,9 +48,9 @@ export const Disclaimer = () => {
           my={6}
           p={2}
           bg='brand.200'
-          boxShadow='sm'
+          // boxShadow='sm'
         >
-          <Text fontSize='xs'>But if you see something, say something!</Text>
+          <Text fontSize='xs'>See something? Say something!</Text>
           <ButtonGroup
             as={HStack}
             size='sm'
