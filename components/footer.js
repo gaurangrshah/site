@@ -31,7 +31,7 @@ export const Footer = ({}) => {
             <ContactForm />
           </Box>
         </Box>
-        <VStack p={16}>
+        <VStack p={16} color='gray.600' justify='center'>
           <HStack w='full' justify='flex-start' spacing={36} my={12}>
             {/* <Box
               as='ul'

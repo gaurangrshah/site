@@ -39,7 +39,7 @@ export const Disclaimer = () => {
         </Text>
       </Box>
       <VStack w='full' textAlign='left' alignItems='flex-end' pr={3}>
-        <Text fontSize='xl' fontFamily='accent'>
+        <Text fontSize='xl' fontFamily='accent' color='gray.700'>
           I'm still getting some things sorted.
         </Text>
         <VStack
@@ -66,10 +66,11 @@ export const Disclaimer = () => {
               isExternal
               border='none'
               textDecoration='none'
+              colorScheme='green'
+              rightIcon={<PathIcon icon={devIcons.github} fill='brand.300' />}
             >
               Report Bugs
             </Button>
-            <PathIcon icon={devIcons.github} stroke='brand.800' />
           </ButtonGroup>
         </VStack>
       </VStack>

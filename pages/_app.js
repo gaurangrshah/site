@@ -7,7 +7,7 @@ import { ScaffoldProvider } from "@/chakra/contexts/scaffold-context";
 import { LocalDataProvider } from "@/contexts/local-data-context";
 import MessageRouter from "@/components/message-router";
 import { Protected } from "@/components/auth";
-import { useUser } from "@/contexts/supabase-context";
+// import { useUser } from "@/contexts/supabase-context";
 import ErrorBoundary from "@/components/error-boundary";
 
 import SEO from "../next-seo.config";
