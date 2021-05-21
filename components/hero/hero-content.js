@@ -52,7 +52,7 @@ export const HeroContent = ({ children, ...rest }) => {
         </Box>
       </Heading>
       <Box
-        w='350px'
+        // maxW='350px'
         h='9px'
         filter='blur(1.4rem) opacity(0.3)'
         bg='brand.900'
@@ -70,7 +70,7 @@ export const HeroContent = ({ children, ...rest }) => {
         <br />
 
         <br />
-        <Text w='80%' lineHeight={2.5}>
+        <Text w={"80%"} lineHeight={2.5}>
           I recently got heavily inspired by the{" "}
           <Box as='span' className='markup'>
             #indiehacking&nbsp;

@@ -32,38 +32,6 @@ export const Footer = ({}) => {
           </Box>
         </Box>
         <VStack p={16} color='gray.600' justify='center'>
-          <HStack w='full' justify='flex-start' spacing={36} my={12}>
-            {/* <Box
-              as='ul'
-              listStyleType='none'
-              sx={{ li: { pt: 2, fontSize: "md" } }}
-            >
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-            </Box>
-            <Box
-              as='ul'
-              listStyleType='none'
-              sx={{ li: { pt: 2, fontSize: "md" } }}
-            >
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-            </Box>
-            <Box
-              as='ul'
-              listStyleType='none'
-              sx={{ li: { pt: 2, fontSize: "md" } }}
-            >
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-              <li>Test</li>
-            </Box> */}
-          </HStack>
           <Text pb={12}>
             Thank you so much for checking out my work. I'm still in the process
             of putting up more content. There's also several more features I'm

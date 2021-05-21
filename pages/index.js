@@ -30,7 +30,7 @@ const Index = () => {
         zIndex={0}
         _before={beforeBox({})}
         py={24}
-        px={16}
+        px={[4, 16]}
         bg='brand.300'
         divider={{
           pos: "bottom",
@@ -54,8 +54,6 @@ const Index = () => {
       <DualSection
         pb={12}
         minH='40vh'
-        // boxShadow='md'
-        // bgGradient='linear(to-br, brand.200, brand.300)'
         bg='brand.300'
         divider={{
           pos: "both",

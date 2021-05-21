@@ -21,7 +21,7 @@ export const Hero = () => {
           // h={["20vh", null, null, "40vh"]}
           w={"100%"}
           // pt={[24, null, 44]}
-          p={[16, null, null, 0]}
+          p={[4, null, null, 0]}
           maxW='container.md'
           flex={1}
           color='brand.500'

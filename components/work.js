@@ -10,12 +10,12 @@ export const Work = ({}) => {
     <>
       <Container maxW='container.xl'>
         <Heading
-          fontSize='6xl'
+          fontSize={["3xl", null, "6xl"]}
           mb={24}
-          mr={6}
+          mr={[0, null, 6]}
           border='3px solid transparent'
           borderRightColor='brand.500'
-          w='250px'
+          w={['120px', null,  "250px"]}
           color='brand.dark'
         >
           Recent
@@ -26,7 +26,7 @@ export const Work = ({}) => {
       <Container
         position='relative'
         maxW='container.xl'
-        minH='45vh'
+        minH='50rem'
         mb={[80, null, null, 64]}
         bg='#FAD201'
         boxShadow={["none", null, null, "md"]}
@@ -63,7 +63,7 @@ export const Work = ({}) => {
       <Container
         position='relative'
         maxW='container.xl'
-        minH='45vh'
+        minH='50rem'
         mb={[80, null, null, 52]}
         bg='#00186B'
         boxShadow={["none", null, null, "md"]}

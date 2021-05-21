@@ -5,6 +5,7 @@ import {
   HStack,
   Image,
   Link,
+  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -15,8 +16,9 @@ import { devIcons } from "./icons/dev";
 
 export const Disclaimer = () => {
   return (
-    <HStack
-      align='center'
+    <Stack
+      direction={['row', 'column']}
+      align={['flex-start', 'center']}
       pos='relative'
       border='3px dashed'
       borderColor='brand.400'
@@ -35,6 +37,7 @@ export const Disclaimer = () => {
           px={3}
           bg='brand.500'
           transform='rotate(-5deg)'
+          maxW="200px"
         >
           Pardon The Appearance
         </Text>
@@ -58,6 +61,6 @@ export const Disclaimer = () => {
           </Button>
         </VStack>
       </VStack>
-    </HStack>
+    </Stack>
   );
 };

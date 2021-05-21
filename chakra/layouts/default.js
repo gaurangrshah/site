@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Box, chakra } from "@chakra-ui/react";
+import { Box} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { ModeToggle } from "../components/mode-toggle";
@@ -7,7 +6,6 @@ import Scaffold from "../components/structure/scaffold";
 import { Wave } from "@/components/backgrounds/shapes";
 
 import { ChInnerWave } from "../components/motion-wave";
-import { theme } from "@/chakra";
 import { useMounted } from "@/hooks/use-mounted";
 
 export function DefaultLayout(props) {
@@ -24,7 +22,7 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && process.env.NODE_ENV === "development" ? (
+      {mounted && process.env.NODE_ENV === "production" ? (
         <MotionGradient gradientTransition={gradientTransition}>
           {/* <ModeToggle /> */}
           <Scaffold {...props} zIndex={1} />
@@ -35,7 +33,7 @@ export function DefaultLayout(props) {
           <>
             {/* <ModeToggle /> */}
             <Scaffold {...props} zIndex={1} />
-            <WaveFooter />
+            {/* <WaveFooter /> */}
           </>
         )
       )}
