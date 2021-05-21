@@ -8,7 +8,7 @@ import { Outro } from "@/components/outro";
 import { beforeBox } from "@/chakra/variants";
 
 import { NewsletterSignup } from "@/components/newsletter-signup";
-import { ReachOut } from "@/components/reach-out";
+import { Footer } from "@/components/footer";
 
 const image1 =
   "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -40,25 +40,14 @@ const Index = () => {
           <NewsletterSignup />
         </Container>
       </Section>
-      <Section
-        py={16}
-        minH='40vh'
-        mt={62}
-      >
-        <Container
-          w='full'
-          maxW='container.xl'
-          p={[6, 12, null, null, 24]}
-          borderRadius={[null, null, null, null, "10px"]}
-          bgGradient={`linear(to-tr, brand.700, brand.dark)`}
-          boxShadow='lg'
-        >
-          <Work />
-        </Container>
+      <Section py={16} minH='40vh' mt={62}>
+        <Work />
       </Section>
-      <Section py={36} minH='100vh'>
-        {/* <Outro /> */}
-        <ReachOut />
+      <Section pb={6} minH='30vh'>
+        <Outro />
+      </Section>
+      <Section pb={36} minH='60vh'>
+        <Footer />
       </Section>
     </Box>
   );

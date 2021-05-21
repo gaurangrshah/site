@@ -1,17 +1,13 @@
-import React from "react";
-import { Box, Container, Heading, Image } from "@chakra-ui/react";
+import { Box, Container, Heading, Image, Text } from "@chakra-ui/react";
+import { Section } from "@/components/section";
 
-// import { PathIcon } from "@/components/icons/path-icon";
-// import { TransitionBox } from "@/chakra/TransitionBox";
-// import { devIcons } from "./icons/dev";
-
-export const Work = ({}) => {
+const Sandbox2 = () => {
   return (
-    <>
+    <Section my={36}>
       <Container maxW='container.xl'>
         <Heading
           fontSize='6xl'
-          mb={24}
+          mb={6}
           mr={6}
           border='3px solid transparent'
           borderRightColor='brand.500'
@@ -27,18 +23,13 @@ export const Work = ({}) => {
         position='relative'
         maxW='container.xl'
         minH='45vh'
-        mb={[80, null, null, 64]}
+        my={52}
         bg='#FAD201'
-        boxShadow={["none", null, null, "md"]}
-        borderRadius={[null, null, null, "10px"]}
+        boxShadow='md'
+        borderRadius='10px'
       >
         <Image src='/falcon.svg' w='180px' pt={12} pl={12} />
-        <Box
-          pos='absolute'
-          top={[56, null, 16]}
-          right={[1, null, null, 32]}
-          w={["350px", null, "450px"]}
-        >
+        <Box pos='absolute' top={16} right={32} w='450px'>
           <Image
             src='/falcon-site-browser.svg'
             borderRadius='12px'
@@ -50,12 +41,7 @@ export const Work = ({}) => {
             src='/falcon-site-mobile.svg'
             borderRadius='12px'
             zIndex={2}
-            transform={[
-              "translate(-10rem, -32rem)",
-              null,
-              null,
-              "translate(-10rem, -25rem) ",
-            ]}
+            transform='translate(-10rem, -25rem) '
             filter='drop-shadow(10px 10px 2px rgba(70, 94, 55, 0.3))'
           />
         </Box>
@@ -64,18 +50,12 @@ export const Work = ({}) => {
         position='relative'
         maxW='container.xl'
         minH='45vh'
-        mb={[80, null, null, 52]}
+        my={52}
         bg='#00186B'
-        boxShadow={["none", null, null, "md"]}
-        borderRadius={[null, null, null, "10px"]}
-        overflow={["hidden", null, "initial"]}
+        boxShadow='md'
+        borderRadius='10px'
       >
-        <Box
-          pos='absolute'
-          top={[64, null, null, 36]}
-          left={[40, null, null, 64]}
-          w={["350px", null, "450px"]}
-        >
+        <Box pos='absolute' top={36} left={64} w='450px'>
           <Image
             src='/pps-site-browser.svg'
             borderRadius='12px'
@@ -83,7 +63,7 @@ export const Work = ({}) => {
             filter='drop-shadow(10px 10px 2px rgba(70, 94, 55, 0.3))'
           />
           <Image
-            w='160px'
+            w='200px'
             src='/pps-site-mobile.svg'
             borderRadius='12px'
             zIndex={2}
@@ -93,6 +73,8 @@ export const Work = ({}) => {
         </Box>
         <Image src='/pps-latest.svg' w='180px' pt={12} pr={12} float='right' />
       </Container>
-    </>
+    </Section>
   );
 };
+
+export default Sandbox2;

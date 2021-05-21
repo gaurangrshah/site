@@ -71,37 +71,21 @@ export const ContactForm = ({ reason = "general" }) => {
         console.log(err);
       }
     } else {
-      setMessage('Something seems to have gone wrong, please try again')
+      setMessage("Something seems to have gone wrong, please try again");
     }
 
     setIsSubmitting(false);
   };
 
   return message ? (
-    <Box
-      maxW='70%'
-      mx='auto'
-      bg='brand.200'
-      p={6}
-      borderRadius='5px'
-      boxShadow='md'
-    >
+    <Box mx='auto' p={6}>
       <Heading as='h3' fontSize='3xl' lineHeight={2}>
         Thank You For Your Message
       </Heading>
       <Text>{message}</Text>
     </Box>
   ) : (
-    <Box
-      as='form'
-      onSubmit={handleSubmit}
-      maxW='70%'
-      mx='auto'
-      bg='brand.200'
-      p={6}
-      borderRadius='5px'
-      boxShadow='md'
-    >
+    <Box as='form' position='relative' onSubmit={handleSubmit} mx='auto' p={4}>
       <InputGroup size='sm' borderColor='brand.500' my={4}>
         <FormControl id='fname' mx={6}>
           <FormLabel color='gray.500'>First Name</FormLabel>
@@ -135,18 +119,20 @@ export const ContactForm = ({ reason = "general" }) => {
         </FormControl>
       </InputGroup>
 
-      <Button
-        type='submit'
-        isLoading={isSubmitting}
-        variant='outline'
-        colorScheme='teal'
-        leftIcon={
-          <CustomIcon color='teal.800' icon='plane' mt={1} size='1.5rem' />
-        }
-        spinner={<Spinner />}
-      >
-        Send Now
-      </Button>
+      <Box ml='65%'>
+        <Button
+          type='submit'
+          isLoading={isSubmitting}
+          variant='outline'
+          colorScheme='teal'
+          leftIcon={
+            <CustomIcon color='teal.800' icon='plane' mt={1} size='1.5rem' />
+          }
+          spinner={<Spinner />}
+        >
+          Send Now
+        </Button>
+      </Box>
     </Box>
   );
 };
