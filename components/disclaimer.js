@@ -16,62 +16,46 @@ import { devIcons } from "./icons/dev";
 export const Disclaimer = () => {
   return (
     <HStack
+      align='center'
       pos='relative'
       border='3px dashed'
       borderColor='brand.400'
       borderRadius='10px'
       w='full'
-      py={4}
+      py={2}
     >
-      <Box position='relative' my={6} ml={3} w='350px' p={2}>
-        {/* <Image position='absolute' top={-12} left={12} src='/noun-construction.svg' w='120px' /> */}
+      <Box position='relative' w='100%' my={3} ml={3} p={2} textAlign='center'>
         <Text
           fontFamily='accent'
           flex={1}
           fontSize='2xl'
-          color='brand.500'
-          p={1}
+          color='brand.300'
+          mt={3}
+          py={1}
           px={3}
-          bg={"brand.300"}
+          bg='brand.500'
           transform='rotate(-5deg)'
         >
           Pardon The Appearance
         </Text>
-      </Box>
-      <VStack w='full' textAlign='left' alignItems='flex-end' pr={3}>
-        <Text fontSize='xl' fontFamily='accent' color='gray.700'>
+        <Text fontSize='xl' fontFamily='accent' color='gray.700' py={6}>
           I'm still getting some things sorted.
         </Text>
-        <VStack
-          w='full'
-          align='flex-end'
-          my={6}
-          p={2}
-          bg='brand.200'
-          // boxShadow='sm'
-        >
+      </Box>
+      <VStack w='full' textAlign='left' alignItems='flex-end' pr={3}>
+        <VStack w='full' align='flex-end' my={6} p={2}>
           <Text fontSize='xs'>See something? Say something!</Text>
-          <ButtonGroup
-            as={HStack}
-            size='sm'
-            isAttached
-            border='2px solid'
-            borderColor='brand.400'
-            borderRadius='5px'
-            p={1}
+          <Button
+            as={Link}
+            href='https://github.com/gaurangrshah/site/issues/new?assignees=&labels=&template=bug_report.md&title='
+            isExternal
+            border='none'
+            textDecoration='none'
+            colorScheme='green'
+            rightIcon={<PathIcon icon={devIcons.github} fill='brand.300' />}
           >
-            <Button
-              as={Link}
-              href='https://github.com/gaurangrshah/site/issues/new?assignees=&labels=&template=bug_report.md&title='
-              isExternal
-              border='none'
-              textDecoration='none'
-              colorScheme='green'
-              rightIcon={<PathIcon icon={devIcons.github} fill='brand.300' />}
-            >
-              Report Bugs
-            </Button>
-          </ButtonGroup>
+            Report Bugs
+          </Button>
         </VStack>
       </VStack>
     </HStack>

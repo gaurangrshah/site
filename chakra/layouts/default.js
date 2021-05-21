@@ -24,7 +24,7 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && process.env.NODE_ENV === "production" ? (
+      {mounted && process.env.NODE_ENV === "development" ? (
         <MotionGradient gradientTransition={gradientTransition}>
           {/* <ModeToggle /> */}
           <Scaffold {...props} zIndex={1} />
@@ -61,7 +61,7 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
         animate={{ backgroundPostion: "0 50%" }}
         transition={{
           type: "inertia",
-          velocity: 300,
+          velocity: 3000,
           repeatType: "loop",
         }}
       >
@@ -71,8 +71,10 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
               "#F7FFF7",
               "#C0E8CA",
               "#2CDEBA",
-              "#138E76",
+              // "#138E76",
               "#086375",
+              "#2CDEBA",
+              "#C0E8CA",
               "#F7FFF7",
             ],
           }}

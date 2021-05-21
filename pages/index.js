@@ -1,6 +1,6 @@
 import { Box, Container } from "@chakra-ui/react";
 
-import { Section } from "@/components/section";
+import { Section, SingleSection, DualSection } from "@/components/section";
 import { Hero } from "@/components/hero";
 import { Work } from "@/components/work";
 import { Outro } from "@/components/outro";
@@ -25,16 +25,21 @@ const insideStyles = {
 const Index = () => {
   return (
     <Box>
-      <Section
-        border='1px'
+      <SingleSection
         bg='transparent'
         zIndex={0}
         _before={beforeBox({})}
         py={24}
         px={16}
+        bg='brand.300'
+        divider={{
+          pos: "bottom",
+          shape: "tilt",
+          style: { stroke: "transparent", fill: "brand.300" },
+        }}
       >
         <Hero />
-      </Section>
+      </SingleSection>
       <Section mt={6} mb={24}>
         <Container w='full' maxW='container.xl'>
           <NewsletterSignup />
@@ -46,9 +51,20 @@ const Index = () => {
       <Section pb={6} minH='30vh'>
         <Outro />
       </Section>
-      <Section pb={36} minH='60vh' bg='rgba(255, 255, 255, .9)' boxShadow='md'>
+      <DualSection
+        pb={12}
+        minH='40vh'
+        // boxShadow='md'
+        // bgGradient='linear(to-br, brand.200, brand.300)'
+        bg='brand.300'
+        divider={{
+          pos: "both",
+          shape: "tilt",
+          style: { stroke: "transparent", fill: "brand.300" },
+        }}
+      >
         <Footer />
-      </Section>
+      </DualSection>
     </Box>
   );
 };

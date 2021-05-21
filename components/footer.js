@@ -23,7 +23,7 @@ export const Footer = ({}) => {
         direction={["column", null, null, "row"]}
         alignItems={["center", null, null, "stretch"]}
       >
-        <Box w='full' p={16}>
+        <Box w='full' p={2}>
           <Box w='full' minH='5em' bg='brand.300' borderRadius='10px'>
             <Heading p={6} color='brand.500'>
               Let's Connect
