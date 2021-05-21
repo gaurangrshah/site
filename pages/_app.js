@@ -22,7 +22,7 @@ const App = ({ Component, pageProps, router }) => {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <ChakraProvider resetCSS theme={theme}>
+      <ChakraProvider resetCSS theme={theme} initial>
         <ErrorBoundary>
           <LocalDataProvider>
             <ScaffoldProvider
