@@ -1,50 +1,25 @@
-// @link: https://samuelkraft.com/blog/spring-parallax-framer-motion-guide
-import { useState, useRef, useLayoutEffect, ReactNode } from "react";
-import {
-  motion,
-  useTransform,
-  useSpring,
-  useReducedMotion,
-} from "framer-motion";
+import { Box } from "@chakra-ui/react";
+import { useInView } from "react-intersection-observer";
 
-const Parallax = ({ children, offset = 50, scrollY }) => {
-  const prefersReducedMotion = useReducedMotion();
-  const [elementTop, setElementTop] = useState(0);
-  const [clientHeight, setClientHeight] = useState(0);
-  const ref = useRef(null);
+import { MotionBox } from "./motion-box";
 
-  const initial = elementTop - clientHeight;
-  const final = elementTop + offset;
-
-  const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
-  const y = useSpring(yRange, { stiffness: 400, damping: 10 });
-
-  useLayoutEffect(() => {
-    const element = ref.current;
-    const onResize = () => {
-      setElementTop(
-        element.getBoundingClientRect().top + element.scrollY ||
-          element.pageYOffset
-      );
-      setClientHeight(element.innerHeight);
-    };
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [ref]);
-
-  // Don't parallax if the user has "reduced motion" enabled
-  if (prefersReducedMotion) {
-    return <>{children}</>;
-  }
-
+// @link: https://dev.to/jesuscovam/react-parallax-effect-with-framer-motion-1mhd
+export const ParallaxBox = ({ transition, children, ...rest }) => {
+  const [ref, isVisible] = useInView({ threshold: 0.7 });
+  const { key, ...restTransition } = transition;
   return (
-    <motion.div ref={ref} style={{ y }}>
+    <MotionBox
+      ref={ref}
+      key={key}
+      {...restTransition}
+      // variants={variants}
+      animate={isVisible ? "visible" : "hidden"}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
+
+      style={{ marginLeft: "50px" }}
+      // ml="50px"
+    >
       {children}
-    </motion.div>
+    </MotionBox>
   );
 };
-
-export default Parallax;
-
-// USAGE: see '../../pages/parallax-box-example.js'

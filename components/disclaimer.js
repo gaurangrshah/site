@@ -17,8 +17,8 @@ import { devIcons } from "./icons/dev";
 export const Disclaimer = () => {
   return (
     <Stack
-      direction={['row', 'column']}
-      align={['flex-start', 'center']}
+      direction={["row", null, "column"]}
+      align={["flex-start", null, "center"]}
       pos='relative'
       border='3px dashed'
       borderColor='brand.400'
@@ -29,7 +29,7 @@ export const Disclaimer = () => {
       <Box position='relative' w='100%' my={3} ml={3} p={2} textAlign='center'>
         <Text
           fontFamily='accent'
-          flex={1}
+          flex={[0, null, 1]}
           fontSize='2xl'
           color='brand.300'
           mt={3}
@@ -37,7 +37,7 @@ export const Disclaimer = () => {
           px={3}
           bg='brand.500'
           transform='rotate(-5deg)'
-          maxW="200px"
+          maxW='200px'
         >
           Pardon The Appearance
         </Text>

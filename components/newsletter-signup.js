@@ -15,6 +15,9 @@ import { SocialWrapper } from "@/components/social-icons";
 import { socialIcons } from "@/components/icons/social";
 import { convertFormToObject } from "@/utils/form-helpers";
 import { DrawnArrow } from "./scribbles/drawn-arrow";
+import { PresenceBox } from "@/components/framer/presence-box";
+import { transitions } from "./framer/transitions";
+import { MotionBox } from "@/components/framer/motion-box";
 
 export const NewsletterSignup = ({ children, ...rest }) => {
   const [message, setMessage] = useState("");
@@ -66,21 +69,6 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         borderColor='brand.300'
         mx='auto'
       >
-        <Box
-          position='absolute'
-          top={-20}
-          right={5}
-          zIndex={1}
-          display='inline-block'
-        >
-          <Text className='scribble'>Follow my progress</Text>
-          <DrawnArrow
-            className='scribble'
-            w={5}
-            strokeWidth={0.3}
-            transform='rotate(36deg)'
-          />
-        </Box>
         <Heading
           as='h5'
           lineHeight='0.9'
@@ -92,12 +80,13 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         >
           Follow me on my indie-hacking journey!
         </Heading>
+        <Pointer />
         {message ? (
           <Box>
             <Text>{message}</Text>
           </Box>
         ) : (
-          <Box as='form' onSubmit={handleSubscribe} maxW="90%">
+          <Box as='form' onSubmit={handleSubscribe} maxW='90%'>
             <Text color='gray.500' lineHeight={2.8} my={3}>
               Sign up for{" "}
               <Box as='span' fontWeight='600'>
@@ -130,5 +119,36 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         )}
       </Box>
     </SocialWrapper>
+  );
+};
+
+export const Pointer = ({ children, ...rest }) => {
+  // const transition = {
+  //   key: 'newsletter',
+  //   initial: { opacity: 0, y: 100}
+  // }
+
+  return (
+    <MotionBox
+      position='relative'
+      // position='absolute'
+      // top={-20}
+      // right={5}
+      zIndex={1}
+      // display='inline-block'
+      initial={{ opacity: 0, y: 0 }}
+      animate={{ opacity: 1, y: -100 }}
+      transition={{ duration: 0.3, delay: 0.6 }}
+      float='right'
+      // ml='auto'
+    >
+      <Text className='scribble'>Follow my progress</Text>
+      <DrawnArrow
+        className='scribble'
+        w={5}
+        strokeWidth={0.3}
+        transform='rotate(36deg)'
+      />
+    </MotionBox>
   );
 };
