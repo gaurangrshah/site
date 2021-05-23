@@ -11,10 +11,10 @@ import { Protected } from "@/components/auth";
 import ErrorBoundary from "@/components/error-boundary";
 
 import SEO from "../next-seo.config";
-import "@fontsource/caveat/index.css";
-import "@fontsource/merriweather-sans/index.css";
-import "@fontsource/merriweather/index.css";
-import "@fontsource/yeseva-one/index.css";
+// import "@fontsource/caveat/index.css";
+// import "@fontsource/merriweather-sans/index.css";
+// import "@fontsource/merriweather/index.css";
+// import "@fontsource/yeseva-one/index.css";
 
 const App = ({ Component, pageProps, router }) => {
   const isDashboard = router.asPath.includes("dashboard");
