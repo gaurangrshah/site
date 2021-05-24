@@ -67,20 +67,6 @@ export const HeroContent = ({ children, ...rest }) => {
         >
           I love working with people and building awesome interfaces.
         </Text>
-        <br />
-
-        <br />
-        <Text w={"80%"} lineHeight={2.5}>
-          I recently got heavily inspired by the{" "}
-          <Box as='span' className='markup'>
-            #indiehacking&nbsp;
-          </Box>
-          community and am currently working on my first{" "}
-          <Box as='span' className='markup'>
-            #buildinpublic &nbsp;
-          </Box>
-          project.
-        </Text>
       </Box>
     </>
   );

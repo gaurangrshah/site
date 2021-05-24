@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 import { Section, SingleSection, DualSection } from "@/components/section";
 import { Hero } from "@/components/hero";
@@ -27,15 +27,16 @@ const insideStyles = {
 };
 
 const Index = () => {
-  useEffect(() => {
-    document.fonts.load("12px Caveat").then(() => console.log("loaded"));
-  });
+  // useEffect(() => {
+  //   document.fonts.load("12px Caveat").then(() => console.log("loaded"));
+  // });
 
   return (
     <Box>
       <SingleSection
         bg='transparent'
         zIndex={0}
+        minH='60vh'
         _before={beforeBox({})}
         py={24}
         px={[4, 16]}
@@ -49,7 +50,33 @@ const Index = () => {
         <Hero />
       </SingleSection>
       <Section mt={6} mb={24}>
-        <Container w='full' maxW='container.xl'>
+        <Container w='full' maxW='container.xl' textAlign='center'>
+          <Heading as='h2' mb={0}>
+            Follow my journey.
+          </Heading>
+          <Text mt={3} mb={24}>
+            As I build and break things - all in public.
+          </Text>
+          <Box w='full' mx='auto' textAlign='left'>
+            <Text
+              w='container.sm'
+              mx='auto'
+              mb={12}
+              fontSize='lg'
+              lineHeight={2.5}
+            >
+              I recently got heavily inspired by the{" "}
+              <Box as='span' className='markup'>
+                #indiehacking&nbsp;
+              </Box>
+              community and am currently working on my first{" "}
+              <Box as='span' className='markup'>
+                #buildinpublic &nbsp;
+              </Box>
+              project.
+            </Text>
+          </Box>
+          <UpcomingProject />
           <ParallaxBox transition={transitions.slideLToR}>
             <NewsletterSignup />
           </ParallaxBox>
@@ -78,3 +105,57 @@ const Index = () => {
 };
 
 export default Index;
+
+export const UpcomingProject = ({}) => {
+  return (
+    <Flex
+      direction='column'
+      justify='center'
+      align='center'
+      position='relative'
+      w='80%'
+      h='300px'
+      mx='auto'
+      my={12}
+      pt={12}
+      bg='white'
+      borderRadius='10px'
+      background='#4cc9f0;background-image: radial-gradient(at 100% 90%, hsla(228,81%,60%,1) 0, transparent 57%), radial-gradient(at 100% 13%, hsla(255,74%,37%,1) 0, transparent 49%), radial-gradient(at 6% 4%, hsla(274,75%,41%,1) 0, transparent 58%), radial-gradient(at 0% 97%, hsla(332,90%,55%,1) 0, transparent 44%), radial-gradient(at 100% 100%, hsla(195,84%,64%,1) 0, transparent 34%)'
+      boxShadow='lg'
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        bg: "linear-gradient(240deg, white, transparent)",
+      }}
+    >
+      <Image
+        w='50%'
+        mx='auto'
+        src='/themeable-brand.svg'
+        filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
+      />
+      <Button
+        disabled
+        variant="outline"
+        size="md"
+        fontSize='2xl'
+        textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
+        my={9}
+      >
+        Launching Soon!
+      </Button>
+      <Image
+        position='absolute'
+        top={10}
+        right={5}
+        src='/themeable.svg'
+        w='80px'
+        filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
+      />
+    </Flex>
+  );
+};

@@ -8,6 +8,7 @@ import {
   InputRightAddon,
   Text,
 } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 
 import { CustomIcon } from "@/chakra/icons/custom-icon";
 import { SocialWrapper } from "@/components/social-icons";
@@ -15,9 +16,8 @@ import { SocialWrapper } from "@/components/social-icons";
 import { socialIcons } from "@/components/icons/social";
 import { convertFormToObject } from "@/utils/form-helpers";
 import { DrawnArrow } from "./scribbles/drawn-arrow";
-import { PresenceBox } from "@/components/framer/presence-box";
-import { transitions } from "./framer/transitions";
 import { MotionBox } from "@/components/framer/motion-box";
+import { useMounted } from "@/hooks/use-mounted";
 
 export const NewsletterSignup = ({ children, ...rest }) => {
   const [message, setMessage] = useState("");
@@ -123,32 +123,30 @@ export const NewsletterSignup = ({ children, ...rest }) => {
 };
 
 export const Pointer = ({ children, ...rest }) => {
-  // const transition = {
-  //   key: 'newsletter',
-  //   initial: { opacity: 0, y: 100}
-  // }
+  const mounted = useMounted();
 
   return (
-    <MotionBox
-      position='relative'
-      // position='absolute'
-      // top={-20}
-      // right={5}
-      zIndex={1}
-      // display='inline-block'
-      initial={{ opacity: 0, y: 0 }}
-      animate={{ opacity: 1, y: -100 }}
-      transition={{ duration: 0.3, delay: 0.6 }}
-      float='right'
-      // ml='auto'
-    >
-      <Text className='scribble'>Follow my progress</Text>
-      <DrawnArrow
-        className='scribble'
-        w={5}
-        strokeWidth={0.3}
-        transform='rotate(36deg)'
-      />
-    </MotionBox>
+    <AnimatePresence>
+      {mounted && (
+        <MotionBox
+          position='relative'
+          zIndex={1}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: -100 }}
+          transition={{ duration: 0.3, delay: 0.6 }}
+          float='right'
+        >
+          <Text className='scribble'>Follow my progress</Text>
+          <DrawnArrow
+            className='scribble'
+            w={5}
+            strokeWidth={0.3}
+            transform='rotate(36deg)'
+          />
+        </MotionBox>
+      )}
+    </AnimatePresence>
   );
 };
+
+
