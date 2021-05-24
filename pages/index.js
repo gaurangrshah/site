@@ -138,6 +138,7 @@ export const UpcomingProject = ({}) => {
         bottom: 0,
         left: 0,
         bg: "linear-gradient(240deg, white, transparent)",
+        borderRadius: "10px"
       }}
     >
       <Image
