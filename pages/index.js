@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 
-import { Box, Button, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 
 import { Section, SingleSection, DualSection } from "@/components/section";
 import { Hero } from "@/components/hero";
@@ -138,14 +146,10 @@ export const UpcomingProject = ({}) => {
         src='/themeable-brand.svg'
         filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
       />
-      <Button
-        disabled
-        variant="outline"
-        size="md"
-        fontSize='2xl'
-        textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-        my={9}
-      >
+      <Text as='small' alignSelf='flex-end' pt={3} mr='26%' color='black'>
+        A CodeBuds Collaboration
+      </Text>
+      <Button disabled variant='outline' size='md' my={9} colorScheme='red'>
         Launching Soon!
       </Button>
       <Image
