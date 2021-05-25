@@ -136,10 +136,11 @@ export const Pointer = ({ children, ...rest }) => {
       {mounted && (
         <MotionBox
           position='absolute'
+          right={9}
           display='inline'
           zIndex={1}
           initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -130 }}
+          animate={{ opacity: 1, y: -143 }}
           transition={{ duration: 0.3, delay: 0.6 }}
         >
           <Text className='scribble'>Follow my progress</Text>

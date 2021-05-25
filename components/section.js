@@ -6,7 +6,7 @@ import { dividers } from "./dividers";
 export const Section = ({ children, ...rest }) => {
   return (
     <>
-      <Box as='section' pos='relative' {...rest}>
+      <Box as='section' pos='relative' overflow="hidden" {...rest}>
         {children}
       </Box>
     </>
@@ -27,7 +27,8 @@ export const DualSection = ({ divider, children, ...rest }) => {
           <path d={dividers[divider.shape].top.d} />
         </Box>
       )}
-      <Box as='section' pos='relative' {...rest}>
+
+      <Box as='section' pos='relative' overflow='hidden' {...rest}>
         {children}
       </Box>
       {divider && (
@@ -59,7 +60,7 @@ export const SingleSection = ({ divider, children, ...rest }) => {
           <path d={dividers[divider.shape].top.d} />
         </Box>
       )}
-      <Box as='section' pos='relative' {...rest}>
+      <Box as='section' pos='relative' overflow='hidden' {...rest}>
         {children}
       </Box>
       {divider && divider.pos === "bottom" && (

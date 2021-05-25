@@ -35,10 +35,6 @@ const insideStyles = {
 };
 
 const Index = () => {
-  // useEffect(() => {
-  //   document.fonts.load("12px Caveat").then(() => console.log("loaded"));
-  // });
-
   return (
     <Box>
       <SingleSection
@@ -100,9 +96,9 @@ const Index = () => {
       <Section py={16} minH='40vh' mt={62}>
         <Work />
       </Section>
-      <Section pb={6} minH='30vh'>
+      {/* <Section pb={6} minH='30vh'>
         <Outro />
-      </Section>
+      </Section> */}
       <DualSection
         pb={12}
         minH='40vh'

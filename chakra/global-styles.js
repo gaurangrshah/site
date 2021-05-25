@@ -55,6 +55,8 @@ export const styles = {
       fontSize: "1.5rem",
       lineHeight: 2,
       textRendering: "optimizeLegibility",
+      WebkitTextSizeAdjust: "none",
+      MozFontSmoothing: "grayscale",
       overflowX: "hidden",
       maxW: "full",
       "span.markup": {

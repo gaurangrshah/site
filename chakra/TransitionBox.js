@@ -6,10 +6,10 @@ export const TransitionBox = ({
   children,
   ...rest
 }) => {
-  const { ref: testRef, inView } = useInView(options);
+  const { ref: ref, inView } = useInView(options);
   return (
     <>
-      <Box ref={testRef} overflow='hidden' {...rest}>
+      <Box ref={ref} overflow='hidden' {...rest}>
         {/* {JSON.stringify({ inView })} */}
         <SlideFade in={inView} offsetY='50px' animateOpacity>
           {children}

@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 
 import { MotionBox } from "./motion-box";
