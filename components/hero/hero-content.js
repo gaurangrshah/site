@@ -51,13 +51,6 @@ export const HeroContent = ({ children, ...rest }) => {
           Hi-Ya! I'm Gaurang!
         </Box>
       </Heading>
-      {/* <Box
-        // maxW='350px'
-        h='9px'
-        filter='blur(1.4rem) opacity(0.3)'
-        bg='brand.900'
-        mt={-20}
-      /> */}
       <Box pt={3} pl={2}>
         <Text
           fontSize='md'
