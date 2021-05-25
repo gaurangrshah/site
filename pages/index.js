@@ -128,7 +128,7 @@ export const UpcomingProject = ({}) => {
       pt={12}
       bg='white'
       borderRadius='10px'
-      background='#4cc9f0;background-image: radial-gradient(at 100% 90%, hsla(228,81%,60%,1) 0, transparent 57%), radial-gradient(at 100% 13%, hsla(255,74%,37%,1) 0, transparent 49%), radial-gradient(at 6% 4%, hsla(274,75%,41%,1) 0, transparent 58%), radial-gradient(at 0% 97%, hsla(332,90%,55%,1) 0, transparent 44%), radial-gradient(at 100% 100%, hsla(195,84%,64%,1) 0, transparent 34%)'
+      background='#fff;background-image: radial-gradient(at 100% 90%, hsla(228,81%,60%,1) 0, transparent 57%), radial-gradient(at 100% 13%, hsla(255,74%,37%,1) 0, transparent 49%), radial-gradient(at 6% 4%, hsla(274,75%,41%,1) 0, transparent 58%), radial-gradient(at 0% 97%, hsla(332,90%,55%,1) 0, transparent 44%), radial-gradient(at 100% 100%, hsla(195,84%,64%,1) 0, transparent 34%)'
       boxShadow='lg'
       _before={{
         content: '""',
