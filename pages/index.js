@@ -59,7 +59,14 @@ const Index = () => {
       </SingleSection>
       <Section mt={6} mb={24}>
         <Container w='full' maxW='container.xl' textAlign='center'>
-          <Heading as='h2' mb={0}>
+          <Heading
+            as='h2'
+            fontSize="5xl"
+            mb={0}
+            color='brand.400'
+            bgGradient='linear(to-r,  brand.600, brand.400)'
+            backgroundClip='text'
+          >
             Follow my journey.
           </Heading>
           <Text mt={3} mb={24}>
@@ -67,7 +74,7 @@ const Index = () => {
           </Text>
           <Box w='full' mx='auto' textAlign='left'>
             <Text
-              w='container.sm'
+              maxW='container.sm'
               mx='auto'
               mb={12}
               fontSize='lg'
@@ -158,7 +165,7 @@ export const UpcomingProject = ({}) => {
         top={10}
         right={5}
         src='/themeable.svg'
-        w='80px'
+        w={['40px', null, '80px']}
         filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
       />
     </Flex>

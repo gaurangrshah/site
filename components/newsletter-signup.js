@@ -7,6 +7,7 @@ import {
   InputGroup,
   InputRightAddon,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
@@ -57,11 +58,15 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         },
       ]}
     >
-      <Box
+      <VStack
+        justify='center'
+        align='center'
         pos='relative'
-        w={["80%", null, null, "40%"]}
-        my={16}
-        p={6}
+        w={["80%", null, null, "50%"]}
+        mt={36}
+        mb={19}
+        px={6}
+        py={12}
         bg='brand.200'
         borderRadius='md'
         boxShadow='1px 1px 8px 0 rgba(19,142,118,0.25)'
@@ -71,12 +76,11 @@ export const NewsletterSignup = ({ children, ...rest }) => {
       >
         <Heading
           as='h5'
-          lineHeight='0.9'
           fontFamily='article'
           fontSize='md'
-          pb={2}
+          lineHeight='0.9'
           color='brand.500'
-          // textShadow='0px 0px 2px rgba(0,0,0, 0.1)'
+          pb={3}
         >
           Follow me on my indie-hacking journey!
         </Heading>
@@ -86,21 +90,23 @@ export const NewsletterSignup = ({ children, ...rest }) => {
             <Text>{message}</Text>
           </Box>
         ) : (
-          <Box as='form' onSubmit={handleSubscribe} maxW='90%'>
-            <Text color='gray.500' lineHeight={2.8} my={3}>
+          <Box as='form' onSubmit={handleSubscribe}>
+            <Text color='gray.500' lineHeight={2.8} my={6}>
               Sign up for{" "}
               <Box as='span' fontWeight='600'>
                 free early-bird access
               </Box>{" "}
               to my upcoming newsletter
             </Text>
-            <InputGroup size='sm' borderColor='brand.500'>
+            <InputGroup borderColor='brand.500' w='100%' mx='auto'>
               <Input
+                borderRadius='5px'
                 name='email'
                 type='email'
                 placeholder='you@youremail.com'
               />
               <InputRightAddon
+                borderRadius='5px'
                 children={
                   <IconButton
                     type='submit'
@@ -117,7 +123,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
             </InputGroup>
           </Box>
         )}
-      </Box>
+      </VStack>
     </SocialWrapper>
   );
 };
@@ -129,12 +135,12 @@ export const Pointer = ({ children, ...rest }) => {
     <AnimatePresence>
       {mounted && (
         <MotionBox
-          position='relative'
+          position='absolute'
+          display='inline'
           zIndex={1}
           initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -100 }}
+          animate={{ opacity: 1, y: -130 }}
           transition={{ duration: 0.3, delay: 0.6 }}
-          float='right'
         >
           <Text className='scribble'>Follow my progress</Text>
           <DrawnArrow
@@ -148,5 +154,3 @@ export const Pointer = ({ children, ...rest }) => {
     </AnimatePresence>
   );
 };
-
-
