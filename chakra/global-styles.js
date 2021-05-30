@@ -58,6 +58,7 @@ export const styles = {
       WebkitTextSizeAdjust: "none",
       MozFontSmoothing: "grayscale",
       overflowX: "hidden",
+      overflowY: "hidden",
       maxW: "full",
       "span.markup": {
         color: "brand.500",
