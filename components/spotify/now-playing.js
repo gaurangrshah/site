@@ -18,6 +18,7 @@ import { otherIcons } from "../icons/other";
 import { msToMins } from "@/utils/datefns";
 import { Spinner } from "@/chakra/components/spinner";
 import { PathIcon } from "../icons/path-icon";
+import { Playlists } from "./playlists";
 
 export const NowPlaying = ({ children, ...rest }) => {
   const [current, setCurrent] = useState(null);
@@ -41,10 +42,11 @@ export const NowPlaying = ({ children, ...rest }) => {
     <>
       <VStack
         as={Container}
-        maxW={64}
+        maxW={96}
         bg='gray.700'
         borderRadius='5px'
         my={3}
+        pb={3}
         boxShadow='sm'
       >
         <HStack
@@ -81,23 +83,19 @@ export const NowPlaying = ({ children, ...rest }) => {
           )}
         </HStack>
         {current?.item && (
-          <VStack align='flex-start' color='brand.200' pb={4}>
-            <Box w='200px' h='200px'>
+          <HStack align='flex-start' color='brand.200' pb={4}>
+            <Box w='150px'>
               <Image
                 src={`${current?.item?.album?.images[1].url}`}
                 borderRadius='5px'
-                objectFit='cover'
+                // objectFit='contain'
               />
             </Box>
-            <VStack w='full' align='flex-start'>
+            <VStack w='full' align='flex-start' ml={3}>
               <HStack justify='space-between' w='full'>
                 <Link href={current?.item?.external_urls?.spotify} isExternal>
                   <Text>{current?.item?.name}</Text>
                 </Link>
-                {/* <Text as='small'>
-                  {msToMins(current?.progress_ms)}/
-                  {msToMins(current?.item?.duration_ms)}
-                </Text> */}
               </HStack>
               <HStack flexWrap='wrap'>
                 <PathIcon
@@ -139,8 +137,9 @@ export const NowPlaying = ({ children, ...rest }) => {
                 </HStack>
               </Link>
             </VStack>
-          </VStack>
+          </HStack>
         )}
+        <Playlists />
       </VStack>
     </>
   );

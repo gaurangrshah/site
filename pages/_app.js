@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { DefaultSeo } from "next-seo";
 
 import { theme } from "@/chakra";
-import { DashboardLayout, DefaultLayout } from "@/chakra/layouts";
+import {  DefaultLayout } from "@/chakra/layouts";
 import { ScaffoldProvider } from "@/chakra/contexts/scaffold-context";
 import { LocalDataProvider } from "@/contexts/local-data-context";
 import MessageRouter from "@/components/message-router";
@@ -11,7 +11,6 @@ import { Protected } from "@/components/auth";
 import ErrorBoundary from "@/components/error-boundary";
 
 import SEO from "../next-seo.config";
-
 
 const App = ({ Component, pageProps, router }) => {
   const isDashboard = router.asPath.includes("dashboard");
@@ -27,15 +26,7 @@ const App = ({ Component, pageProps, router }) => {
             >
               <MessageRouter asPath={router.asPath}>
                 <DefaultLayout>
-                  {isDashboard ? (
-                    <DashboardLayout>
-                      <Protected user={pageProps?.user}>
-                        <Component {...pageProps} />
-                      </Protected>
-                    </DashboardLayout>
-                  ) : (
-                    <Component {...pageProps} />
-                  )}
+                  <Component {...pageProps} />
                 </DefaultLayout>
               </MessageRouter>
             </ScaffoldProvider>

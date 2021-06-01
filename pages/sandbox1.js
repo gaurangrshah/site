@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Section } from "@/components/section";
 import { MotionBox } from "@/components/framer/motion-box";
 import { PresenceBox } from "@/components/framer/presence-box";
+import { List } from "@/components/list";
 
 const Sandbox3 = ({ children, ...rest }) => {
   // const { ref, inView } = useInView({
@@ -15,9 +16,10 @@ const Sandbox3 = ({ children, ...rest }) => {
     <Box id='pag-wrap'>
       <Section h='100vh' border='5px' borderColor='red' />
       <Section h='100vh' border='5px' borderColor='red' />
-      <PresenceBox options={{ threshold: 0.5, triggerOnce: true }}>
+      {/* <PresenceBox options={{ threshold: 0.5, triggerOnce: true }}>
         Test
-      </PresenceBox>
+      </PresenceBox> */}
+      <List />
       {/* <Box border='5px' borderColor='red' ref={ref}>
         <AnimatePresence>
           {inView && (

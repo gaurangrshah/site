@@ -1,15 +1,14 @@
-import { Box} from "@chakra-ui/react";
+import { Box, usePrefersReducedMotion } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { ModeToggle } from "../components/mode-toggle";
-import Scaffold from "../components/structure/scaffold";
-import { Wave } from "@/components/backgrounds/shapes";
 
 import { ChInnerWave } from "../components/motion-wave";
 import { useMounted } from "@/hooks/use-mounted";
 
 export function DefaultLayout(props) {
   const mounted = useMounted();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const gradientTransition = {
     backgroundColor: {
@@ -22,17 +21,19 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && process.env.NODE_ENV === "production" ? (
+      {mounted && !prefersReducedMotion ? (
         <MotionGradient gradientTransition={gradientTransition}>
           {/* <ModeToggle /> */}
-          <Scaffold {...props} zIndex={1} />
-          <WaveFooter />
+          {/* <Scaffold {...props} zIndex={1} /> */}
+          {props.children}
+          {/* <WaveFooter /> */}
         </MotionGradient>
       ) : (
         mounted && (
           <>
+            {props.children}
             {/* <ModeToggle /> */}
-            <Scaffold {...props} zIndex={1} />
+            {/* <Scaffold {...props} zIndex={1} /> */}
             {/* <WaveFooter /> */}
           </>
         )

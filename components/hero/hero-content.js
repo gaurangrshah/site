@@ -36,7 +36,6 @@ export const HeroContent = ({ children, ...rest }) => {
         letterSpacing='1px'
         textTransform='capitalize'
         textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-        pb={[12]}
         pt={6}
       >
         <Box as='span' fontSize='3xl' pb={2}>
@@ -51,14 +50,25 @@ export const HeroContent = ({ children, ...rest }) => {
           Hi-Ya! I'm Gaurang!
         </Box>
       </Heading>
-      <Box pt={3} pl={2}>
+      <Box pl={2}>
+        <Text
+          fontSize='1.5rem'
+          fontFamily='accent'
+          lineHeight='2.5'
+          color='brand.600'
+          textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
+        >
+          Thanks for checking out my little corner of the inter-webs!
+        </Text>
         <Text
           fontSize='md'
           fontFamily='body'
           lineHeight={2.9}
           color='brand.700'
         >
-          I love working with people and building awesome interfaces.
+          I still can't get over how amazing it is that you've found me here. I
+          guess it's only right that you learn a bit about me while you're
+          here.
         </Text>
       </Box>
     </>
