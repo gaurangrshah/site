@@ -10,7 +10,9 @@ import {
 import { HeroImage } from "./hero-image";
 import { List } from "@/components/list";
 import { HeroContent } from "./hero-content";
+import { MotionBox } from "@/components/framer/motion-box";
 import { NewsletterSignup } from "@/components/newsletter-signup";
+
 export const Hero = () => {
   return (
     <>
@@ -22,13 +24,17 @@ export const Hero = () => {
         justifyContent='space-around'
         alignItems='center'
       >
-        <HeroImage />
+        <MotionBox
+          initial={{ rotateY: 0 }}
+          animate={{ rotateY: 360 }}
+          transition={{ delay: 2, duration: 2 }}
+        >
+          <HeroImage />
+        </MotionBox>
         <Container
           order={[1, null, 1]}
           pos='relative'
-          // h={["20vh", null, null, "40vh"]}
           w={"100%"}
-          // pt={[24, null, 44]}
           p={[4, null, null, 0]}
           maxW='container.md'
           flex={1}
