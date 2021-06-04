@@ -2,30 +2,36 @@ import {
   Box,
   Button,
   ButtonGroup,
+  chakra,
   Container,
   Flex,
   Heading,
   HStack,
   IconButton,
   Image,
-  Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { ContactForm } from "./contact-form";
 import { Disclaimer } from "./disclaimer";
+import { PathIcon } from "./icons/path-icon";
+
+import { socialIcons } from "@/components/icons/social";
+import { social } from "@/app.config";
+import { ChNextLink } from "@/components/next-link";
+import { MotionBox } from "@/components/framer/motion-box";
 
 export const Footer = ({}) => {
   return (
     <Container maxW='container.xl'>
       <Flex
         w='full'
-        direction={["column", null, null, "row"]}
+        direction={["column-reverse", null, null, "row"]}
         alignItems={["center", null, null, "stretch"]}
       >
         <Box w='full' p={2}>
           <Box w='full' minH='5em' bg='brand.300' borderRadius='10px'>
-            <Heading p={6} color='brand.500'>
+            <Heading as='h3' p={6} color='brand.500'>
               Let's Connect
             </Heading>
             <ContactForm />
@@ -49,11 +55,55 @@ export const Footer = ({}) => {
             specialize in helping startups and SMBs get off the ground. If
             you've got an idea I'd love to discuss it with you!
           </Text>
-          <HStack w='full'>
-            <Text>GSDev &copy; {new Date().getFullYear()}</Text>
-          </HStack>
         </VStack>
       </Flex>
+      <HStack
+        pos='relative'
+        spacing={3}
+        justifyContent={["center", null, null, "flex-end"]}
+        alignItems='center'
+        color='brand.500'
+        mt={[6, null, null, 0]}
+        mr={[0, null, null, 20]}
+      >
+        <Text mr={6}>
+          {" "}
+          &copy;{" "}
+          <chakra.span fontWeight='bold' ml={2}>
+            GSDev
+          </chakra.span>{" "}
+          {new Date().getFullYear()}
+        </Text>
+        <SocialIcons />
+      </HStack>
     </Container>
   );
 };
+
+export function SocialIcons({}) {
+  return (
+    <HStack spacing={4}>
+      {Object.keys(social).map((channel) => {
+        return (
+          <ChNextLink
+            key={social[channel].href}
+            href={social[channel].href}
+            isExternal
+          >
+            <MotionBox whileHover={{ scale: 1.3 }}>
+              <PathIcon
+                icon={socialIcons[channel]}
+                size={
+                  channel === "devTo" || channel === "linkedIn"
+                    ? "2rem"
+                    : "1.25rem"
+                }
+                fill='currentColor'
+              />
+            </MotionBox>
+          </ChNextLink>
+        );
+      })}
+    </HStack>
+  );
+}

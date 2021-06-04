@@ -1,12 +1,3 @@
-import { mode } from "@chakra-ui/theme-tools";
-
-// import { Header, Footer } from "@/chakra/components/structure/_bars";
-// import { HeaderContent } from "@/components/structure/header-content";
-// import { FooterContent } from "@/components/structure/footer-content";
-// import { ascii } from "./utils/ascii";
-
-// console.log(ascii());
-
 const appConfig = {
   details: {
     title: "Next.js + Supabase CMS",
@@ -35,6 +26,13 @@ const appConfig = {
         // include endpoints exposed via client side api routes
       },
     },
+  },
+  social: {
+    github: { href: "https://github.com/gaurangrshah" },
+    twitter: { href: "https://twitter.com/Soham_Asmi" },
+    devTo: { href: "https://dev.to/gaurangrshah" },
+    hashnode: { href: "https://hashnode.com/@gsdev" },
+    linkedIn: { href: "https://www.linkedin.com/in/gshah2020/" },
   },
   options: {
     toasts: { show: true },

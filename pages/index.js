@@ -57,7 +57,7 @@ const Index = () => {
         <Container w='full' maxW='container.xl' textAlign='center'>
           <Heading
             as='h2'
-            fontSize="5xl"
+            fontSize='5xl'
             mb={0}
             color='brand.400'
             bgGradient='linear(to-r,  brand.600, brand.400)'
@@ -70,11 +70,12 @@ const Index = () => {
           </Text>
           <Box w='full' mx='auto' textAlign='left'>
             <Text
-              maxW='container.sm'
-              mx='auto'
-              mb={12}
               fontSize='lg'
               lineHeight={2.5}
+              textAlign={["center", null, null, "left"]}
+              maxW={["80%", null, null, "container.sm"]}
+              mx='auto'
+              mb={12}
             >
               I recently got heavily inspired by the{" "}
               <Box as='span' className='markup'>
@@ -161,7 +162,7 @@ export const UpcomingProject = ({}) => {
         top={10}
         right={5}
         src='/themeable.svg'
-        w={['40px', null, '80px']}
+        w={["40px", null, "80px"]}
         filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
       />
     </Flex>

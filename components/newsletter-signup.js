@@ -62,7 +62,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         justify='center'
         align='center'
         pos='relative'
-        w={["80%", null, null, "50%"]}
+        w={["md"]}
         mt={36}
         mb={19}
         px={6}

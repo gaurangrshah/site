@@ -27,7 +27,7 @@ export const Work = ({}) => {
         position='relative'
         maxW='container.xl'
         minH={["40rem", null, null, "50rem"]}
-        mb={[20, null, null, 48]}
+        mb={48}
         bg='#FAD201'
         boxShadow={["none", null, null, "md"]}
         borderRadius={[null, null, null, "10px"]}
@@ -68,7 +68,6 @@ export const Work = ({}) => {
         bg='#00186B'
         boxShadow={["none", null, null, "md"]}
         borderRadius={[null, null, null, "10px"]}
-        overflow={["hidden", null, "initial"]}
       >
         <Box
           pos='absolute'
@@ -88,7 +87,7 @@ export const Work = ({}) => {
             borderRadius='12px'
             zIndex={2}
             transform={[
-              "translate(-3rem, -16rem)",
+              "translate(-3rem, -20rem)",
               null,
               null,
               "translate(-10rem, -25rem) ",

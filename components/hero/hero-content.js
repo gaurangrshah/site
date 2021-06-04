@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -30,7 +31,7 @@ export const HeroContent = ({ children, ...rest }) => {
       </HStack>
       <Heading
         pos='relative'
-        fontSize={["2xl", "4xl", "3xl", "4xl"]}
+        fontSize={["2xl", "4xl", "3xl", "5xl"]}
         fontWeight='800'
         lineHeight={2.9}
         letterSpacing='1px'
@@ -54,21 +55,22 @@ export const HeroContent = ({ children, ...rest }) => {
         <Text
           fontSize='1.5rem'
           fontFamily='accent'
-          lineHeight='2.5'
+          lineHeight={[1.6, null, null, 2.5]}
           color='brand.600'
           textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
+          mb={[6, null, null, 3]}
         >
           Thanks for checking out my little corner of the inter-webs!
         </Text>
         <Text
           fontSize='md'
           fontFamily='body'
-          lineHeight={2.9}
+          lineHeight={2}
           color='brand.700'
+          maxW='lg'
         >
           I still can't get over how amazing it is that you've found me here. I
-          guess it's only right that you learn a bit about me while you're
-          here.
+          guess it's only right that you learn a bit about me while you're here.
         </Text>
       </Box>
     </>

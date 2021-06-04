@@ -36,7 +36,7 @@ export function List() {
 
       <Feature
         title='Fail to succeed'
-        icon={<PathIcon icon={otherIcons.fail} />}
+        icon={<PathIcon icon={otherIcons.fail2} />}
       >
         I've failed at more things than most people attempt, but for some reason
         that only motivates me more.
