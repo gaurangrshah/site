@@ -6,15 +6,13 @@ import { Section } from "@/components/section";
 import { MotionBox } from "@/components/framer/motion-box";
 import { PresenceBox } from "@/components/framer/presence-box";
 import { List } from "@/components/list";
-import { getUserLocation } from "../sevices/location";
 
 const Sandbox3 = ({ children, ...rest }) => {
   // const { ref, inView } = useInView({
   //   // trackVisibility: true,
   //   delay: 100,
   // });
-  const test = getUserLocation();
-  console.log(test);
+
   return (
     <Box id='pag-wrap'>
       <Section h='100vh' border='5px' borderColor='red' />
