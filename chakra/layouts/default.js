@@ -54,28 +54,25 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
           background: "rgba(255, 255, 255, 0.1)",
           background:
             "linear-gradient(to bottom right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.0))",
-          backgroundSize: "300% 300%",
+          backgroundSize: "150% 150%",
         }}
-        initial={{ backgroundPostion: "0 100%" }}
-        animate={{ backgroundPostion: "0 50%" }}
+        initial={{ backgroundPostion: "0 50%" }}
+        animate={{ backgroundPostion: "100% 50%" }}
         transition={{
-          type: "inertia",
-          velocity: 3000,
+          type: "spring",
+          stiffness: 10,
           repeatType: "loop",
         }}
       >
         <motion.div
+          backgroundSize='150% 150%'
           animate={{
-            backgroundColor: [
-              "#F7FFF7",
-              "#C0E8CA",
-              "#2CDEBA",
-              // "#138E76",
-              "#086375",
-              "#2CDEBA",
-              "#C0E8CA",
-              "#F7FFF7",
-            ],
+            backgroundColor: ["#F7FFF7", "#C0E8CA", "#C0E8CA"], // "#2CDEBA",
+            // background: [
+            //   `linear-gradient(-45deg, #F7FFF7, #C0E8CA)`,
+            //   `linear-gradient(-90deg, #C0EACA, #)`,
+            //   `linear-gradient(-70deg, #2CDEBA, #F7FFF7)`,
+            // ],
           }}
           transition={gradientTransition}
         >

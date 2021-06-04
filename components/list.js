@@ -60,14 +60,14 @@ const Feature = (props) => {
           h={16}
           w={16}
           rounded='md'
-          bg={useColorModeValue("brand.500")}
-          color='white'
+          bg={"brand.300"}
+          color='brand.600'
+          boxShadow='md'
         >
           <Icon
             boxSize={9}
             fill='currentColor'
             viewBox='0 0 24 24'
-            // stroke='currentColor'
             aria-hidden='true'
           >
             {props.icon}
@@ -79,7 +79,7 @@ const Feature = (props) => {
           fontSize='lg'
           fontWeight='medium'
           lineHeight='6'
-          color={useColorModeValue("gray.900")}
+          color='brand.600'
         >
           {props.title}
         </chakra.dt>
