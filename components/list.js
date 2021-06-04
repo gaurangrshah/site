@@ -9,6 +9,7 @@ import {
 
 import { PathIcon } from "@/components/icons/path-icon";
 import { otherIcons } from "./icons/other";
+import { MotionBox } from "@/components/framer/motion-box";
 
 export function List() {
   return (
@@ -22,6 +23,7 @@ export function List() {
       <Feature
         title='Jamstack aficionado'
         icon={<PathIcon icon={otherIcons.jam} />}
+        multiplier={0}
       >
         I'm a huge fan of jamstack architecture. I think it's the pinnacle of
         the separation of concerns ideaology.
@@ -30,6 +32,7 @@ export function List() {
       <Feature
         title='Get  $h!t done'
         icon={<PathIcon icon={otherIcons.bleep} />}
+        multiplier={1}
       >
         I'm an introvert masquerading as an extrovert in order to get $h!t done.
       </Feature>
@@ -37,11 +40,16 @@ export function List() {
       <Feature
         title='Fail to succeed'
         icon={<PathIcon icon={otherIcons.fail2} />}
+        multiplier={2}
       >
         I've failed at more things than most people attempt, but for some reason
         that only motivates me more.
       </Feature>
-      <Feature title='Oontz oontz' icon={<PathIcon icon={otherIcons.record} />}>
+      <Feature
+        title='Oontz oontz'
+        icon={<PathIcon icon={otherIcons.record} />}
+        multiplier={3}
+      >
         I'm a die-hard music lover, I enjoy just about anything with a good
         groove to it, but I tend to lean towards deep melodic soulful house and
         techno.
@@ -50,10 +58,27 @@ export function List() {
   );
 }
 
-const Feature = (props) => {
+const Feature = ({ multiplier, ...props }) => {
   return (
-    <Flex bg='brand.300' p={3} borderRadius='5px'>
-      <Flex shrink={0}>
+    <MotionBox
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: multiplier ? multiplier * 0.1 : 0.1, duration: 1 }}
+      display='flex'
+      p={3}
+    >
+      {/* <Flex bg='brand.300' p={3}> */}
+      <MotionBox
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: multiplier ? multiplier * 0.2 : 0.2,
+          duration: 1,
+        }}
+        display='flex'
+        flexShrink={0}
+      >
+        {/* <Flex shrink={0}> */}
         <Flex
           alignItems='center'
           justifyContent='center'
@@ -73,7 +98,8 @@ const Feature = (props) => {
             {props.icon}
           </Icon>
         </Flex>
-      </Flex>
+        {/* </Flex> */}
+      </MotionBox>
       <Box ml={4}>
         <chakra.dt
           fontSize='lg'
@@ -87,6 +113,7 @@ const Feature = (props) => {
           {props.children}
         </chakra.dd>
       </Box>
-    </Flex>
+      {/* </Flex> */}
+    </MotionBox>
   );
 };

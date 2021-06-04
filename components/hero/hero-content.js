@@ -17,61 +17,93 @@ import {
 import { PathIcon } from "../icons/path-icon";
 import { otherIcons } from "../icons/other";
 import { devIcons } from "../icons/dev";
+import { MotionBox } from "@/components/framer/motion-box";
 
 export const HeroContent = ({ children, ...rest }) => {
   return (
     <>
       <HStack>
-        <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
-          Developer
-        </Badge>
-        <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
-          Maker
-        </Badge>
+        <MotionBox
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
+            Developer
+          </Badge>
+        </MotionBox>
+        <MotionBox
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+        >
+          <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
+            Maker
+          </Badge>
+        </MotionBox>
       </HStack>
-      <Heading
-        pos='relative'
-        fontSize={["2xl", "4xl", "3xl", "5xl"]}
-        fontWeight='800'
-        lineHeight={2.9}
-        letterSpacing='1px'
-        textTransform='capitalize'
-        textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-        pt={6}
+      <MotionBox
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
       >
-        <Box as='span' fontSize='3xl' pb={2}>
-          👋{" "}
-        </Box>
-        <Box
-          as='span'
-          color='brand.400'
-          bgGradient='linear(to-r,  brand.600, brand.400)'
-          backgroundClip='text'
-        >
-          Hi-Ya! I'm Gaurang!
-        </Box>
-      </Heading>
-      <Box pl={2}>
-        <Text
-          fontSize='1.5rem'
-          fontFamily='accent'
-          lineHeight={[1.6, null, null, 2.5]}
-          color='brand.600'
+        <Heading
+          pos='relative'
+          fontSize={["2xl", "4xl", "3xl", "5xl"]}
+          fontWeight='800'
+          lineHeight={2.9}
+          letterSpacing='1px'
+          textTransform='capitalize'
           textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
-          mb={[6, null, null, 3]}
+          pt={6}
         >
-          Thanks for checking out my little corner of the inter-webs!
-        </Text>
-        <Text
-          fontSize='md'
-          fontFamily='body'
-          lineHeight={2}
-          color='brand.700'
-          maxW='lg'
+          <Box as='span' fontSize='3xl' pb={2}>
+            👋{" "}
+          </Box>
+          <Box
+            as='span'
+            color='brand.400'
+            bgGradient='linear(to-r,  brand.600, brand.400)'
+            backgroundClip='text'
+          >
+            Hi-Ya! I'm Gaurang!
+          </Box>
+        </Heading>
+      </MotionBox>
+      <Box pl={2}>
+        <MotionBox
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 1 }}
         >
-          I still can't get over how amazing it is that you've found me here. I
-          guess it's only right that you learn a bit about me while you're here.
-        </Text>
+          <Text
+            fontSize='1.5rem'
+            fontFamily='accent'
+            lineHeight={[1.6, null, null, 2.5]}
+            color='brand.600'
+            textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
+            mb={[6, null, null, 3]}
+          >
+            Thanks for checking out my little corner of the inter-webs!
+          </Text>
+        </MotionBox>
+        <MotionBox
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+        >
+          <Text
+            fontSize='md'
+            fontFamily='body'
+            lineHeight={2}
+            color='brand.700'
+            maxW='lg'
+          >
+            I still can't get over how amazing it is that you've found me here.
+            I guess it's only right that you learn a bit about me while you're
+            here.
+          </Text>
+        </MotionBox>
       </Box>
     </>
   );

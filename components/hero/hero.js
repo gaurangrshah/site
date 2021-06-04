@@ -25,9 +25,9 @@ export const Hero = () => {
         alignItems='center'
       >
         <MotionBox
-          initial={{ rotateY: 0 }}
-          animate={{ rotateY: 360 }}
-          transition={{ delay: 2, duration: 2 }}
+          initial={{ opacity: 0, rotateY: 0 }}
+          animate={{ opacity: 1, rotateY: 360 }}
+          transition={{ duration: 2 }}
         >
           <HeroImage />
         </MotionBox>
@@ -53,15 +53,21 @@ export const Hero = () => {
         flex={1}
         color='brand.500'
       >
-        <Heading
-          as='h3'
-          fontSize={["2xl", null, "3xl", "4xl"]}
-          fontFamily='accent'
-          textAlign='center'
-          my={12}
+        <MotionBox
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-          So, here's a few things you should know about me:
-        </Heading>
+          <Heading
+            as='h3'
+            fontSize={["2xl", null, "3xl", "4xl"]}
+            fontFamily='accent'
+            textAlign='center'
+            my={12}
+          >
+            So, here's a few things you should know about me:
+          </Heading>
+        </MotionBox>
         <List />
       </Container>
     </>
