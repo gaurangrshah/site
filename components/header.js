@@ -20,8 +20,8 @@ export function Header({ children, ...rest }) {
       top={0}
       left={0}
       right={0}
-      zIndex={1}
       h='100px'
+      zIndex={1}
     >
       <Container maxW='container.md'>
         <HStack as='header' w='full' justify='space-between' py={6}>

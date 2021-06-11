@@ -5,5 +5,7 @@ export default async function handler(req, res) {
 
   const response = await devApi.getArticles({ username: "gsdev", page: 1 });
 
-  return res.json(response);
+  if(response?.length) return res.json(response);
+
+  return res.json({error: {message: "An unknown error has occured."}})
 }
