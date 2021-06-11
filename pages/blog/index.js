@@ -60,7 +60,9 @@ const Posts = ({ posts }) => {
 export default Posts;
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`);
-  const posts = await res.json();
+  const { devApi } = await import("../../lib/dev-to");
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`);
+  const posts = await devApi.getArticles({ username: "gsdev", page: 1 });
+  // const posts = await res.json();
   return { props: { posts } };
 }
