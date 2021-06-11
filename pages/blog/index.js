@@ -16,7 +16,7 @@ import { ChNextButtonLink, ChNextLink } from "@/components/next-link";
 
 const Posts = ({ posts }) => {
   return (
-    <Container maxW='container.md' py={16}>
+    <Container maxW='container.md' py={36}>
       <SimpleGrid w='full' mx='auto' columns={2} spacing={6}>
         {posts.map((post) => {
           const cover = post?.cover_image; //@HACK:
@@ -32,19 +32,15 @@ const Posts = ({ posts }) => {
                 <Image
                   src={cover}
                   width='full'
-                  // height='140px'
                   alt={post?.title}
-                  // layout='responsive'
                   objectFit='contain'
                   borderTopRadius='10px'
                   borderTopRadius='10px'
-                  // style={{ objectFit: "contain" }}
                 />
               )}
               <VStack w='80%' spacing={9} align='flex-start' pt={6}>
                 <Heading>{post?.title}</Heading>
                 <Text>{post?.description}</Text>
-                {/* <Text>{post?.description}</Text> */}
 
                 <ChNextButtonLink
                   variant='ghost'

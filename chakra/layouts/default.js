@@ -1,10 +1,22 @@
-import { Box, usePrefersReducedMotion } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Text,
+  usePrefersReducedMotion,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { ModeToggle } from "../components/mode-toggle";
+import { ChNextLink } from "@/components/next-link";
 
 import { ChInnerWave } from "../components/motion-wave";
 import { useMounted } from "@/hooks/use-mounted";
+import { Header } from "@/components/header";
 
 export function DefaultLayout(props) {
   const mounted = useMounted();
@@ -23,6 +35,7 @@ export function DefaultLayout(props) {
     <>
       {mounted && !prefersReducedMotion ? (
         <MotionGradient gradientTransition={gradientTransition}>
+          <Header />
           {/* <ModeToggle /> */}
           {/* <Scaffold {...props} zIndex={1} /> */}
           {props.children}
@@ -31,6 +44,7 @@ export function DefaultLayout(props) {
       ) : (
         mounted && (
           <>
+            <Header />
             {props.children}
             {/* <ModeToggle /> */}
             {/* <Scaffold {...props} zIndex={1} /> */}

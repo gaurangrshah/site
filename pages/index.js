@@ -6,6 +6,7 @@ import {
   Container,
   Flex,
   Heading,
+  HStack,
   Image,
   Text,
 } from "@chakra-ui/react";
@@ -21,6 +22,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 import { Footer } from "@/components/footer";
 import { ParallaxBox } from "@/components/framer/parallax-box";
 import { transitions } from "@/components/framer/transitions";
+import { ChNextLink } from "@/components/next-link";
 
 const image1 =
   "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
