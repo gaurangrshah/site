@@ -1,8 +1,16 @@
-import { chakra, Badge, Text, Heading } from "@chakra-ui/react";
+import {
+  chakra,
+  Badge,
+  Box,
+  Code as ChCode,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
 
 import { ChNextButtonLink } from "../../components/next-link";
 import { ChNextLink } from "@/components/next-link";
+import { Code } from "@/components/code";
 
 const CHMarkdown = chakra(Markdown);
 
@@ -32,6 +40,13 @@ const MarkdownJSX = ({ section = "", overrides, ...rest }) => {
           li: (props) => (
             <chakra.li {...props} {...layerStyles.li} {...rest.li} />
           ),
+          code: (props) => (
+            <Code {...props} {...layerStyles.code} {...rest.code} />
+          ),
+          pre: (props) => (
+            <chakra.pre {...props} {...layerStyles.pre} {...rest.pre} />
+          ),
+          div: (props) => <Box {...props} {...layerStyles.div} {...rest.div} />,
           ...overrides,
         },
       }}
@@ -49,39 +64,86 @@ const layerStyles = {
     variant: "ghost",
     fontWeight: 700,
     textDecoration: "underline",
+    color: "brand.400",
   },
   h1: {
-    mb: 6,
-    as: "h2",
-    fontFamily: "body",
-    fontSize: { base: "3xl", md: "3xl", lg: "4xl" },
-    fontWeight: "bold",
-    color: "brand.200",
-    lineHeight: "shorter",
+    mt: 9,
+    as: "h1",
+    p: {
+      fontFamily: "body",
+      fontSize: { base: "3xl", md: "3xl", lg: "4xl" },
+      fontWeight: "bold",
+      color: "gray.500",
+      lineHeight: "shorter",
+    },
   },
   h2: {
-    as: "p",
+    as: "h2",
     pr: { base: 0, lg: 9 },
-    mb: 4,
-    fontSize: "md",
-    color: "gray.700",
-    letterSpacing: "wider",
+    mt: 9,
+    p: {
+      fontFamily: "body",
+      color: "gray.500",
+      fontSize: "2xl",
+      letterSpacing: "wider",
+    },
   },
   h3: {
-    as: "p",
-    fontFamily: "body",
-    fontSize: "md",
-    color: "brand.300",
+    as: "h3",
+    mt: 9,
+    p: {
+      fontFamily: "body",
+      fontSize: "xl",
+      color: "gray.500",
+    },
   },
   p: {
+    as: "span", //@HACK: can't render p > p so rendering parent as span
+    display: "inline-block",
     pr: { base: 0, lg: 9 },
     mb: 4,
     fontSize: "md",
-    color: "gray.700",
+    fontWeight: "normal",
+    color: "gray.600",
     letterSpacing: "wider",
   },
   ul: {
+    position: "relative",
+    w: "85%",
     ml: 10,
+    my: 9,
     color: "gray.500",
+    fontSize: "md",
+  },
+  pre: {
+    display: "flex",
+    flexDirection: "row",
+    // border: "1px solid red",
+    whiteSpace: "pre-wrap",
+    overflowX: "auto",
+    sx: {
+      code: {
+        position: "relative",
+        p: 6,
+        maxW: "full",
+        rounded: "lg",
+        // shadow: "md",
+      },
+    },
+  },
+  code: {
+    pos: "relative",
+    variant: "subtle",
+    maxW: "80%",
+    px: 2,
+    my: 2,
+    // sx: {
+    //   span: {
+    //     maxW: "80%",
+    //   },
+    // },
+  },
+  div: {
+    pos: "relative",
   },
 };

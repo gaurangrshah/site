@@ -83,6 +83,10 @@ export const styles = {
       },
       "*.hide-scroll::-webkit-scrollbar": { display: "none" },
       "*.hide-scroll": { scrollBarWidth: "none" },
+      "svg.highlight-action": {
+        // @HACK: markdown code blocks render some svg icons that we're just hiding
+        display: "none",
+      },
     },
     "*::placeholder": {
       color: mode("gray.400", "whiteAlpha.300")(props),

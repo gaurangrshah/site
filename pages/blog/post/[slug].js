@@ -1,5 +1,30 @@
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  SimpleGrid,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { ChNextButtonLink, ChNextLink } from "@/components/next-link";
+import MarkdownJSX from "@/chakra/components/blog-md-jsx";
+
 export const Post = ({ post }) => {
-  return <div>{JSON.stringify(post)}</div>;
+  console.log(post?.body_html);
+  return (
+    <Container maxW='container.md' p={16} bg='white' rounded='lg'>
+      <Box as={post?.type_of}>
+        <Heading>{post.title}</Heading>
+        <Box>
+          <MarkdownJSX section={post?.body_html} />
+        </Box>
+      </Box>
+    </Container>
+  );
 };
 
 export default Post;

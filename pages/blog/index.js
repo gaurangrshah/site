@@ -21,7 +21,13 @@ const Posts = ({ posts }) => {
         {posts.map((post) => {
           const cover = post?.cover_image; //@HACK:
           return (
-            <VStack as='article' key={post?.id} p={6} bg='white' rounded='xl'>
+            <VStack
+              as={post?.type_of}
+              key={post?.id}
+              p={6}
+              bg='white'
+              rounded='xl'
+            >
               {cover && (
                 <Image
                   src={cover}
