@@ -40,7 +40,7 @@ const MarkdownJSX = ({ options, overrides, children, ...rest }) => {
             <chakra.li {...props} {...layerStyles.li} {...rest.li} />
           ),
           code: (props) => (
-            <Code {...props} {...layerStyles.code} {...rest.code} />
+            <ChCode {...props} {...layerStyles.code} {...rest.code} />
           ),
           pre: (props) => (
             <chakra.pre {...props} {...layerStyles.pre} {...rest.pre} />
