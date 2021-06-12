@@ -1,26 +1,15 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import { ChNextButtonLink, ChNextLink } from "@/components/next-link";
+import { Box, Container, Image, Heading } from "@chakra-ui/react";
+
 import MarkdownJSX from "@/chakra/components/blog-md-jsx";
 
-export const Post = ({ post }) => {
-  console.log(post?.body_html);
+const Post = ({ post }) => {
   return (
-    <Container maxW='container.md' p={16} bg='white' rounded='lg'>
+    <Container maxW='container.md' p={16} pt={40} bg='white' rounded='lg'>
+      <Image src={post?.cover_image} w='100%' objectFit='contain' />
       <Box as={post?.type_of}>
-        <Heading>{post.title}</Heading>
+        <Heading my={8}>{post.title}</Heading>
         <Box>
-          <MarkdownJSX section={post?.body_html} />
+          <MarkdownJSX>{post?.body_markdown}</MarkdownJSX>
         </Box>
       </Box>
     </Container>

@@ -2,17 +2,22 @@ import { Code as ChCode } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-export const Code = ({ children, ...rest }) => {
-  return rest?.className ? (
+export const Code = ({ inline, className, children, ...rest }) => {
+  // const match = /language-(\w+)/.exec(className || "");
+
+  return !inline ? (
     <SyntaxHighlighter
-      language={rest?.className?.replace(/lang-/, "") || "text"}
+      // language={match && match[1]}
       style={dark}
-      showLineNumbers
-      lineNumberStyle={{ color: "#495162", paddingRight: "16px" }}
+      // showLineNumbers
+      // wrapLines
+      // lineNumberStyle={{ color: "#495162", paddingRight: "16px" }}
     >
-      <ChCode {...rest}>{children}</ChCode>
+      <ChCode {...rest} style={{ width: "100%", border: "1px solid red" }}>
+        {(String(children).replace(/\n$/), "")}
+      </ChCode>
     </SyntaxHighlighter>
   ) : (
-    <ChCode>{children}</ChCode>
+    <ChCode {...rest}>{children}</ChCode>
   );
 };

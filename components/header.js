@@ -28,11 +28,12 @@ export function Header({ children, ...rest }) {
           <VisuallyHidden>
             <Heading>G.S. Dev</Heading>
           </VisuallyHidden>
-          <ChNextLink href='/'>
+          <ChNextLink href='/' cursor='pointer'>
             <Image src='/logo.svg' alt='gsdev logo' h='60px' />
           </ChNextLink>
           <ChNextLink
             href='/blog'
+            cursor='pointer'
             fontSize='lg'
             fontWeight='700'
             color='brand.400'

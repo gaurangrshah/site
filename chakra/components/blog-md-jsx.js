@@ -14,11 +14,10 @@ import { Code } from "@/components/code";
 
 const CHMarkdown = chakra(Markdown);
 
-const MarkdownJSX = ({ section = "", overrides, ...rest }) => {
+const MarkdownJSX = ({ options, overrides, children, ...rest }) => {
   return (
     <CHMarkdown
       className='md-jsx'
-      {...rest}
       options={{
         overrides: {
           a: (props) => (
@@ -49,9 +48,10 @@ const MarkdownJSX = ({ section = "", overrides, ...rest }) => {
           div: (props) => <Box {...props} {...layerStyles.div} {...rest.div} />,
           ...overrides,
         },
+        ...options,
       }}
     >
-      {section}
+      {children}
     </CHMarkdown>
   );
 };
@@ -71,7 +71,7 @@ const layerStyles = {
     as: "h1",
     p: {
       fontFamily: "body",
-      fontSize: { base: "3xl", md: "3xl", lg: "4xl" },
+      fontSize: { base: "3xl", md: "3xl", lg: "5xl" },
       fontWeight: "bold",
       color: "gray.500",
       lineHeight: "shorter",
@@ -81,24 +81,26 @@ const layerStyles = {
     as: "h2",
     pr: { base: 0, lg: 9 },
     mt: 9,
+    mb: 9,
+    fontSize: "4xl",
     p: {
       fontFamily: "body",
       color: "gray.500",
-      fontSize: "2xl",
       letterSpacing: "wider",
     },
   },
   h3: {
     as: "h3",
     mt: 9,
+    fontSize: "2xl",
     p: {
-      fontFamily: "body",
-      fontSize: "xl",
+      fontFamily: "heading",
       color: "gray.500",
     },
   },
   p: {
-    as: "span", //@HACK: can't render p > p so rendering parent as span
+    // as: "span", //@HACK: can't render p > p so rendering parent as span
+    maxW: "full",
     display: "inline-block",
     pr: { base: 0, lg: 9 },
     mb: 4,
@@ -106,6 +108,7 @@ const layerStyles = {
     fontWeight: "normal",
     color: "gray.600",
     letterSpacing: "wider",
+    wordWrap: "break-word",
   },
   ul: {
     position: "relative",
@@ -127,7 +130,6 @@ const layerStyles = {
         p: 6,
         maxW: "full",
         rounded: "lg",
-        // shadow: "md",
       },
     },
   },
@@ -137,11 +139,6 @@ const layerStyles = {
     maxW: "80%",
     px: 2,
     my: 2,
-    // sx: {
-    //   span: {
-    //     maxW: "80%",
-    //   },
-    // },
   },
   div: {
     pos: "relative",
