@@ -22,7 +22,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 import { Footer } from "@/components/footer";
 import { ParallaxBox } from "@/components/framer/parallax-box";
 import { transitions } from "@/components/framer/transitions";
-import { ChNextLink } from "@/components/next-link";
+import { ChNextButtonLink } from "@/components/next-link";
 
 const image1 =
   "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -79,7 +79,7 @@ const Index = () => {
               mx='auto'
               mb={12}
             >
-              I recently got heavily inspired by the{" "}
+              I was recently heavily inspired by the{" "}
               <Box as='span' className='markup'>
                 #indiehacking&nbsp;
               </Box>
@@ -153,12 +153,21 @@ export const UpcomingProject = ({}) => {
         src='/themeable-brand.svg'
         filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
       />
-      <Text as='small' alignSelf='flex-end' pt={3} mr='26%' color='black'>
+      <Text as='small' alignSelf='flex-end' pt={3} mr='26%' color='black' mb={12}>
         A CodeBuds Collaboration
       </Text>
-      <Button disabled variant='outline' size='md' my={9} colorScheme='red'>
-        Launching Soon!
-      </Button>
+      <ChNextButtonLink
+        href='https://www.themeable.xyz'
+        isExternal
+        chProps={{
+          // disabled: true,
+          variant: "outline",
+          colorScheme: "teal",
+          size: "md",
+        }}
+      >
+        Get on the waitlist
+      </ChNextButtonLink>
       <Image
         position='absolute'
         top={10}
