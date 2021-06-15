@@ -81,7 +81,7 @@ export const MotionGradient = ({ gradientTransition, children, ...rest }) => {
         <motion.div
           backgroundSize='150% 150%'
           animate={{
-            backgroundColor: ["#F7FFF7", "#C0E8CA", "#C0E8CA"], // "#2CDEBA",
+            backgroundColor: ["#F7FFF7", "#C0E8CA", "#F7FFF7"], // "#2CDEBA",
             // background: [
             //   `linear-gradient(-45deg, #F7FFF7, #C0E8CA)`,
             //   `linear-gradient(-90deg, #C0EACA, #)`,
