@@ -158,9 +158,10 @@ export const UpcomingProject = ({}) => {
       </Text>
       <ChNextButtonLink
         href='https://www.themeable.xyz'
-        isExternal
+
         chProps={{
           // disabled: true,
+
           variant: "outline",
           colorScheme: "teal",
           size: "md",
