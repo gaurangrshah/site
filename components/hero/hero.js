@@ -4,7 +4,7 @@ import {
   Flex,
   Heading,
   SimpleGrid,
-  VStack,
+  Text,
 } from "@chakra-ui/react";
 
 import { HeroImage } from "./hero-image";
@@ -81,29 +81,13 @@ export const Hero = () => {
         color='brand.500'
         mt={12}
       >
-        <Flex w='full' justify='center' align='center'>
-          <Heading
-            as='h3'
-            fontSize={["2xl", null, "3xl", "4xl"]}
-            fontFamily='accent'
-            textAlign='center'
-            w='full'
-            my={6}
-            color='brand.500'
-          >
-            My Current Stack
-          </Heading>
-          <Heading
-            as='h3'
-            fontSize={["2xl", null, "3xl", "4xl"]}
-            fontFamily='accent'
-            textAlign='center'
-            w='full'
-            my={6}
-            color='brand.500'
-          >
-            My Preferred Tools
-          </Heading>
+        <Flex w='full' align='center'>
+          <Text w='full' px={9} my={1}>
+            Current Stack
+          </Text>
+          <Text w='full' px={9} my={1}>
+            Preferred tools
+          </Text>
         </Flex>
 
         <Flex w='full' justify='center' align='stretch'>
