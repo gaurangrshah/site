@@ -9,6 +9,7 @@ import {
   SlideFade,
   SimpleGrid,
   Skeleton,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
@@ -37,22 +38,23 @@ export const Playlists = () => {
   };
 
   return (
-    <SimpleGrid pos='relative' w='full' columns={4} rowGap={4}>
+    <Stack
+      pos='relative'
+      w='full'
+      direction='row'
+      flexWrap='wrap'
+      spacing={4}
+      pt={6}
+    >
       {data?.length &&
         data?.map((pl, i) => {
           return (
+            // <>
             <MotionBox
-              key={`${pl?.id}-${i}`}
-              as={Link}
-              href={pl?.external_urls?.spotify}
-              isExternal
-              pos='relative'
-              color='white'
-              mx='auto'
-              whileHover={{ scale: 1.2 }}
-              onMouseOver={handlePlaylistHover}
-              whileTap={{ scale: 0.9 }}
-              data-index={i}
+              whileHover={{
+                scale: 1.2,
+              }}
+              mb={6}
             >
               <Image
                 src={pl?.images[1]?.url}
@@ -61,31 +63,23 @@ export const Playlists = () => {
                 width='50px'
                 height='50px'
               />
-              {/* <AnimatePresence> */}
-              {/* {selected === i && (
-
-                <>
-                  <MotionBox
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    position='relative'
-                    w='full'
-                    display='flex'
-                    justifyContent='center'
-                    alignItems='center'
-                    flexDirection='row'
-                    color='white'
-                    zIndex={100}
-                  >
-                */}
-              <SlideFade in={selected === i} offsetY='25px' zIndex={100}>
-                <Text w='full' zIndex={100}>
-                  {pl?.name}
-                </Text>
-              </SlideFade>
             </MotionBox>
+            // <SlideFade in={selected === i} offsetY='25px' zIndex={100}>
+            //   <Text w='full' zIndex={100}>
+            //     {pl?.name}
+            //   </Text>
+            // </SlideFade>
+            // </>
           );
         })}
-    </SimpleGrid>
+    </Stack>
   );
+};
+
+const scaleUpTransition = {
+  tranistion: "all .2s ease-out",
+  transitionDelay: ".1s",
+  _hover: {
+    transform: "scale(1.1)",
+  },
 };
