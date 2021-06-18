@@ -62,7 +62,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         justify='center'
         align='center'
         pos='relative'
-        w={["md"]}
+        w={["sm", "md"]}
         mt={36}
         mb={19}
         px={6}
@@ -77,7 +77,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         <Heading
           as='h5'
           fontFamily='article'
-          fontSize='md'
+          fontSize={["sm", "md"]}
           lineHeight='0.9'
           color='brand.500'
           pb={3}
