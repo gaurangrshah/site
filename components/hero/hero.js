@@ -92,14 +92,14 @@ export const Hero = () => {
 
         <Flex w='full' justify='center' align='stretch'>
           <SimpleGrid
-            columns={3}
-            gap={3}
+            columns={[2, null, null, 3]}
+            columnGap={3}
             rowGap={6}
             justifyItems='center'
             alignItems='center'
             w='full'
             p={9}
-            mx={6}
+            mx={[2, null, null, 6]}
             fill='brand.600'
             border='1px'
             borderStyle='dashed'
@@ -114,14 +114,14 @@ export const Hero = () => {
             <PathIcon icon={devIcons.graphql} size='3rem' />
           </SimpleGrid>
           <SimpleGrid
-            columns={3}
-            gap={3}
+            columns={[2, null, null, 3]}
+            columnGap={3}
             rowGap={6}
             justifyItems='center'
             alignItems='center'
             w='full'
             p={9}
-            mx={6}
+            mx={[2, null, null, 6]}
             fill='brand.600'
             border='1px'
             borderStyle='dashed'
