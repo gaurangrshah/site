@@ -153,15 +153,21 @@ export const UpcomingProject = ({}) => {
         src='/themeable-brand.svg'
         filter='drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))'
       />
-      <Text as='small' alignSelf='flex-end' pt={3} mr='26%' color='black' mb={12}>
+      <Text
+        as='small'
+        alignSelf='flex-end'
+        pt={3}
+        mr='26%'
+        color='black'
+        mb={12}
+      >
         A CodeBuds Collaboration
       </Text>
       <ChNextButtonLink
-        href='https://www.themeable.xyz'
-
+        href='https://links.gshahdev.com/themeable'
         chProps={{
           // disabled: true,
-
+          isExternal: true,
           variant: "outline",
           colorScheme: "teal",
           size: "md",
