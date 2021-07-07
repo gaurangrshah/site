@@ -50,6 +50,7 @@ const Post = ({ posts }) => {
             },
           ],
         }}
+        image={post?.matter?.data?.cover}
       />
       {post ? (
         <Container
