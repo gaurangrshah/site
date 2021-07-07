@@ -13,6 +13,7 @@ const appConfig = {
     services: "services",
     contact: "contact",
     dashboard: "dashboard",
+    blog: 'blog',
     profile: "profile",
     onboarding: "onboarding",
     signin: "auth/signin",

@@ -86,13 +86,12 @@ const layerStyles = {
     my: 6,
     as: "h1",
     fontFamily: "body",
-    fontSize: { base: "3xl", md: "3xl", lg: "5xl" },
+    fontSize: "5xl",
     fontWeight: "bold",
     color: "gray.500",
   },
   h2: {
     as: "h2",
-    pr: { base: 0, lg: 9 },
     mt: 12,
     mb: 6,
     fontSize: "4xl",
@@ -101,7 +100,7 @@ const layerStyles = {
   },
   h3: {
     as: "h3",
-    mt: 6,
+    mt: 12,
     mb: 3,
     fontSize: "2xl",
     fontFamily: "body",

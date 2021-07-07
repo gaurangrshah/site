@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import {
   Container,
   Heading,
@@ -11,38 +12,41 @@ import { ChNextButtonLink } from "@/components/next-link";
 
 const Posts = ({ posts = [] }) => {
   return (
-    <Container maxW='container.md' py={36}>
-      <SimpleGrid w='full' mx='auto' columns={2} spacing={6}>
-        {posts?.map((post, i) => {
-          return post?.posts?.map((p, i) => {
-            console.log(p);
-            return (
-              <VStack key={`${post?.name}-${i}`} bg='white' rounded='xl'>
-                <Image
-                  src={p?.matter?.data?.cover}
-                  w='full'
-                  borderTopLeftRadius='xl'
-                  borderTopRightRadius='xl'
-                />
-                <VStack spacing={6} p={6}>
-                  <Heading fontSize='3xl'>{p?.matter?.data?.title}</Heading>
-                  <Text>{p?.matter?.data?.description}</Text>
+    <>
+      <NextSeo title='Blog | G. Shah Dev' />
+      <Container maxW='container.md' py={36}>
+        <SimpleGrid w='full' mx='auto' columns={2} spacing={6}>
+          {posts?.map((post, i) => {
+            return post?.posts?.map((p, i) => {
+              console.log(p);
+              return (
+                <VStack key={`${post?.name}-${i}`} bg='white' rounded='xl'>
+                  <Image
+                    src={p?.matter?.data?.cover}
+                    w='full'
+                    borderTopLeftRadius='xl'
+                    borderTopRightRadius='xl'
+                  />
+                  <VStack spacing={6} p={6}>
+                    <Heading fontSize='3xl'>{p?.matter?.data?.title}</Heading>
+                    <Text>{p?.matter?.data?.description}</Text>
 
-                  <HStack w='full' justify='flex-end'>
-                    <ChNextButtonLink
-                      variant='ghost'
-                      href={p?.path.split(".").slice(0, -1).join(".")}
-                    >
-                      Read more...
-                    </ChNextButtonLink>
-                  </HStack>
+                    <HStack w='full' justify='flex-end'>
+                      <ChNextButtonLink
+                        variant='ghost'
+                        href={p?.path.split(".").slice(0, -1).join(".")}
+                      >
+                        Read more...
+                      </ChNextButtonLink>
+                    </HStack>
+                  </VStack>
                 </VStack>
-              </VStack>
-            );
-          });
-        })}
-      </SimpleGrid>
-    </Container>
+              );
+            });
+          })}
+        </SimpleGrid>
+      </Container>
+    </>
   );
 };
 
