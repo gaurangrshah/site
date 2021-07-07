@@ -1,16 +1,16 @@
 import {
-  chakra,
-  Badge,
   Box,
+  chakra,
   Code as ChCode,
-  Text,
   Heading,
+  Image,
+  Text,
 } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
+// import { Image } from "@/components/next-chakra-image";
 
-import { ChNextButtonLink } from "../../components/next-link";
 import { ChNextLink } from "@/components/next-link";
-import { Code } from "@/components/code";
+import { darken, lighten } from "@chakra-ui/theme-tools";
 
 const CHMarkdown = chakra(Markdown);
 
@@ -32,12 +32,18 @@ const MarkdownJSX = ({ options, overrides, children, ...rest }) => {
           h3: (props) => (
             <Heading {...props} {...layerStyles.h3} {...rest.h3} />
           ),
+          h4: (props) => (
+            <Heading {...props} {...layerStyles.h4} {...rest.h4} />
+          ),
+          h5: (props) => (
+            <Heading {...props} {...layerStyles.h5} {...rest.h5} />
+          ),
           p: (props) => <Text {...props} {...layerStyles.p} {...rest.p} />,
           ul: (props) => (
             <chakra.ul {...props} {...layerStyles.ul} {...rest.ul} />
           ),
-          li: (props) => (
-            <chakra.li {...props} {...layerStyles.li} {...rest.li} />
+          ol: (props) => (
+            <chakra.ol {...props} {...layerStyles.ol} {...rest.ol} />
           ),
           code: (props) => (
             <ChCode {...props} {...layerStyles.code} {...rest.code} />
@@ -46,6 +52,16 @@ const MarkdownJSX = ({ options, overrides, children, ...rest }) => {
             <chakra.pre {...props} {...layerStyles.pre} {...rest.pre} />
           ),
           div: (props) => <Box {...props} {...layerStyles.div} {...rest.div} />,
+          img: (props) => <Image {...props} {...layerStyles.img} />,
+          blockquote: (props) => (
+            <Box as='blockquote' {...props} {...layerStyles.blockquote} />
+          ),
+          table: (props) => (
+            <Box as='table' {...props} {...layerStyles.table} />
+          ),
+          iframe: (props) => (
+            <Box as='iframe' w='full' {...props} {...layerStyles.iframe} />
+          ),
           ...overrides,
         },
         ...options,
@@ -64,64 +80,127 @@ const layerStyles = {
     variant: "ghost",
     fontWeight: 700,
     textDecoration: "underline",
-    color: "brand.400",
+    color: darken("brand.400", 10),
   },
   h1: {
-    mt: 9,
+    my: 6,
     as: "h1",
-    p: {
-      fontFamily: "body",
-      fontSize: { base: "3xl", md: "3xl", lg: "5xl" },
-      fontWeight: "bold",
-      color: "gray.500",
-      lineHeight: "shorter",
-    },
+    fontFamily: "body",
+    fontSize: { base: "3xl", md: "3xl", lg: "5xl" },
+    fontWeight: "bold",
+    color: "gray.500",
   },
   h2: {
     as: "h2",
     pr: { base: 0, lg: 9 },
-    mt: 9,
-    mb: 9,
+    mt: 12,
+    mb: 6,
     fontSize: "4xl",
-    p: {
-      fontFamily: "body",
-      color: "gray.500",
-      letterSpacing: "wider",
-    },
+    fontFamily: "body",
+    color: "gray.500",
   },
   h3: {
     as: "h3",
-    mt: 9,
+    mt: 6,
+    mb: 3,
     fontSize: "2xl",
-    p: {
-      fontFamily: "heading",
-      color: "gray.500",
-    },
+    fontFamily: "body",
+    color: "gray.500",
+  },
+  h4: {
+    as: "h4",
+    mt: 6,
+    mb: 3,
+    fontSize: "xl",
+    fontFamily: "body",
+    color: "gray.500",
+  },
+  h5: {
+    as: "h5",
+    mt: 6,
+    mb: 3,
+    fontSize: "xl",
+    fontFamily: "body",
+    color: "gray.500",
   },
   p: {
-    // as: "span", //@HACK: can't render p > p so rendering parent as span
-    maxW: "full",
-    display: "inline-block",
+    mx: "auto",
+    my: 3,
     pr: { base: 0, lg: 9 },
-    mb: 4,
-    fontSize: "md",
-    fontWeight: "normal",
+    fontFamily: "heading",
+    fontSize: "2xl",
+    fontWeight: "500",
     color: "gray.600",
-    letterSpacing: "wider",
+    letterSpacing: "narrow",
     wordWrap: "break-word",
+    lineHeight: 1.5,
+    sx: {
+      em: {
+        color: "gray.500",
+      },
+      strong: {
+        mt: 4,
+      },
+      code: {
+        display: "inline",
+        fontSize: "md",
+        bg: lighten("brand.400", 40),
+        my: 0,
+        lineHeight: 1.75,
+      },
+      li: {
+        display: "inline",
+      },
+    },
   },
   ul: {
     position: "relative",
-    w: "85%",
     ml: 10,
+    mb: 4,
+    color: "gray.500",
+    fontFamily: "heading",
+    fontSize: "2xl",
+    sx: {
+      ul: {
+        ml: "1em",
+      },
+    },
+    li: {
+      sx: {
+        code: {
+          display: "inline",
+          bg: lighten("brand.400", 40),
+        },
+      },
+    },
+  },
+  ol: {
+    position: "relative",
+    counterReset: "li",
+    ml: 4,
+    mr: 2,
     my: 9,
     color: "gray.500",
-    fontSize: "md",
+    fontFamily: "heading",
+    fontSize: "2xl",
+    sx: {
+      "& ::marker": {
+        color: "gray.400",
+        p: 2,
+        rounded: "md",
+      },
+      li: {
+        fontSize: "xl",
+      },
+      ol: {
+        ml: "5em",
+      },
+    },
   },
+
   pre: {
     display: "flex",
     flexDirection: "row",
-    // border: "1px solid red",
     whiteSpace: "pre-wrap",
     overflowX: "auto",
     sx: {
@@ -136,11 +215,71 @@ const layerStyles = {
   code: {
     pos: "relative",
     variant: "subtle",
-    maxW: "80%",
+    w: "full",
     px: 2,
     my: 2,
   },
   div: {
     pos: "relative",
+    mx: "auto",
+  },
+  blockquote: {
+    p: 6,
+    py: 6,
+    minH: "2em",
+    bg: "brand.200",
+    color: "brand.500",
+    borderLeft: "3px solid",
+    borderLeftColor: "brand.400",
+    my: 6,
+    sx: {
+      p: {
+        fontSize: "xl",
+        lineheight: 1.3,
+        ml: 6,
+        whitespace: "pre-wrap",
+        code: {
+          mx: 0,
+        },
+
+        _last: {
+          mb: 2,
+        },
+      },
+      code: {
+        mx: 6,
+      },
+    },
+  },
+  table: {
+    w: "full",
+    tableLayout: "fixed",
+    whiteSpace: "nowrap",
+    my: 12,
+    sx: {
+      tr: {
+        border: "1px",
+        borderColor: "brand.400",
+      },
+      th: {
+        p: 2,
+        border: "1px",
+        borderColor: "brand.400",
+      },
+      td: {
+        p: 2,
+        border: "1px",
+        borderColor: "brand.400",
+        code: {
+          display: "inline",
+          bg: "brand.300",
+        },
+      },
+    },
+  },
+  iframe: {
+    w: "full",
+    minH: "40vh",
+    mx: "auto",
   },
 };

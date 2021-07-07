@@ -33,7 +33,9 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && !prefersReducedMotion ? (
+      {!process.env.NODE_ENV === "development" &&
+      mounted &&
+      !prefersReducedMotion ? (
         <MotionGradient gradientTransition={gradientTransition}>
           <Header />
           {/* <ModeToggle /> */}

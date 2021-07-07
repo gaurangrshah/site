@@ -1,9 +1,5 @@
-// import Image from "next/image";
 import {
-  Box,
   Container,
-  Divider,
-  Flex,
   Heading,
   HStack,
   Image,
@@ -11,46 +7,39 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { ChNextButtonLink, ChNextLink } from "@/components/next-link";
-// import { Image } from "../../components/next-chakra-image";
+import { ChNextButtonLink } from "@/components/next-link";
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts = [] }) => {
   return (
     <Container maxW='container.md' py={36}>
       <SimpleGrid w='full' mx='auto' columns={2} spacing={6}>
-        {posts.map((post) => {
-          const cover = post?.cover_image; //@HACK:
-          return (
-            <VStack
-              as={post?.type_of}
-              key={post?.id}
-              p={6}
-              bg='white'
-              rounded='xl'
-            >
-              {cover && (
+        {posts?.map((post, i) => {
+          return post?.posts?.map((p, i) => {
+            console.log(p);
+            return (
+              <VStack key={`${post?.name}-${i}`} bg='white' rounded='xl'>
                 <Image
-                  src={cover}
-                  width='full'
-                  alt={post?.title}
-                  objectFit='contain'
-                  borderTopRadius='10px'
-                  borderTopRadius='10px'
+                  src={p?.matter?.data?.cover}
+                  w='full'
+                  borderTopLeftRadius='xl'
+                  borderTopRightRadius='xl'
                 />
-              )}
-              <VStack w='80%' spacing={9} align='flex-start' pt={6}>
-                <Heading>{post?.title}</Heading>
-                <Text>{post?.description}</Text>
+                <VStack spacing={6} p={6}>
+                  <Heading fontSize='3xl'>{p?.matter?.data?.title}</Heading>
+                  <Text>{p?.matter?.data?.description}</Text>
 
-                <ChNextButtonLink
-                  variant='ghost'
-                  href={`/blog/post/${post?.slug}`}
-                >
-                  Read more...
-                </ChNextButtonLink>
+                  <HStack w='full' justify='flex-end'>
+                    <ChNextButtonLink
+                      variant='ghost'
+                      href={p?.path.split(".").slice(0, -1).join(".")}
+                    >
+                      Read more...
+                    </ChNextButtonLink>
+                  </HStack>
+                </VStack>
               </VStack>
-            </VStack>
-          );
+            );
+          });
         })}
       </SimpleGrid>
     </Container>
@@ -60,8 +49,8 @@ const Posts = ({ posts }) => {
 export default Posts;
 
 export async function getStaticProps() {
-  const { devApi } = await import("../../lib/dev-to");
-  const posts = await devApi.getArticles({ username: "gsdev", page: 1 });
+  const { getAllPosts } = await import("@/lib/octokit");
+  const posts = await getAllPosts();
 
   return { props: { posts } };
 }
