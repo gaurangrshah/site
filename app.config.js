@@ -1,11 +1,11 @@
 const appConfig = {
   details: {
-    title: "Next.js + Supabase CMS",
-    description:
-      "A user-friendly cms built with react using next.js and supabase",
-    siteUrl: process.env.NEXT_PUBLIC_URL,
+    title: "G. Shah Dev",
+    description: "Full Stack Developer - Learning and Building in Public",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
     apiUrl: process.env.NEXT_PUBLIC_API_URL,
     cdnUrl: process.env.NEXT_PUBLIC_CDN_URL,
+    blogUrl: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
   },
   routes: {
     home: "/",
@@ -13,7 +13,7 @@ const appConfig = {
     services: "services",
     contact: "contact",
     dashboard: "dashboard",
-    blog: 'blog',
+    blog: "blog",
     profile: "profile",
     onboarding: "onboarding",
     signin: "auth/signin",

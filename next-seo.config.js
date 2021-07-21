@@ -1,13 +1,12 @@
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+import { details } from "@/app.config";
 
-const title = "G. Shah Dev";
-const description = "Full Stack Developer - Learning while I #buildInPublic";
+const { siteUrl, title, description } = details;
 
 const SEO = {
   title,
   description,
-  url: `${BASE_URL}`,
-  canonical: `${BASE_URL}`,
+  url: `${siteUrl}`,
+  canonical: `${siteUrl}`,
   twitter: {
     handle: "@Soham_asmi",
     site: "@Soham_asmi",
@@ -16,7 +15,7 @@ const SEO = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: `${BASE_URL}`,
+    url: `${siteUrl}`,
     title,
     description,
     images: [
