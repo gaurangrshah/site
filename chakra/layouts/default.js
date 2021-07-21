@@ -33,7 +33,7 @@ export function DefaultLayout(props) {
 
   return (
     <>
-      {mounted && !prefersReducedMotion ? (
+      {mounted && prefersReducedMotion ? (
         <MotionGradient gradientTransition={gradientTransition}>
           <Header />
           {/* <ModeToggle /> */}

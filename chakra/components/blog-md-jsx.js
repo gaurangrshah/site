@@ -131,7 +131,6 @@ const layerStyles = {
     fontWeight: "500",
     color: "gray.600",
     letterSpacing: "narrow",
-    wordWrap: "break-word",
     lineHeight: 1.5,
     sx: {
       em: {
@@ -196,7 +195,14 @@ const layerStyles = {
       },
     },
   },
-
+  img: {
+    // placeholder: "blurDataUrl",
+    layout: "responsive",
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    rounded: "lg",
+  },
   pre: {
     display: "flex",
     flexDirection: "row",
