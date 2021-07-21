@@ -1,11 +1,13 @@
 import { NextSeo } from "next-seo";
+import NextImage from "next/image";
+
 import { useRouter } from "next/router";
-import { Box, Container, Heading, Image } from "@chakra-ui/react";
+import { Box, Container, Heading, Image as ChImage } from "@chakra-ui/react";
 
 import { Spinner } from "@/chakra/components/spinner";
 import MarkdownJSX from "@/chakra/components/blog-md-jsx";
-// import { Image } from "@/components/next-chakra-image";
-import { appConfig } from "@/app.config";
+import { Image } from "@/components/next-chakra-image";
+import appConfig from "@/app.config";
 
 const Post = ({ posts }) => {
   const router = useRouter();
@@ -54,7 +56,8 @@ const Post = ({ posts }) => {
       />
       {post ? (
         <Container
-          maxW='container.lg'
+          pos='relative'
+          maxW='container.md'
           p={16}
           pt={40}
           bg='white'
@@ -62,18 +65,17 @@ const Post = ({ posts }) => {
           textAlign='center'
           mx='auto'
         >
-          <Image
-            src={post?.matter?.data?.cover}
-            // placeholder='blurDataURL'
-            // loading='eager'
-            // layout='fill'
-            w='100%'
-            h='100%'
-            objectFit='contain'
-            style={{
-              position: "relative",
-            }}
-          />
+          <Box pos='relative' w='full'>
+            <Image
+              src={post?.matter?.data?.cover}
+              // placeholder='blurDataURL'
+              loading='eager'
+              layout='intrinsic'
+              width='600px'
+              height='400px'
+              objectFit='contain'
+            />
+          </Box>
           <Box textAlign='left' mt={16} mb={3}>
             <MarkdownJSX>{post?.matter?.content}</MarkdownJSX>
           </Box>

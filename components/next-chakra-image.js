@@ -9,5 +9,5 @@ const Img = chakra(NextImage, {
 });
 
 export const Image = (props) => {
-  return <Img {...props} />;
+  return <Img {...props} pos='relative' />;
 };
