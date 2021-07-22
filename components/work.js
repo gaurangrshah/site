@@ -14,9 +14,9 @@ export const Work = ({}) => {
           mb={[16, null, 24]}
           mr={[0, null, 6]}
           border='3px solid transparent'
-          borderRightColor='brand.500'
+          borderRightColor='bg1'
           w={["120px", null, "250px"]}
-          color='brand.dark'
+          color='dark'
         >
           Recent
           <br />

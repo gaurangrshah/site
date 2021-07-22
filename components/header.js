@@ -36,9 +36,9 @@ export function Header({ children, ...rest }) {
             cursor='pointer'
             fontSize='lg'
             fontWeight='700'
-            color='brand.400'
+            color='secondary'
             _hover={{
-              color: "brand.500",
+              color: "bg1",
             }}
           >
             blog

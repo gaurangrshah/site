@@ -80,7 +80,7 @@ const layerStyles = {
     variant: "ghost",
     fontWeight: 700,
     textDecoration: "underline",
-    color: darken("brand.400", 10),
+    color: darken("secondary", 10),
   },
   h1: {
     my: 6,
@@ -142,7 +142,7 @@ const layerStyles = {
       code: {
         display: "inline",
         fontSize: "md",
-        bg: lighten("brand.400", 40),
+        bg: lighten("secondary", 40),
         my: 0,
         lineHeight: 1.75,
       },
@@ -167,7 +167,7 @@ const layerStyles = {
       sx: {
         code: {
           display: "inline",
-          bg: lighten("brand.400", 40),
+          bg: lighten("secondary", 40),
         },
       },
     },
@@ -232,10 +232,10 @@ const layerStyles = {
     p: 6,
     py: 6,
     minH: "2em",
-    bg: "brand.200",
-    color: "brand.500",
+    bg: "light",
+    color: "bg1",
     borderLeft: "3px solid",
-    borderLeftColor: "brand.400",
+    borderLeftColor: "secondary",
     my: 6,
     sx: {
       p: {
@@ -264,20 +264,20 @@ const layerStyles = {
     sx: {
       tr: {
         border: "1px",
-        borderColor: "brand.400",
+        borderColor: "secondary",
       },
       th: {
         p: 2,
         border: "1px",
-        borderColor: "brand.400",
+        borderColor: "secondary",
       },
       td: {
         p: 2,
         border: "1px",
-        borderColor: "brand.400",
+        borderColor: "secondary",
         code: {
           display: "inline",
-          bg: "brand.300",
+          bg: "primary",
         },
       },
     },

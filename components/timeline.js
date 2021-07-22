@@ -30,8 +30,8 @@ export function Timeline() {
       <Heading
         as='h1'
         className='title'
-        color='brand.200'
-        textShadow='2px 1px 2px brand.700'
+        color='light'
+        textShadow='2px 1px 2px gray1'
       >
         History
       </Heading>
@@ -55,7 +55,7 @@ export function Timeline() {
                 as='h3'
                 className='vertical-timeline-element-title'
                 fontSize='2xl'
-                color='brand.500'
+                color='bg1'
               >
                 {element.title}
               </Heading>
@@ -67,7 +67,7 @@ export function Timeline() {
               >
                 {element.location}
               </Heading>
-              <Text id='description' color='brand.600'>
+              <Text id='description' color='bg2'>
                 {element.description}
               </Text>
               {showButton && (

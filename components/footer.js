@@ -30,8 +30,8 @@ export const Footer = ({}) => {
         alignItems={["center", null, null, "stretch"]}
       >
         <Box w='full' p={2}>
-          <Box w='full' minH='5em' bg='brand.300' borderRadius='10px'>
-            <Heading as='h3' p={6} color='brand.500'>
+          <Box w='full' minH='5em' bg='primary' borderRadius='10px'>
+            <Heading as='h3' p={6} color='bg1'>
               Let's Connect
             </Heading>
             <ContactForm />
@@ -62,7 +62,7 @@ export const Footer = ({}) => {
         spacing={3}
         justifyContent={["center", null, null, "flex-end"]}
         alignItems='center'
-        color='brand.500'
+        color='bg1'
         mt={[6, null, null, 0]}
         mr={[0, null, null, 20]}
       >

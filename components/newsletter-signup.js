@@ -67,11 +67,11 @@ export const NewsletterSignup = ({ children, ...rest }) => {
         mb={19}
         px={6}
         py={12}
-        bg='brand.200'
+        bg='light'
         borderRadius='md'
         boxShadow='1px 1px 8px 0 rgba(19,142,118,0.25)'
         borderStyle='inset'
-        borderColor='brand.300'
+        borderColor='primary'
         mx='auto'
       >
         <Heading
@@ -79,7 +79,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
           fontFamily='article'
           fontSize={["sm", "md"]}
           lineHeight='0.9'
-          color='brand.500'
+          color='secondary'
           pb={3}
         >
           Follow me on my indie-hacking journey!
@@ -98,7 +98,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
               </Box>{" "}
               to my upcoming newsletter
             </Text>
-            <InputGroup borderColor='brand.500' w='100%' mx='auto'>
+            <InputGroup borderColor='bg1' w='100%' mx='auto'>
               <Input
                 borderRadius='5px'
                 name='email'
@@ -112,7 +112,7 @@ export const NewsletterSignup = ({ children, ...rest }) => {
                     type='submit'
                     h='1.75rem'
                     size='sm'
-                    color='brand.600'
+                    color='bg2'
                     isLoading={isSubmitting}
                     icon={<CustomIcon icon='plane' mt={1} />}
                   >

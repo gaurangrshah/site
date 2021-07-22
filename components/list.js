@@ -67,7 +67,7 @@ const Feature = ({ multiplier, ...props }) => {
       display='flex'
       p={3}
     >
-      {/* <Flex bg='brand.300' p={3}> */}
+      {/* <Flex bg='primary' p={3}> */}
       <MotionBox
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,8 +85,8 @@ const Feature = ({ multiplier, ...props }) => {
           h={16}
           w={16}
           rounded='md'
-          bg={"brand.300"}
-          color='brand.600'
+          bg={"primary"}
+          color='bg2'
           boxShadow='md'
         >
           <Icon
@@ -105,7 +105,7 @@ const Feature = ({ multiplier, ...props }) => {
           fontSize='lg'
           fontWeight='medium'
           lineHeight='6'
-          color='brand.600'
+          color='bg2'
         >
           {props.title}
         </chakra.dt>

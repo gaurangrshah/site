@@ -82,8 +82,8 @@ export const SingleSection = ({ divider, children, ...rest }) => {
  * USAGE:
 
  <DualSection
-        bg='brand.500'
-        divider={{ shape: "tilt", fill: "brand.500", style: { mt: 9 } }}
+        bg='bg1
+        divider={{ shape: "tilt", fill: "bg1, style: { mt: 9 } }}
         // _before={beforeBox()}
       >
       {children}

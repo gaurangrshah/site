@@ -29,7 +29,7 @@ const Sandbox3 = ({ children, ...rest }) => {
               key='test'
               w='300px'
               h='300px'
-              bg='brand.300'
+              bg='primary
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 200 }}
               exit={{ opacity: 0, y: 0 }}

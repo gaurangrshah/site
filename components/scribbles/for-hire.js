@@ -11,8 +11,8 @@ export const ForHire = ({ children, ...rest }) => {
       py={3}
       pb={4}
       // mt={-24}
-      bgGradient='linear(to-br,  brand.600, brand.400)'
-      color='brand.200'
+      bgGradient='linear(to-br,  bg2, secondary)'
+      color='light'
       borderRadius='5px'
       boxShadow='md'
       textAlign='center'
@@ -31,7 +31,7 @@ export const ForHire = ({ children, ...rest }) => {
         >
           AVAILABLE
         </Heading>
-        <Divider p={0} borderColor='brand.300' w='50%' />
+        <Divider p={0} borderColor='primary' w='50%' />
         <Text
           as='strong'
           fontFamily='body'

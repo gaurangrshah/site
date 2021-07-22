@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { MotionBox } from "@/components/framer/motion-box";
 
 const heading = {
-  color: "brand.700",
+  color: "gray1",
   fontSize: ["5xl", "6xl", "8xl", "8xl"],
   textAlign: "left",
   textShadow: "rgba(8,99,117, 0.4) 1px 1px 3px",

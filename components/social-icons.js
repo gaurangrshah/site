@@ -85,7 +85,7 @@ export const SocialIcons = ({ icons, ...rest }) => {
         >
           <MotionBox whileHover={{ scale: 1.2 }}>
             <PathIcon
-              fill='brand.500'
+              fill='bg1'
               icon={icon?.icon}
               size='2.5rem'
               p={2}

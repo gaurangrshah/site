@@ -21,7 +21,7 @@ export const Disclaimer = () => {
       align={["center"]}
       pos='relative'
       border='3px dashed'
-      borderColor='brand.400'
+      borderColor='secondary'
       borderRadius='10px'
       w='full'
       py={2}
@@ -31,11 +31,11 @@ export const Disclaimer = () => {
           fontFamily='accent'
           flex={[0, null, 1]}
           fontSize='2xl'
-          color='brand.300'
+          color='primary'
           mt={3}
           py={1}
           px={3}
-          bg='brand.500'
+          bg='bg1'
           transform='rotate(-22deg) translate(-2em, -3em)'
           maxW='200px'
         >
@@ -44,7 +44,7 @@ export const Disclaimer = () => {
         <Text
           fontSize={["2xl", null, null, "4xl"]}
           fontFamily='accent'
-          color='brand.600'
+          color='bg2'
           pt={[0, null, null, 6]}
         >
           I'm still getting some things sorted.
@@ -60,7 +60,7 @@ export const Disclaimer = () => {
             border='none'
             textDecoration='none'
             colorScheme='green'
-            rightIcon={<PathIcon icon={devIcons.github} fill='brand.300' />}
+            rightIcon={<PathIcon icon={devIcons.github} fill='primary' />}
           >
             Report Bugs
           </Button>

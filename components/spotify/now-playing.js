@@ -59,7 +59,7 @@ export const NowPlaying = ({ children, ...rest }) => {
           <PathIcon icon={devIcons.spotify} fill='#1DB954' opacity='0.7' />
           <Box w='90%' textAlign='center'>
             {current?.item ? (
-              <Text color='brand.300'>Currently Listening</Text>
+              <Text color='primary'>Currently Listening</Text>
             ) : loading ? (
               <Spinner />
             ) : (
@@ -76,14 +76,14 @@ export const NowPlaying = ({ children, ...rest }) => {
           ) : (
             <PathIcon
               icon={otherIcons.sound_on}
-              stroke='brand.200'
+              stroke='light'
               fill='transparent'
               size='2em'
             />
           )}
         </HStack>
         {current?.item && (
-          <HStack align='flex-start' color='brand.200' pb={4}>
+          <HStack align='flex-start' color='light' pb={4}>
             <Box w='150px'>
               <Image
                 src={`${current?.item?.album?.images[1].url}`}
@@ -101,7 +101,7 @@ export const NowPlaying = ({ children, ...rest }) => {
                 <PathIcon
                   icon={otherIcons.artist}
                   fill='transparent'
-                  stroke='brand.400'
+                  stroke='secondary'
                 />
                 {current?.item?.artists.map((artist, i) => {
                   const isMultiple = current?.item?.artists?.length > 1;
@@ -113,7 +113,7 @@ export const NowPlaying = ({ children, ...rest }) => {
                       data-artist-id={artist.id}
                       isExternal
                     >
-                      <Text as={isMultiple ? "small" : "b"} color='brand.400'>
+                      <Text as={isMultiple ? "small" : "b"} color='secondary'>
                         {artist?.name}
                       </Text>
                       {isMultiple && !isLast ? "," : ""}
@@ -131,7 +131,7 @@ export const NowPlaying = ({ children, ...rest }) => {
                   <PathIcon
                     icon={otherIcons.album}
                     fill='transparent'
-                    stroke='brand.400'
+                    stroke='secondary'
                   />
                   <Text as='small'>{current?.item?.album?.name}</Text>
                 </HStack>

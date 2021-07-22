@@ -94,9 +94,9 @@ export const ContactForm = ({ reason = "general" }) => {
       mx='auto'
       p={4}
     >
-      <InputGroup size='sm' borderColor='brand.500' my={4}>
+      <InputGroup size='sm' borderColor='bg1' my={4}>
         <FormControl id='fname' mx={6}>
-          <FormLabel color='gray.500'>First Name</FormLabel>
+            <FormLabel color='gray.500'>First Name</FormLabel>
           <Input name='fname' type='text' placeholder='John' />
         </FormControl>
         <FormControl id='lname' mx={6}>
@@ -104,7 +104,7 @@ export const ContactForm = ({ reason = "general" }) => {
           <Input name='lname' type='text' placeholder='Doe' />
         </FormControl>
       </InputGroup>
-      <InputGroup size='sm' borderColor='brand.500' my={4} required>
+      <InputGroup size='sm' borderColor='bg1' my={4} required>
         <FormControl id='email' mx={6} required>
           <FormLabel color='gray.500'>
             *Email{" "}
@@ -115,7 +115,7 @@ export const ContactForm = ({ reason = "general" }) => {
           <Input name='email' type='email' placeholder='you@youremail.com' />
         </FormControl>
       </InputGroup>
-      <InputGroup size='sm' borderColor='brand.500' my={4} required>
+      <InputGroup size='sm' borderColor='bg1' my={4} required>
         <FormControl id='Message' mx={6}>
           <FormLabel color='gray.500'>
             *Message{" "}
@@ -134,7 +134,7 @@ export const ContactForm = ({ reason = "general" }) => {
           variant='outline'
           colorScheme='green'
           leftIcon={
-            <CustomIcon icon='plane' fill="green" mt={1} size='1.5rem' />
+            <CustomIcon icon='plane' fill='green' mt={1} size='1.5rem' />
           }
           spinner={<Spinner />}
         >

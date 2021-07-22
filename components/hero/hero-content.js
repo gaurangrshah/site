@@ -28,7 +28,7 @@ export const HeroContent = ({ children, ...rest }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
+          <Badge px={1} bg='primary' color='bg1' boxShadow='sm'>
             Developer
           </Badge>
         </MotionBox>
@@ -37,7 +37,7 @@ export const HeroContent = ({ children, ...rest }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
         >
-          <Badge px={1} bg='brand.300' color='brand.500' boxShadow='sm'>
+          <Badge px={1} bg='primary' color='bg1' boxShadow='sm'>
             Maker
           </Badge>
         </MotionBox>
@@ -62,8 +62,8 @@ export const HeroContent = ({ children, ...rest }) => {
           </Box>
           <Box
             as='span'
-            color='brand.400'
-            bgGradient='linear(to-r,  brand.600, brand.400)'
+            color='secondary'
+            bgGradient='linear(to-r,  bg1, secondary)'
             backgroundClip='text'
           >
             Hi-Ya! I'm Gaurang!
@@ -80,7 +80,7 @@ export const HeroContent = ({ children, ...rest }) => {
             fontSize='1.5rem'
             fontFamily='accent'
             lineHeight={[1.6, null, null, 2.5]}
-            color='brand.600'
+            color='bg2'
             textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
             mb={[6, null, null, 3]}
           >
@@ -96,7 +96,7 @@ export const HeroContent = ({ children, ...rest }) => {
             fontSize='md'
             fontFamily='body'
             lineHeight={2}
-            color='brand.700'
+            color='gray1'
             maxW='lg'
           >
             I still can't get over how amazing it is that you've found me here.

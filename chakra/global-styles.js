@@ -26,7 +26,7 @@ export const styles = {
       wordWrap: "break-word",
     },
     "*::-webkit-scrollbar-track": {
-      boxShadow: "inset 0 0 6px var(--chakra-colors-brand-500)",
+      boxShadow: "inset 0 0 6px var(--chakra-colors-bg1)",
       borderRadius: "10px",
       backgroundColor: "transparent",
     },
@@ -35,8 +35,8 @@ export const styles = {
     },
     "*::-webkit-scrollbar-thumb": {
       borderRadius: "10px",
-      boxShadow: "inset 0 0 6px var(--chakra-colors-brand-400)",
-      backgroundColor: "var(--chakra-colors-brand-400)",
+      boxShadow: "inset 0 0 6px var(--chakra-colors-secondary)",
+      backgroundColor: "var(--chakra-colors-secondary)",
     },
     "html, body": {
       margin: 0,
@@ -51,7 +51,7 @@ export const styles = {
     body: {
       position: "relative",
       fontFamily: "body",
-      color: mode("brand.700", "brand.200")(props),
+      color: mode("gray1", "light")(props),
       fontSize: "1.5rem",
       lineHeight: 2,
       textRendering: "optimizeLegibility",
@@ -61,24 +61,24 @@ export const styles = {
       // overflowY: "hidden",
       maxW: "full",
       "span.markup": {
-        color: "brand.500",
+        color: "bg1",
         fontFamily: "accent",
         fontSize: "2xl",
         lineHeight: 0.7,
-        background: "brand.300",
+        background: "primary",
         px: "0.2rem",
         mr: "0.2rem",
         borderRadius: "2px",
       },
       "p.scribble": {
-        color: "brand.500",
+        color: "bg1",
         fontFamily: "accent",
         fontSize: "2xl",
         opacity: 0.8,
         textShadow: "0px 0px 2px rgba(0,0,0, 0.2)",
       },
       "svg.scribble": {
-        fill: "brand.500",
+        fill: "bg1",
         filter: "drop-shadow(0px 0px 2px rgba(70, 94, 55, 0.3))",
       },
       "*.hide-scroll::-webkit-scrollbar": { display: "none" },

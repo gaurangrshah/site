@@ -24,7 +24,7 @@ export const Splash = () => {
         textAlign='center'
         mx='auto'
         my='auto'
-        color='brand.200'
+        color='light'
       >
         <MotionBox
           position='absolute'
@@ -51,7 +51,7 @@ export const Splash = () => {
 
         <Box
           position='relative'
-          bg='brand.dark'
+          bg='dark'
           opacity='0.9'
           w={["70%", "container.xs", "50%"]}
           boxShadow='md'
@@ -66,13 +66,13 @@ export const Splash = () => {
             <Image src={`/personwbgcircle.svg`} />
           </Box>
 
-          <Heading as='h2' color='brand.400' lineHeight='1' mt={2}>
+          <Heading as='h2' color='secondary' lineHeight='1' mt={2}>
             Gaurang Shah
           </Heading>
           <chakra.small as='span' textAlign='center'>
             full stack developer
           </chakra.small>
-          <Text fontSize='md' textAlign='center' color='brand.300' py={9}>
+          <Text fontSize='md' textAlign='center' color='primary' py={9}>
             Hey! I'm just setting some things up, check back soon...
           </Text>
           <Divider maxWidth='80%' mx='auto' mb={3} />
@@ -101,7 +101,7 @@ export const Splash = () => {
 
 const SocialIcons = ({
   icons = ["twitterfill", "github", "linkedin" /*"reddit", "makerlog" */],
-  colors = ["twitter.500", "brand.dark", "red.500", "blue.400", "green.400"],
+  colors = ["twitter.500", "dark", "red.500", "blue.400", "green.400"],
   to = [
     "https://twitter.com/Soham_Asmi",
     "https://github.com/gaurangrshah",
@@ -120,14 +120,14 @@ const SocialIcons = ({
       px={[16, null, 32]}
       py={3}
       w='full'
-      bg={"brand.800"}
+      bg={"gray2"}
     >
       {icons?.length &&
         icons.map((icon, i) => {
           return (
             <Link key={icon} href={to[i]} isExternal>
               <CustomIcon
-                bg={"brand.300"}
+                bg={primary"}
                 borderRadius='50%'
                 border='2px'
                 boxShadow='sm'

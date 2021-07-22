@@ -1,3 +1,4 @@
+import { ThemeEditorProvider } from "@hypertheme-editor-pro/chakra-ui";
 import * as ErrorContext from "./error-context";
 import * as ToastContext from "./toast-context";
 import * as ModalContext from "./modal-context";
@@ -12,4 +13,5 @@ export const Providers = {
   errors: ErrorContext.ErrorProvider,
   toasts: ToastContext.ToastProvider,
   modal: ModalContext.ModalProvider,
+  editor: ThemeEditorProvider,
 };

@@ -45,6 +45,7 @@ export function DefaultLayout(props) {
         mounted && (
           <>
             <Header />
+
             {props.children}
             {/* <ModeToggle /> */}
             {/* <Scaffold {...props} zIndex={1} /> */}
@@ -115,7 +116,7 @@ export const WaveFooter = () => {
           id='motion-wave'
           viewBox='0 0 800 338.05'
           preserveAspectRatio='none'
-          fill='brand.dark'
+          fill='dark'
           opacity='0.2'
           width='calc(100% - 9px)'
           height='25vh'

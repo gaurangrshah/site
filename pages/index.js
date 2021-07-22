@@ -46,11 +46,11 @@ const Index = () => {
         _before={beforeBox({})}
         py={24}
         px={[4, 16]}
-        bg='brand.300'
+        bg='primary'
         divider={{
           pos: "bottom",
           shape: "tilt",
-          style: { stroke: "transparent", fill: "brand.300" },
+          style: { stroke: "transparent", fill: "primary" },
         }}
       >
         <Hero />
@@ -61,8 +61,8 @@ const Index = () => {
             as='h2'
             fontSize='5xl'
             mb={0}
-            color='brand.400'
-            bgGradient='linear(to-r,  brand.600, brand.400)'
+            color='secondary'
+            bgGradient='linear(to-r, bg2, secondary)'
             backgroundClip='text'
           >
             Follow my journey.
@@ -105,11 +105,11 @@ const Index = () => {
       <DualSection
         pb={12}
         minH='40vh'
-        bg='brand.300'
+        bg='primary'
         divider={{
           pos: "both",
           shape: "tilt",
-          style: { stroke: "transparent", fill: "brand.300" },
+          style: { stroke: "transparent", fill: "primary" },
         }}
       >
         <Footer />

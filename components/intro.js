@@ -38,7 +38,7 @@ export const Intro = () => {
           as='article'
           w='95%'
           mx='auto'
-          bg='brand.300'
+          bg='primary'
           opacity='0.8'
           p={6}
           py={12}
@@ -64,7 +64,7 @@ export const Intro = () => {
                 textTransform='capitalize'
                 textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
                 lineHeight='1'
-                color='brand.500'
+                color='bg1'
                 mt={2}
               >
                 Gaurang Shah
@@ -85,13 +85,13 @@ export const Intro = () => {
             p={[12, null, 12]}
             my={["auto", null, 0]}
             textAlign={["center", null, "left"]}
-            color='brand.700'
+            color='gray1'
           >
             <Heading
               as='h3'
               fontSize='3xl'
               fontFamily='body'
-              color='brand.400'
+              color='secondary'
               lineHeight='1.5'
               textTransform='capitalize'
               textShadow='rgba(179, 179, 179, 0.2) 1px 1px 6px'
@@ -123,7 +123,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.apollo}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -137,7 +137,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2 },
               }}
               icon={devIcons.docker}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -151,7 +151,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.25 },
               }}
               icon={devIcons.gatsby}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -165,7 +165,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.next}
-              color={"brand.400"}
+              color={"secondary"}
               w='6rem'
               h='6rem'
             />
@@ -181,7 +181,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.3 },
               }}
               icon={devIcons.blitz}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -195,7 +195,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.vercel}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -209,7 +209,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.chakra}
-              fill={"brand.400"}
+              fill={"secondary"}
             />
             <MotionBrand
               move={{
@@ -223,7 +223,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.netlify}
-              color={"brand.400"}
+              color={"secondary"}
             />
             <MotionBrand
               move={{
@@ -237,7 +237,7 @@ export const Intro = () => {
                 transition: { type: "spring", bounce: 0.2, delay: 0.1 },
               }}
               icon={devIcons.heroku}
-              color={"brand.400"}
+              color={"secondary"}
             />
           </>
         )}
@@ -289,7 +289,7 @@ export const MotionBrand = ({ move, icon, ...rest }) => {
       top={0}
       left={`50%`}
       right={`50%`}
-      bg='brand.300'
+      bg='primary'
       w='4.5rem'
       h='4.5rem'
       p={2}

@@ -40,8 +40,8 @@ export const Hero = () => {
           p={[4, null, null, 0]}
           maxW='container.md'
           flex={1}
-          color='brand.500'
-          bg={["brand.300", null, null, "transparent"]}
+          color='bg1'
+          bg={["primary", null, null, "transparent"]}
           borderRadius='5px'
         >
           <HeroContent />
@@ -53,7 +53,7 @@ export const Hero = () => {
         w={"100%"}
         maxW='container.md'
         flex={1}
-        color='brand.500'
+        color='bg1'
       >
         <MotionBox
           initial={{ opacity: 0, y: 100 }}
@@ -78,7 +78,7 @@ export const Hero = () => {
         w={"100%"}
         maxW='container.md'
         flex={1}
-        color='brand.500'
+        color='bg1'
         mt={12}
       >
         <Flex w='full' align='center'>
@@ -100,7 +100,7 @@ export const Hero = () => {
             w='full'
             p={9}
             mx={[2, null, null, 6]}
-            fill='brand.600'
+            fill='bg2'
             border='1px'
             borderStyle='dashed'
             borderColor='gray.400'
@@ -122,7 +122,7 @@ export const Hero = () => {
             w='full'
             p={9}
             mx={[2, null, null, 6]}
-            fill='brand.600'
+            fill='bg2'
             border='1px'
             borderStyle='dashed'
             borderColor='gray.400'

@@ -10,18 +10,29 @@ const colors = {
     light,
     dark,
   },
+  primary: customColors.nyanza, //#E2FADB
+  secondary: customColors.turquoise, //#4ECDC4
+  accent: customColors.han, //#642BD6
+  dark: customColors.gunmetal,
+  deepDark: customColors.royalDark, //#05235E
+  light: customColors.mintCream, //#F7FFF7
+  bg1: customColors.emerald, //#138E76
+  bg2: customColors.blueSapphire, //#086375
+  gray1: customColors.blackCoral, //#4C5563
+  gray2: customColors.charcoal, // #384251
+  gray3: customColors.jet, // #363636
   brand: {
-    100: customColors.royalDark, //#05235E
-    200: customColors.mintCream, //#F7FFF7
-    300: customColors.nyanza, //#E2FADB
-    400: customColors.turquoise, //#4ECDC4
-    500: customColors.emerald, //#138E76
-    600: customColors.blueSapphire, //#086375
-    700: customColors.blackCoral, //#4C5563
-    800: customColors.charcoal, //#384251
-    900: customColors.jet, //#363636
-    accent: customColors.han, //#642BD6
-    dark: customColors.gunmetal, //#242F40
+    100: customColors.royalDark,
+    200: customColors.mintCream,
+    300: customColors.nyanza,
+    400: customColors.turquoise,
+    500: customColors.emerald,
+    600: customColors.blueSapphire,
+    700: customColors.blackCoral,
+    800: customColors.charcoal,
+    900: customColors.jet,
+    accent: customColors.han,
+    dark: customColors.gunmetal,
   },
 };
 const config = {

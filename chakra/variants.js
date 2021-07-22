@@ -9,7 +9,7 @@ export const beforeBox = ({
   left: 0,
   right: 0,
   // backgroundImage: gradient,
-  bgGradient: "linear(to-br, brand.300,  rgba(233, 255, 219,0.0) )",
+  bgGradient: "linear(to-br, primary,  rgba(233, 255, 219,0.0) )",
   w: "full",
   // h: "100vh",
   zIndex: -1,

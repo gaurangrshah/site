@@ -4,25 +4,26 @@ import {
   useContext,
   useEffect,
   useState,
-} from 'react';
+} from "react";
 
-import { Providers } from '@/chakra/contexts';
-import { SupabaseProvider } from '@/contexts/supabase-context';
+import { Providers } from "@/chakra/contexts";
+import { SupabaseProvider } from "@/contexts/supabase-context";
 
-import Nprogress from '@/chakra/components/nprogress';
+import Nprogress from "@/chakra/components/nprogress";
 
-import appConfig from '../../app.config';
+import appConfig from "../../app.config";
 
 import {
   useLocalDataState,
   useLocalDataDispatch,
-} from '@/contexts/local-data-context';
+} from "@/contexts/local-data-context";
 
-import { sb } from '@/lib/initSupabase';
+import { sb } from "@/lib/initSupabase";
 
 export const ScaffoldContext = createContext();
 export function ScaffoldProvider({ children }) {
   const { options, ...restAppConfig } = appConfig;
+  const showEditor = process.env.NODE_ENV == "development";
 
   return (
     <ScaffoldContext.Provider value={{ ...restAppConfig, options }}>
@@ -31,7 +32,11 @@ export function ScaffoldProvider({ children }) {
           <Providers.toasts toastOptions={options?.toasts}>
             <Providers.errors errorOptions={options?.errors}>
               <Nprogress />
-              {children}
+              {showEditor ? (
+                <Providers.editor>{children}</Providers.editor>
+              ) : (
+                <>{children}</>
+              )}
             </Providers.errors>
           </Providers.toasts>
         </Providers.modal>
@@ -43,11 +48,11 @@ export function ScaffoldProvider({ children }) {
 export const useScaffold = () => {
   const context = useContext(ScaffoldContext);
   if (context === undefined) {
-    throw new Error('useScaffoldState must be used within a ScaffoldProvider');
+    throw new Error("useScaffoldState must be used within a ScaffoldProvider");
   }
 
-  const { localData: options } = useLocalDataState('options');
-  const { setLocalData } = useLocalDataDispatch('options');
+  const { localData: options } = useLocalDataState("options");
+  const { setLocalData } = useLocalDataDispatch("options");
   const [showHeader, setShowHeader] = useState(true);
   const [showFooter, setShowFooter] = useState(true);
   const [scaffoldTheme, setScaffoldTheme] = useState(context?.scaffold?.theme);
