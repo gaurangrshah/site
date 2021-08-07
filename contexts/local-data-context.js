@@ -5,15 +5,21 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { options } from '@/app.config';
 const LocalDataStateContext = createContext();
 const LocalDataDispatchContext = createContext();
+import appConfig from '../app.config';
 
 const key = 'options';
+console.log('options', appConfig);
 
 export function LocalDataProvider({ children }) {
-  const [localData, setLocalStorage] = useState(options);
+  const [localData, setLocalStorage] = useState(() => appConfig?.options || '');
+
   const [initialized, setInitialized] = useState({});
+
+  useEffect(() => {
+    if (!appConfig && !Object.keys(appConfig?.length)) return children;
+  }, []);
 
   useEffect(() => {
     const localDb = window.localStorage.getItem(key);
@@ -22,7 +28,7 @@ export function LocalDataProvider({ children }) {
     if (obj && Object.keys(obj).length) {
       setLocalData(obj);
     } else {
-      window.localStorage.setItem(key, JSON.stringify(options));
+      window.localStorage.setItem(key, JSON.stringify(appConfig?.options));
     }
     setInitialized(true);
   }, []);

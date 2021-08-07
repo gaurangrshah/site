@@ -1,3 +1,5 @@
+/** @format */
+
 import { extendTheme } from "@chakra-ui/react";
 import { styles } from "./global-styles";
 
@@ -44,10 +46,15 @@ const shadows = {
   bs: "0 12px 24px 0 rgba(0,0,0,0.09)",
 };
 
+const components = {};
+
 export const theme = extendTheme({
   config,
   colors,
   styles,
   fonts,
   shadows,
+  components
 });
+
+

@@ -10,4 +10,7 @@ export default function Onboarding({ children = "onboarding" }) {
   return <Protected {...{ user }}>{children}</Protected>;
 }
 
+Onboarding.layout = "Default"
 export const getServerSideProps = onboarding();
+
+

@@ -1,6 +1,7 @@
 import { Box, Portal, Slide, Text } from "@chakra-ui/react";
 import { useScaffold } from "@/chakra/contexts/scaffold-context";
 import { useColor } from "@/chakra/hooks/use-color";
+import { appConfig } from '@/app.config';
 
 // @SCOPE:  used to handle errors and set toast messages and render error tag in UI accordingly
 
@@ -11,9 +12,11 @@ export const ErrorTag = ({
   children,
   ...rest
 }) => {
-  const {
-    config: { options },
-  } = useScaffold();
+  //  🚧
+  // const {
+  //   config: { options },
+  // } = useScaffold();
+  const {options} = appConfig
 
   const { color } = useColor();
 

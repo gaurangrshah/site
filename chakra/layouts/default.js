@@ -18,7 +18,7 @@ import { ChInnerWave } from "../components/motion-wave";
 import { useMounted } from "@/hooks/use-mounted";
 import { Header } from "@/components/header";
 
-export function DefaultLayout(props) {
+export function Default(props) {
   const mounted = useMounted();
   const prefersReducedMotion = usePrefersReducedMotion();
 

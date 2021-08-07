@@ -118,6 +118,8 @@ const Index = () => {
   );
 };
 
+Index.layout = 'Default'
+
 export default Index;
 
 export const UpcomingProject = ({}) => {

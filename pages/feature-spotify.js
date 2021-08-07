@@ -5,3 +5,4 @@ import { NowPlaying } from "@/components/spotify/now-playing";
 export default function Sandbox() {
   return <NowPlaying />;
 }
+Sandbox.layout = "Default"

@@ -8,8 +8,14 @@ export const is = {
   function(fn) {
     return typeof fn === 'function';
   },
+  array(arr) {
+    return Array.isArray(arr);
+  },
   object(obj) {
-    return (obj && obj.constructor === Object) || obj === Object(obj);
+    return (
+      ((obj && obj.constructor === Object) || obj === Object(obj)) &&
+      !Array.isArray(obj)
+    );
   },
   empty(value) {
     // returns true when any of the conditions are met --
@@ -30,5 +36,13 @@ export const is = {
 };
 
 export const isSSR = () => {
-  return !(typeof window !== "undefined" && window.document?.createElement);
-}
+  return !(typeof window !== 'undefined' && window.document?.createElement);
+};
+
+export const typeIs = (value, type) => {
+  // get a reference to the type checking conditional
+  const check = value && value.constructor && value.constructor.name;
+  // check value against type
+  if (type) return check === type;
+  return check; // return the check if no type is passed in
+};
