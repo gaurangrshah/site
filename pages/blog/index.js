@@ -16,6 +16,7 @@ import { typeIs } from '@/utils/validator';
 import PreviewCard from '@/components/blog/preview-card';
 
 function Posts({ folders = [] }) {
+  console.log("🚀 | file: index.js | line 19 | folders", folders)
   return (
     <>
       <NextSeo title="Blog | G. Shah Dev" />
@@ -47,6 +48,6 @@ export default Posts;
 export async function getStaticProps() {
   const { getAllPosts } = await import('@/lib/octokit');
   const folders = await getAllPosts();
-  console.log('🚀 | file: index.js | line 67 | folders', folders);
+  console.log('🚀 | file: index.js | line 67 | folders', folders?.length);
   return { props: { folders: folders ? folders : [] } };
 }

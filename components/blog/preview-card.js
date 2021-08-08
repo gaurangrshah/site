@@ -14,7 +14,7 @@ export default function PreviewCard({ post, isSeries }) {
   const data = isSeries ? post?.matter?.data?.series : post?.matter?.data;
 
   return (
-    <ChNextLink href={`/blog/${post.name.split('.')[0]}`}>
+    <ChNextLink href={isSeries ? `/blog/series/${post.name.split('.')[0]}` : `/blog/${post.name.split('.')[0]}`}>
       <VStack
         as="article"
         align="flex-start"
