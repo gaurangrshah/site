@@ -14,7 +14,6 @@
     "@chakra-ui/theme-tools": "^1.1.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@hypertheme-editor-pro/chakra-ui": "^0.0.21",
     "@supabase/supabase-js": "^1.11.8",
     "airtable": "^0.11.0",
     "focus-visible": "^5.2.0",
@@ -35,5 +34,7 @@
     "react-syntax-highlighter": "^15.4.3",
     "react-vertical-timeline-component": "^3.3.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@hypertheme-editor-pro/chakra-ui": "^0.0.21"
+  }
 }
