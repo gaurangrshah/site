@@ -1,9 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
-// import {
-//   ThemeEditorProvider,
-//   ThemeEditorDrawerButton,
-// } from '@hypertheme-editor-pro/chakra-ui';
 import { SupabaseProvider } from '@/contexts/supabase-context';
 import { sb } from '@/lib/initSupabase';
 
@@ -37,9 +33,6 @@ const App = ({ Component, pageProps, router }) => {
                   <Component {...pageProps} />
                 </DefaultLayout>
               </MessageRouter>
-              {/* {process.env.NODE_ENV === 'development' && (
-                <ThemeEditorDrawerButton pos="fixed" bottom={4} right={2} />
-              )} */}
             </Providers>
           </SupabaseProvider>
         </ErrorBoundary>
