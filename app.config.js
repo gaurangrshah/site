@@ -1,11 +1,9 @@
 import { ScaffoldProvider } from '@/chakra/contexts/scaffold-context';
 import { LocalDataProvider } from '@/contexts/local-data-context';
-import { ThemeEditorProvider } from '@hypertheme-editor-pro/chakra-ui';
 import { constants } from './chakra/constants';
 
 const defaultProviders = [LocalDataProvider, ScaffoldProvider];
 const pluginProviders = [];
-const devProviders = [ThemeEditorProvider]; //
 
 const appConfig = {
   details: {
@@ -48,7 +46,7 @@ const appConfig = {
     toasts: { show: true },
     errors: { show: true, config: { tags: true } },
   },
-  providers: [...defaultProviders, ...pluginProviders, ...devProviders],
+  providers: [...defaultProviders, ...pluginProviders],
   constants: {
     // strictly check the negative
     isSSR: !(typeof window !== 'undefined' && window.document?.createElement),
