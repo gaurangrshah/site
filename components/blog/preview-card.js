@@ -11,10 +11,17 @@ import {
 import { ChNextLink } from '@/components/next-link';
 
 export default function PreviewCard({ post, isSeries }) {
-  const data = isSeries ? post?.matter?.data?.series : post?.matter?.data;
+  let data = {};
+
+  if (post) {
+    data = isSeries ? post?.matter?.data?.series : post?.matter?.data;
+    console.log('🚀 | file: preview-card.js | line 19 | data', data);
+  }
 
   return (
-    <ChNextLink href={isSeries ? `/blog/series/${post.name.split('.')[0]}` : `/blog/${post.name.split('.')[0]}`}>
+    <ChNextLink
+      href={isSeries ? `/blog/series/${data.slug}` : `/blog/${data.slug}`}
+    >
       <VStack
         as="article"
         align="flex-start"

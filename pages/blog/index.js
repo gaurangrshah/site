@@ -16,27 +16,29 @@ import { typeIs } from '@/utils/validator';
 import PreviewCard from '@/components/blog/preview-card';
 
 function Posts({ folders = [] }) {
-  console.log("🚀 | file: index.js | line 19 | folders", folders)
+  console.log('🚀 | file: index.js | line 19 | folders', folders);
   return (
     <>
       <NextSeo title="Blog | G. Shah Dev" />
       <Container maxW="container.md" py={36}>
         <SimpleGrid w="full" mx="auto" columns={2} spacing={6}>
           {folders?.length &&
-            folders?.map((folder) => (
-              <HStack
-                key={folder?.sha}
-                align="stretch"
-                p={3}
-                color="black"
-                rounded="lg"
-              >
-                <PreviewCard
-                  post={folder?.posts[0]}
-                  isSeries={folder?.isSeries}
-                />
-              </HStack>
-            ))}
+            folders?.map((folder) => {
+              return (
+                <HStack
+                  key={folder?.sha}
+                  align="stretch"
+                  p={3}
+                  color="black"
+                  rounded="lg"
+                >
+                  <PreviewCard
+                    post={folder?.posts[0]}
+                    isSeries={folder?.isSeries}
+                  />
+                </HStack>
+              );
+            })}
         </SimpleGrid>
       </Container>
     </>
