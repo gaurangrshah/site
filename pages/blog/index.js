@@ -1,22 +1,9 @@
 import { NextSeo } from 'next-seo';
-import {
-  Badge,
-  Box,
-  Container,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Container, HStack, SimpleGrid } from '@chakra-ui/react';
 
-import { ChNextLink } from '@/components/next-link';
-import { typeIs } from '@/utils/validator';
-import PreviewCard from '@/components/blog/preview-card';
+import { PreviewCard } from '@/components/blog/preview-card';
 
 function Posts({ folders = [] }) {
-  console.log('🚀 | file: index.js | line 19 | folders', folders);
   return (
     <>
       <NextSeo title="Blog | G. Shah Dev" />
@@ -50,6 +37,5 @@ export default Posts;
 export async function getStaticProps() {
   const { getAllPosts } = await import('@/lib/octokit');
   const folders = await getAllPosts();
-  console.log('🚀 | file: index.js | line 67 | folders', folders?.length);
   return { props: { folders: folders ? folders : [] } };
 }

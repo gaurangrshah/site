@@ -10,17 +10,38 @@ import {
 
 import { ChNextLink } from '@/components/next-link';
 
-export default function PreviewCard({ post, isSeries }) {
+function getSlugFromSeriesTitle(title) {
+  const isNumber = Number(title.slice(-1));
+
+  let result = false;
+
+  if (isNumber) {
+    result = title.substring(0, title.lastIndexOf('-'));
+  }
+
+  return result;
+}
+
+export function PreviewCard({ post, isSeries, linkTo }) {
   let data = {};
 
   if (post) {
-    data = isSeries ? post?.matter?.data?.series : post?.matter?.data;
-    console.log('🚀 | file: preview-card.js | line 19 | data', data);
+    data = isSeries
+      ? { ...post?.matter?.data, ...post?.matter?.data?.series } // @NOTE: the order here matters
+      : post?.matter?.data
+      ? post?.matter?.data
+      : post;
   }
 
   return (
     <ChNextLink
-      href={isSeries ? `/blog/series/${data.slug}` : `/blog/${data.slug}`}
+      href={
+        linkTo
+          ? linkTo
+          : isSeries
+          ? `/blog/series/${getSlugFromSeriesTitle(data.slug)}`
+          : `/blog/posts/${data.slug}`
+      }
     >
       <VStack
         as="article"
