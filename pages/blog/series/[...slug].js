@@ -1,6 +1,13 @@
 import { NextSeo } from 'next-seo';
 
-import { Box, Badge, Container, Heading, HStack } from '@chakra-ui/react';
+import {
+  Box,
+  Badge,
+  Container,
+  Heading,
+  HStack,
+  SimpleGrid,
+} from '@chakra-ui/react';
 
 import { Image } from '@/components/next-chakra-image';
 import MarkdownJSX from '@/chakra/components/blog-md-jsx';
@@ -74,13 +81,25 @@ export const getStaticProps = async (context) => {
 };
 
 export function SeriesList({ folder }) {
-  return folder?.map((post) => {
-    return (
-      <HStack key={post?.slug} align="stretch" p={3} color="black" rounded="lg">
-        <SeriesPreviewCard post={post} />
-      </HStack>
-    );
-  });
+  return (
+    <Container maxW="container.md" py={36}>
+      <SimpleGrid w="full" mx="auto" columns={2} spacing={6}>
+        {folder?.map((post) => {
+          return (
+            <HStack
+              key={post?.slug}
+              align="stretch"
+              p={3}
+              color="black"
+              rounded="lg"
+            >
+              <SeriesPreviewCard post={post} />
+            </HStack>
+          );
+        })}
+      </SimpleGrid>
+    </Container>
+  );
 }
 
 export function SinglePost({ post, data }) {
