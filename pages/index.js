@@ -57,48 +57,14 @@ const Index = () => {
       </SingleSection>
       <Section mt={6} mb={24}>
         <Container w='full' maxW='container.xl' textAlign='center'>
-          <Heading
-            as='h2'
-            fontSize='5xl'
-            mb={0}
-            color='secondary'
-            bgGradient='linear(to-r, bg2, secondary)'
-            backgroundClip='text'
-          >
-            Follow my journey.
-          </Heading>
-          <Text mt={3} mb={24}>
-            As I build and break things - all in public.
-          </Text>
-          <Box w='full' mx='auto' textAlign='left'>
-            <Text
-              fontSize='lg'
-              lineHeight={2.5}
-              textAlign={["center", null, null, "left"]}
-              maxW={["80%", null, null, "container.sm"]}
-              mx='auto'
-              mb={12}
-            >
-              I was recently heavily inspired by the{" "}
-              <Box as='span' className='markup'>
-                #indiehacking&nbsp;
-              </Box>
-              community and am currently working on my first{" "}
-              <Box as='span' className='markup'>
-                #buildinpublic &nbsp;
-              </Box>
-              project.
-            </Text>
-          </Box>
-          <UpcomingProject />
           <ParallaxBox transition={transitions.slideLToR}>
             <NewsletterSignup />
           </ParallaxBox>
         </Container>
       </Section>
-      <Section py={16} minH='40vh' mt={62}>
+      {/* <Section py={16} minH='40vh' mt={62}>
         <Work />
-      </Section>
+      </Section> */}
       {/* <Section pb={6} minH='30vh'>
         <Outro />
       </Section> */}
