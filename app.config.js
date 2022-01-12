@@ -36,10 +36,10 @@ const appConfig = {
     },
   },
   social: {
+    hashnode: { href: 'https://hashnode.com/@gsdev' },
     github: { href: 'https://github.com/gaurangrshah' },
     twitter: { href: 'https://twitter.com/Soham_Asmi' },
     devTo: { href: 'https://dev.to/gaurangrshah' },
-    hashnode: { href: 'https://hashnode.com/@gsdev' },
     linkedIn: { href: 'https://www.linkedin.com/in/gshah2020/' },
   },
   options: {
