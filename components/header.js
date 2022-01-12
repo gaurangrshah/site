@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   Image,
+  Link,
   Text,
   VisuallyHidden,
 } from "@chakra-ui/react";
@@ -31,8 +32,8 @@ export function Header({ children, ...rest }) {
           <ChNextLink href='/' cursor='pointer'>
             <Image src='/logo.svg' alt='gsdev logo' h='60px' />
           </ChNextLink>
-          <ChNextLink
-            href='/blog'
+          <Link
+            href='http://blog.gshahdev.com'
             cursor='pointer'
             fontSize='lg'
             fontWeight='700'
@@ -42,7 +43,7 @@ export function Header({ children, ...rest }) {
             }}
           >
             blog
-          </ChNextLink>
+          </Link>
         </HStack>
       </Container>
     </Box>
