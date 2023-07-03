@@ -16,6 +16,8 @@ import appConfig from '@/app.config';
 import SEO from '../next-seo.config';
 import { combineProviders } from '@/utils/react';
 
+import { Analytisc } from "@vercel/analytics"
+
 const App = ({ Component, pageProps, router }) => {
   const { providers } = appConfig;
 
@@ -37,6 +39,7 @@ const App = ({ Component, pageProps, router }) => {
           </SupabaseProvider>
         </ErrorBoundary>
       </ChakraProvider>
+      <Analytics/>
     </>
   );
 };
